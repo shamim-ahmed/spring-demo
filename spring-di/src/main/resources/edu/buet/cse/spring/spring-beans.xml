@@ -12,6 +12,8 @@
     <constructor-arg ref="quest"/>
   </bean>
   
+  <bean id="clarkKent" class="edu.buet.cse.spring.di.impl.NamedKnight"/>
+  
   <bean id="minstrel" class="edu.buet.cse.spring.di.impl.Minstrel"/>
   
   <aop:config>
