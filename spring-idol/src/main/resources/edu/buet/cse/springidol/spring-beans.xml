@@ -40,4 +40,29 @@
   <bean id="yanni" class="edu.buet.cse.springidol.impl.Instrumentalist"
         p:song="In the Morning Light"
         p:instrument-ref="piano"/>
+        
+  <!-- example of collection usage -->
+  <bean id="flute" class="edu.buet.cse.springidol.impl.Flute"/>
+  <bean id="harmonica" class="edu.buet.cse.springidol.impl.Harmonica"/>
+  
+  <bean id="hank" class="edu.buet.cse.springidol.impl.OneManBand">
+    <property name="instruments">
+      <set>
+        <ref bean="piano"/>
+        <ref bean="flute"/>
+        <ref bean="harmonica"/>
+      </set>
+    </property>
+  </bean>
+  
+  <!-- example of map injection via constructor -->
+  <bean id="plank" class="edu.buet.cse.springidol.impl.ModifiedOneManBand">
+    <constructor-arg>
+      <map>
+        <entry key="Piano" value-ref="piano"/>
+        <entry key="Flute" value-ref="flute"/>
+        <entry key="Harmonica" value-ref="harmonica"/>
+      </map>
+    </constructor-arg>
+  </bean>
 </beans>
