@@ -16,6 +16,7 @@
   
   <bean id="minstrel" class="edu.buet.cse.spring.basic.impl.Minstrel"/>
   
+  <!-- basic AOP configuration -->
   <aop:config>
   	<aop:pointcut id="embark-quest" expression="execution(* edu.buet.cse.spring.basic.model.Knight.embarkOnQuest(..))"/>
   	
@@ -24,4 +25,20 @@
   	  <aop:after pointcut-ref="embark-quest" method="singAfterQuest"/>
   	</aop:aspect>
   </aop:config>
+  
+  <!-- jdbc configuration -->
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="url" value="jdbc:mysql://localhost:3306/springdb"/>
+    <property name="username" value="root"/>
+    <property name="password" value="admin"/>
+    <property name="maxActive" value="5"/>
+  </bean>
+  
+  <bean id="jdbcTmpl" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+    <constructor-arg ref="dataSource"/>
+  </bean>
+  
+  <bean id="userDao" class="edu.buet.cse.spring.basic.jdbc.UserDao">
+    <constructor-arg ref="jdbcTmpl"/>
+  </bean>
 </beans>
