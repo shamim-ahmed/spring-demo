@@ -21,6 +21,18 @@
   <bean id="ticket" class="edu.buet.cse.springidol.impl.Ticket" scope="prototype"/>
   
   <!-- demonstrates the use of initialization and destroy methods -->
+  <!-- 
   <bean id="auditorium" class="edu.buet.cse.springidol.impl.Auditorium"
-                        init-method="turnOnLights" destroy-method="turnOffLights"/>
+                        init-method="turnOnLights" destroy-method="turnOffLights"/> -->
+                        
+  <!-- simple bean injection -->
+  <bean id="saxophone" class="edu.buet.cse.springidol.impl.Saxophone"/>
+  
+  <!-- inner bean declaration example -->
+  <bean id="kenny" class="edu.buet.cse.springidol.impl.Instrumentalist">
+    <property name="instrument">
+      <bean class="edu.buet.cse.springidol.impl.Piano"/>
+    </property>
+    <property name="song" value="Forever in Love"/>
+  </bean>
 </beans>
