@@ -13,4 +13,8 @@
     <constructor-arg name="poem" ref="poem"/>
     <constructor-arg name="beanCount" value="5"/>
   </bean>
+  
+  <bean id="stage" class="edu.buet.cse.springidol.impl.Stage" factory-method="getInstance"/>
+  
+  <bean id="ticket" class="edu.buet.cse.springidol.impl.Ticket" scope="prototype"/>
 </beans>
