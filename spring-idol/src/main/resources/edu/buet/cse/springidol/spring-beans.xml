@@ -14,7 +14,13 @@
     <constructor-arg name="beanCount" value="5"/>
   </bean>
   
+  <!-- demonstrates the use of factory methods -->
   <bean id="stage" class="edu.buet.cse.springidol.impl.Stage" factory-method="getInstance"/>
   
+  <!-- demonstrates the use of bean scoping -->
   <bean id="ticket" class="edu.buet.cse.springidol.impl.Ticket" scope="prototype"/>
+  
+  <!-- demonstrates the use of initialization and destroy methods -->
+  <bean id="auditorium" class="edu.buet.cse.springidol.impl.Auditorium"
+                        init-method="turnOnLights" destroy-method="turnOffLights"/>
 </beans>
