@@ -2,6 +2,7 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
   <bean id="duke" class="edu.buet.cse.springidol.impl.BeanJuggler">
     <property name="beanCount" value="5"/>
@@ -24,15 +25,19 @@
   <!-- 
   <bean id="auditorium" class="edu.buet.cse.springidol.impl.Auditorium"
                         init-method="turnOnLights" destroy-method="turnOffLights"/> -->
-                        
-  <!-- simple bean injection -->
-  <bean id="saxophone" class="edu.buet.cse.springidol.impl.Saxophone"/>
-  
+                         
   <!-- inner bean declaration example -->
   <bean id="kenny" class="edu.buet.cse.springidol.impl.Instrumentalist">
     <property name="instrument">
-      <bean class="edu.buet.cse.springidol.impl.Piano"/>
+      <bean class="edu.buet.cse.springidol.impl.Saxophone"/>
     </property>
     <property name="song" value="Forever in Love"/>
   </bean>
+  
+  <!-- use of p namespace -->
+  <bean id="piano" class="edu.buet.cse.springidol.impl.Piano"/>
+  
+  <bean id="yanni" class="edu.buet.cse.springidol.impl.Instrumentalist"
+        p:song="In the Morning Light"
+        p:instrument-ref="piano"/>
 </beans>
