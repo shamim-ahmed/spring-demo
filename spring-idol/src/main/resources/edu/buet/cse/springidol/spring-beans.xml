@@ -135,7 +135,7 @@
     <bean class="edu.buet.cse.springidol.spel.City"
           p:name="Chicago" p:state="IL" p:population="2853114"/>
     <bean class="edu.buet.cse.springidol.spel.City"
-          p:name="Atlanta" p:state="GA" p:population="537958"/>
+          p:name="Atlanta" p:state="GA" p:population="5379584"/>
     <bean class="edu.buet.cse.springidol.spel.City"
           p:name="Dallas" p:state="TX" p:population="1279910"/>
     <bean class="edu.buet.cse.springidol.spel.City"
@@ -147,5 +147,12 @@
   <!-- example of filtering a list using SpEL -->
   <bean id="selectedCityContainer" class="edu.buet.cse.springidol.spel.SelectedCityContainer">
     <property name="selectedCities" value="#{cities.?[population gt 2000000]}"/>
+    <property name="firstCity" value="#{cities.^[population gt 2000000]}"/>
+    <property name="lastCity" value="#{cities.$[population gt 2000000]}"/>
+  </bean>
+  
+  <!-- example of projection using SpEL -->
+  <bean id="cityNameContainer" class="edu.buet.cse.springidol.spel.CityNameContainer">
+    <property name="cityNames" value="#{cities.![name]}"/>
   </bean>
 </beans>
