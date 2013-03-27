@@ -117,4 +117,11 @@
     <property name="path" value="#{systemEnvironment['PATH']}"/>
     <property name="user" value="#{systemEnvironment['USER']}"/>
   </bean>
+  
+  <!-- example of accessing properties using SpEL -->
+  <bean id="sysProps" class="edu.buet.cse.springidol.spel.SystemProperties">
+    <property name="javaHome" value="#{systemProperties['java.home']}"/>
+    <property name="javaVendor" value="#{systemProperties['java.vendor']}"/>
+    <property name="lineSeparator" value="#{systemProperties['line.separator']}"/>
+  </bean>
 </beans>
