@@ -94,6 +94,6 @@
   <bean id="songSelector" class="edu.buet.cse.springidol.impl.SongSelector"/>
   
   <bean id="airSupply" class="edu.buet.cse.springidol.impl.AirSupply">
-    <property name="song" value="#{songSelector.selectSong().toUpperCase()}"/>
+    <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}"/>
   </bean>
 </beans>
