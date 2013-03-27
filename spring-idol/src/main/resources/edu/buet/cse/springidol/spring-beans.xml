@@ -127,5 +127,6 @@
     <property name="lineSeparator" value="#{systemProperties['line.separator']}"/>
   </bean>
   
+  <!-- example of loading a properties file -->
   <util:properties id="settings" location="/edu/buet/cse/springidol/spel/settings.properties"/>
 </beans>
