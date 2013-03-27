@@ -153,6 +153,16 @@
   
   <!-- example of projection using SpEL -->
   <bean id="cityNameContainer" class="edu.buet.cse.springidol.spel.CityNameContainer">
+    <property name="cityNames" value="#{cities.![name]}"/>
+  </bean>
+  
+  <!-- example of projecting multiple values-->
+  <bean id="cityNameContainer2" class="edu.buet.cse.springidol.spel.CityNameContainer">
     <property name="cityNames" value="#{cities.![name + ', ' + state]}"/>
+  </bean>
+  
+  <!-- example of projection after filtering -->
+  <bean id="cityNameContainer3" class="edu.buet.cse.springidol.spel.CityNameContainer">
+    <property name="cityNames" value="#{cities.?[population gt 2000000].![name + ', ' + state]}"/>
   </bean>
 </beans>
