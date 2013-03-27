@@ -77,16 +77,23 @@
     </constructor-arg>
   </bean>
   
-  <!-- SPEL basic example -->
+  <!-- SpEL basic example -->
   <bean id="person" class="edu.buet.cse.springidol.impl.Person">
     <property name="name" value="#{'John Doe'}"/>
     <property name="age" value="#{45}"/>
     <property name="employed" value="#{false}"/>
   </bean>
   
-  <!-- SPEL bean injection and property access example -->
+  <!-- SpEL bean injection and property access example -->
   <bean id="zamfir" class="edu.buet.cse.springidol.impl.Instrumentalist">
     <property name="instrument" value="#{piano}"/>
     <property name="song" value="#{kenny.song}"/>
+  </bean>
+  
+  <!-- SpEL method invocation -->
+  <bean id="songSelector" class="edu.buet.cse.springidol.impl.SongSelector"/>
+  
+  <bean id="airSupply" class="edu.buet.cse.springidol.impl.AirSupply">
+    <property name="song" value="#{songSelector.selectSong()}"/>
   </bean>
 </beans>
