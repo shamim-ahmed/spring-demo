@@ -131,7 +131,7 @@
   <util:properties id="settings" location="/edu/buet/cse/springidol/spel/settings.properties"/>
   
   <!-- an example of creating a list as a bean -->
-  <util:list id="cityList">
+  <util:list id="cities" value-type="edu.buet.cse.springidol.spel.City">
     <bean class="edu.buet.cse.springidol.spel.City"
           p:name="Chicago" p:state="IL" p:population="2853114"/>
     <bean class="edu.buet.cse.springidol.spel.City"
@@ -143,4 +143,9 @@
     <bean class="edu.buet.cse.springidol.spel.City"
           p:name="Las Cruces" p:state="NM" p:population="91865"/>
   </util:list>
+  
+  <!-- example of filtering a list using SpEL -->
+  <bean id="selectedCityContainer" class="edu.buet.cse.springidol.spel.SelectedCityContainer">
+    <property name="selectedCities" value="#{cities.?[population gt 2000000]}"/>
+  </bean>
 </beans>
