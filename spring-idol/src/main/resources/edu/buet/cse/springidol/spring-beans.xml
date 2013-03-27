@@ -101,4 +101,11 @@
   <bean id="circleUtil" class="edu.buet.cse.springidol.impl.CircleUtil">
     <property name="multiplier" value="#{T(java.lang.Math).PI}"/>
   </bean>
+  
+  <!-- examples of arithmetic using SpEL -->
+  <bean id="circle" class="edu.buet.cse.springidol.impl.Circle">
+    <property name="radius" value="#{5.0}"/>
+    <property name="circumference" value="#{2 * T(java.lang.Math).PI * 5.0}"/>
+    <property name="area" value="#{T(java.lang.Math).PI * T(java.lang.Math).pow(5.0, 2)}"/>
+  </bean>
 </beans>
