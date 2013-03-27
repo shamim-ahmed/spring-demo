@@ -65,4 +65,15 @@
       </map>
     </constructor-arg>
   </bean>
+  
+  <!-- example of Properties injection via constructor -->
+  <bean id="lank" class="edu.buet.cse.springidol.impl.PropertyBasedOneManBand">
+    <constructor-arg>
+      <props>
+        <prop key="Guiter">STRUM STRUM STRUM</prop>
+        <prop key="Harp">DING DING DING</prop>
+        <prop key="Cymbal">TING TING TING</prop>
+      </props>
+    </constructor-arg>
+  </bean>
 </beans>
