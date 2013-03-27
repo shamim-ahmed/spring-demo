@@ -1,6 +1,5 @@
 package edu.buet.cse.springidol.spel;
 
-import edu.buet.cse.springidol.impl.PerformanceException;
 import edu.buet.cse.springidol.model.Performer;
 
 public class AirSupplyBand implements Performer {
@@ -15,7 +14,7 @@ public class AirSupplyBand implements Performer {
   }
 
   @Override
-  public void perform() throws PerformanceException {
+  public void perform() {
 	System.out.printf("Performing the song %s%n", song);
   }
 }
