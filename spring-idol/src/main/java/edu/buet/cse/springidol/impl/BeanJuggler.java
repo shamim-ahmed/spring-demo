@@ -8,6 +8,10 @@ public class BeanJuggler implements Performer {
   public void setBeanCount(int beanCount) {
     this.beanCount = beanCount;
   }
+  
+  public int getBeanCount() {
+    return beanCount;
+  }
     
   @Override
   public void perform() {
