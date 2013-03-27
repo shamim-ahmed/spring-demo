@@ -25,7 +25,7 @@ public class SystemProperties {
 	return javaVendor;
   }
 
-  public void setJavaVendor(String jvmVendor) {
-	this.javaVendor = jvmVendor;
+  public void setJavaVendor(String javaVendor) {
+	this.javaVendor = javaVendor;
   }
 }
