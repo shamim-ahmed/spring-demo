@@ -3,7 +3,7 @@ package edu.buet.cse.springidol;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.springidol.impl.Circle;
+import edu.buet.cse.spel.Circle;
 
 public class App15 {
   public static void main(String... args) {

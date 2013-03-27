@@ -80,7 +80,7 @@
   </bean>
   
   <!-- SpEL basic example -->
-  <bean id="person" class="edu.buet.cse.springidol.impl.Person">
+  <bean id="person" class="edu.buet.cse.spel.Person">
     <property name="name" value="#{'John Doe'}"/>
     <property name="age" value="#{45}"/>
     <property name="employed" value="#{false}"/>
@@ -93,19 +93,19 @@
   </bean>
   
   <!-- SpEL method invocation via chaining (with null check)-->
-  <bean id="songSelector" class="edu.buet.cse.springidol.impl.SongSelector"/>
+  <bean id="songSelector" class="edu.buet.cse.spel.SongSelector"/>
   
-  <bean id="airSupply" class="edu.buet.cse.springidol.impl.AirSupply">
+  <bean id="airSupply" class="edu.buet.cse.spel.AirSupplyBand">
     <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}"/>
   </bean>
   
   <!-- accessing static constants via SpEL-->
-  <bean id="circleUtil" class="edu.buet.cse.springidol.impl.CircleUtil">
+  <bean id="circleUtil" class="edu.buet.cse.spel.CircleUtil">
     <property name="multiplier" value="#{T(java.lang.Math).PI}"/>
   </bean>
   
   <!-- examples of arithmetic using SpEL -->
-  <bean id="circle" class="edu.buet.cse.springidol.impl.Circle">
+  <bean id="circle" class="edu.buet.cse.spel.Circle">
     <property name="radius" value="#{5.0}"/>
     <property name="circumference" value="#{2 * T(java.lang.Math).PI * 5.0}"/>
     <property name="area" value="#{T(java.lang.Math).PI * T(java.lang.Math).pow(5.0, 2)}"/>

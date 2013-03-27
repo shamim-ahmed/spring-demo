@@ -1,8 +1,9 @@
-package edu.buet.cse.springidol.impl;
+package edu.buet.cse.spel;
 
+import edu.buet.cse.springidol.impl.PerformanceException;
 import edu.buet.cse.springidol.model.Performer;
 
-public class AirSupply implements Performer {
+public class AirSupplyBand implements Performer {
   private String song;
 
   public String getSong() {
