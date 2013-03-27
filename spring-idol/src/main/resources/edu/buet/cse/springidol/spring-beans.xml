@@ -153,6 +153,6 @@
   
   <!-- example of projection using SpEL -->
   <bean id="cityNameContainer" class="edu.buet.cse.springidol.spel.CityNameContainer">
-    <property name="cityNames" value="#{cities.![name]}"/>
+    <property name="cityNames" value="#{cities.![name + ', ' + state]}"/>
   </bean>
 </beans>
