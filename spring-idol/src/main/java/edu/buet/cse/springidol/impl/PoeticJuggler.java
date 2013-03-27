@@ -13,6 +13,14 @@ public class PoeticJuggler implements Performer {
 	this.poem = Objects.requireNonNull(poem);
 	this.beanCount = beanCount;
   }
+  
+  public Poem getPoem() {
+    return poem;
+  }
+
+  public int getBeanCount() {
+    return beanCount;
+  }
 
   @Override
   public void perform() {

@@ -90,10 +90,15 @@
     <property name="song" value="#{kenny.song}"/>
   </bean>
   
-  <!-- SpEL method invocation -->
+  <!-- SpEL method invocation via chaining (with null check)-->
   <bean id="songSelector" class="edu.buet.cse.springidol.impl.SongSelector"/>
   
   <bean id="airSupply" class="edu.buet.cse.springidol.impl.AirSupply">
     <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}"/>
+  </bean>
+  
+  <!-- accessing static constants via SpEL-->
+  <bean id="circleUtil" class="edu.buet.cse.springidol.impl.CircleUtil">
+    <property name="multiplier" value="#{T(java.lang.Math).PI}"/>
   </bean>
 </beans>

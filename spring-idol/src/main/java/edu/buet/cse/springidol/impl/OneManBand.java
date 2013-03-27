@@ -1,6 +1,7 @@
 package edu.buet.cse.springidol.impl;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import edu.buet.cse.springidol.model.Instrument;
 import edu.buet.cse.springidol.model.Performer;
@@ -10,6 +11,10 @@ public class OneManBand implements Performer {
 
   public void setInstruments(Collection<Instrument> instruments) {
 	this.instruments = instruments;
+  }
+  
+  public Collection<Instrument> getInstruments() {
+    return Collections.unmodifiableCollection(instruments);
   }
 
   @Override

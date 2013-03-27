@@ -1,5 +1,6 @@
 package edu.buet.cse.springidol.impl;
 
+import java.util.Collections;
 import java.util.Map;
 
 import edu.buet.cse.springidol.model.Instrument;
@@ -10,6 +11,10 @@ public class ModifiedOneManBand implements Performer {
   
   public ModifiedOneManBand(Map<String, Instrument> instrumentMap) {
 	this.instrumentMap = instrumentMap;
+  }
+  
+  public Map<String, Instrument> getInstrumentMap() {
+    return Collections.unmodifiableMap(instrumentMap);
   }
   
   @Override
