@@ -1,4 +1,4 @@
-package edu.buet.cse.spel;
+package edu.buet.cse.springidol.spel;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

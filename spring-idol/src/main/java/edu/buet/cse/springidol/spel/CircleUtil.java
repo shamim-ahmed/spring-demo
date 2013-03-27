@@ -1,4 +1,4 @@
-package edu.buet.cse.spel;
+package edu.buet.cse.springidol.spel;
 
 public class CircleUtil {
   // this should be equal to Math.PI

@@ -3,7 +3,7 @@ package edu.buet.cse.springidol;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.spel.Person;
+import edu.buet.cse.springidol.spel.Person;
 
 public class App11 {
   public static void main(String... args) {

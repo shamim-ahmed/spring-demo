@@ -80,7 +80,7 @@
   </bean>
   
   <!-- SpEL basic example -->
-  <bean id="person" class="edu.buet.cse.spel.Person">
+  <bean id="person" class="edu.buet.cse.springidol.spel.Person">
     <property name="name" value="#{'John Doe'}"/>
     <property name="age" value="#{45}"/>
     <property name="employed" value="#{false}"/>
@@ -93,21 +93,28 @@
   </bean>
   
   <!-- SpEL method invocation via chaining (with null check)-->
-  <bean id="songSelector" class="edu.buet.cse.spel.SongSelector"/>
+  <bean id="songSelector" class="edu.buet.cse.springidol.spel.SongSelector"/>
   
-  <bean id="airSupply" class="edu.buet.cse.spel.AirSupplyBand">
+  <bean id="airSupply" class="edu.buet.cse.springidol.spel.AirSupplyBand">
     <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}"/>
   </bean>
   
   <!-- accessing static constants via SpEL-->
-  <bean id="circleUtil" class="edu.buet.cse.spel.CircleUtil">
+  <bean id="circleUtil" class="edu.buet.cse.springidol.spel.CircleUtil">
     <property name="multiplier" value="#{T(java.lang.Math).PI}"/>
   </bean>
   
   <!-- examples of arithmetic using SpEL -->
-  <bean id="circle" class="edu.buet.cse.spel.Circle">
+  <bean id="circle" class="edu.buet.cse.springidol.spel.Circle">
     <property name="radius" value="#{5.0}"/>
     <property name="circumference" value="#{2 * T(java.lang.Math).PI * 5.0}"/>
     <property name="area" value="#{T(java.lang.Math).PI * T(java.lang.Math).pow(5.0, 2)}"/>
+  </bean>
+  
+  <!-- example of accessing environment variables using SpEL -->
+  <bean id="envvars" class="edu.buet.cse.springidol.spel.EnvVars">
+    <property name="home" value="#{systemEnvironment['HOME']}"/>
+    <property name="path" value="#{systemEnvironment['PATH']}"/>
+    <property name="user" value="#{systemEnvironment['USER']}"/>
   </bean>
 </beans>

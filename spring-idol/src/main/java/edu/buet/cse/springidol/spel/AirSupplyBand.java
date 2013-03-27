@@ -1,4 +1,4 @@
-package edu.buet.cse.spel;
+package edu.buet.cse.springidol.spel;
 
 import edu.buet.cse.springidol.impl.PerformanceException;
 import edu.buet.cse.springidol.model.Performer;

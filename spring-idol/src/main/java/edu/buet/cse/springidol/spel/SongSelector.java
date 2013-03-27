@@ -1,4 +1,4 @@
-package edu.buet.cse.spel;
+package edu.buet.cse.springidol.spel;
 
 import java.util.Random;
 
