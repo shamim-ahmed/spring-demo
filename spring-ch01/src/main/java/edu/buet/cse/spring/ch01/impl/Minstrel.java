@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.basic.impl;
+package edu.buet.cse.spring.ch01.impl;
 
 public class Minstrel {
   public void singBeforeQuest() {

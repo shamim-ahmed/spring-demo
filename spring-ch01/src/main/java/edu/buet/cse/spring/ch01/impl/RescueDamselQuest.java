@@ -1,6 +1,6 @@
-package edu.buet.cse.spring.basic.impl;
+package edu.buet.cse.spring.ch01.impl;
 
-import edu.buet.cse.spring.basic.model.Quest;
+import edu.buet.cse.spring.ch01.model.Quest;
 
 public class RescueDamselQuest implements Quest {
   @Override

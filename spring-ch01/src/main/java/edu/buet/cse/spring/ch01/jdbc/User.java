@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.basic.jdbc;
+package edu.buet.cse.spring.ch01.jdbc;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

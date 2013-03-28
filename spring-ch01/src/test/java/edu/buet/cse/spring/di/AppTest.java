@@ -3,9 +3,9 @@ package edu.buet.cse.spring.di;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-import edu.buet.cse.spring.basic.impl.BraveKnight;
-import edu.buet.cse.spring.basic.model.Knight;
-import edu.buet.cse.spring.basic.model.Quest;
+import edu.buet.cse.spring.ch01.impl.BraveKnight;
+import edu.buet.cse.spring.ch01.model.Knight;
+import edu.buet.cse.spring.ch01.model.Quest;
 
 public class AppTest {
   @Test

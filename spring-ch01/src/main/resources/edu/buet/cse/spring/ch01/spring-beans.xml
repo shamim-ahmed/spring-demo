@@ -6,19 +6,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
   
-  <bean id="quest" class="edu.buet.cse.spring.basic.impl.SlayDragonQuest"/>
+  <bean id="quest" class="edu.buet.cse.spring.ch01.impl.SlayDragonQuest"/>
   
-  <bean id="knight" class="edu.buet.cse.spring.basic.impl.BraveKnight">
+  <bean id="knight" class="edu.buet.cse.spring.ch01.impl.BraveKnight">
     <constructor-arg ref="quest"/>
   </bean>
   
-  <bean id="clarkKent" class="edu.buet.cse.spring.basic.impl.NamedKnight"/>
+  <bean id="clarkKent" class="edu.buet.cse.spring.ch01.impl.NamedKnight"/>
   
-  <bean id="minstrel" class="edu.buet.cse.spring.basic.impl.Minstrel"/>
+  <bean id="minstrel" class="edu.buet.cse.spring.ch01.impl.Minstrel"/>
   
   <!-- basic AOP configuration -->
   <aop:config>
-  	<aop:pointcut id="embark-quest" expression="execution(* edu.buet.cse.spring.basic.model.Knight.embarkOnQuest(..))"/>
+  	<aop:pointcut id="embark-quest" expression="execution(* edu.buet.cse.spring.ch01.model.Knight.embarkOnQuest(..))"/>
   	
   	<aop:aspect ref="minstrel">
   	  <aop:before pointcut-ref="embark-quest" method="singBeforeQuest"/>
@@ -38,7 +38,7 @@
     <constructor-arg ref="dataSource"/>
   </bean>
   
-  <bean id="userDao" class="edu.buet.cse.spring.basic.jdbc.UserDao">
+  <bean id="userDao" class="edu.buet.cse.spring.ch01.jdbc.UserDao">
     <constructor-arg ref="jdbcTmpl"/>
   </bean>
 </beans>

@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.basic.jdbc;
+package edu.buet.cse.spring.ch01.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

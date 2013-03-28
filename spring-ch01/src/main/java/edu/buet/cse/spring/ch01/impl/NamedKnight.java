@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.basic.impl;
+package edu.buet.cse.spring.ch01.impl;
 
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import edu.buet.cse.spring.basic.model.Knight;
+import edu.buet.cse.spring.ch01.model.Knight;
 
 public class NamedKnight implements Knight, BeanNameAware, ApplicationContextAware, InitializingBean, DisposableBean {
   private String beanName;
