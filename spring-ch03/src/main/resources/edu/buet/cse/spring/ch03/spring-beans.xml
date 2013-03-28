@@ -15,5 +15,8 @@
   
   <bean id="poe" class="edu.buet.cse.spring.ch03.impl.PoeticJuggler" autowire="byType">
     <property name="beanCount" value="8"/>
-  </bean>     
+  </bean>  
+  
+  <!-- autowiring by constructor -->
+  <bean id="benny" class="edu.buet.cse.spring.ch03.impl.Musician" autowire="constructor"/>   
 </beans>
