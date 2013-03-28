@@ -3,5 +3,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans" 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-       
+  <!-- autowiring by name -->
+  <bean id="instrument" class="edu.buet.cse.spring.ch03.impl.Saxophone"/>
+  
+  <bean id="kenny" class="edu.buet.cse.spring.ch03.impl.Instrumentalist" autowire="byName">
+    <property name="song" value="Forever in love"/>
+  </bean>     
 </beans>
