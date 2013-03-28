@@ -3,6 +3,7 @@ package edu.buet.cse.spring.ch02.impl;
 import java.util.Collection;
 import java.util.Collections;
 
+import edu.buet.cse.spring.ch02.ex.PerformanceException;
 import edu.buet.cse.spring.ch02.model.Instrument;
 import edu.buet.cse.spring.ch02.model.Performer;
 

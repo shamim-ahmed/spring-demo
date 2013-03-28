@@ -3,7 +3,7 @@ package edu.buet.cse.spring.ch02;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.spring.ch02.impl.PerformanceException;
+import edu.buet.cse.spring.ch02.ex.PerformanceException;
 import edu.buet.cse.spring.ch02.model.Performer;
 
 public class App8 {

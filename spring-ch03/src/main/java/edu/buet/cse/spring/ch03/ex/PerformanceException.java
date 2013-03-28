@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.ch02.impl;
+package edu.buet.cse.spring.ch03.ex;
 
 public class PerformanceException extends Exception {
   private static final long serialVersionUID = 1L;
