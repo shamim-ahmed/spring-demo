@@ -8,13 +8,13 @@ import edu.buet.cse.spring.ch02.model.Performer;
 
 public class App7 {
   public static void main(String... args) {
-	ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch02/spring-beans.xml");
-	Performer yanni = (Performer) appContext.getBean("yanni");
+    ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch02/spring-beans.xml");
+    Performer yanni = (Performer) appContext.getBean("yanni");
 
-	try {
-	  yanni.perform();
-	} catch (PerformanceException ex) {
-	  ex.printStackTrace(System.err);
-	}
+    try {
+      yanni.perform();
+    } catch (PerformanceException ex) {
+      ex.printStackTrace(System.err);
+    }
   }
 }

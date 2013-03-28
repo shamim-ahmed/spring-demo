@@ -7,10 +7,10 @@ public class CityNameContainer {
   private List<String> cityNames;
 
   public List<String> getCityNames() {
-	return Collections.unmodifiableList(cityNames);
+    return Collections.unmodifiableList(cityNames);
   }
 
   public void setCityNames(List<String> cityNames) {
-	this.cityNames = cityNames;
+    this.cityNames = cityNames;
   }
 }

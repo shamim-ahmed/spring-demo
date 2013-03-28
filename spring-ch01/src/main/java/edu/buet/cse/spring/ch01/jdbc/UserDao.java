@@ -13,27 +13,27 @@ public class UserDao {
   private static final String USER_QUERY = "SELECT * FROM Users WHERE userId = :id";
   private final UserMapper userMapper = new UserMapper();
   private final SimpleJdbcTemplate simpleJdbcTemplate;
-  
+
   public UserDao(SimpleJdbcTemplate simpleJdbcTemplate) {
-	this.simpleJdbcTemplate = Objects.requireNonNull(simpleJdbcTemplate);
+    this.simpleJdbcTemplate = Objects.requireNonNull(simpleJdbcTemplate);
   }
-  
+
   public User getUser(long id) {
-	Map<String, Object> paramMap = new HashMap<>();
-	paramMap.put("id", id);
-	
-	return simpleJdbcTemplate.queryForObject(USER_QUERY, userMapper, paramMap);
+    Map<String, Object> paramMap = new HashMap<>();
+    paramMap.put("id", id);
+
+    return simpleJdbcTemplate.queryForObject(USER_QUERY, userMapper, paramMap);
   }
-  
+
   private static class UserMapper implements RowMapper<User> {
-	@Override
+    @Override
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-	  User user = new User();
-	  user.setId(rs.getLong("userId"));
-	  user.setUsername(rs.getString("username"));
-	  user.setPassword(rs.getString("password"));
-	  
-	  return user;
-    }	
+      User user = new User();
+      user.setId(rs.getLong("userId"));
+      user.setUsername(rs.getString("username"));
+      user.setPassword(rs.getString("password"));
+
+      return user;
+    }
   }
 }

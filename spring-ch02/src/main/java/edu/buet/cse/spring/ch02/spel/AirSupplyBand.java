@@ -6,15 +6,15 @@ public class AirSupplyBand implements Performer {
   private String song;
 
   public String getSong() {
-	return song;
+    return song;
   }
 
   public void setSong(String song) {
-	this.song = song;
+    this.song = song;
   }
 
   @Override
   public void perform() {
-	System.out.printf("Performing the song %s%n", song);
+    System.out.printf("Performing the song %s%n", song);
   }
 }

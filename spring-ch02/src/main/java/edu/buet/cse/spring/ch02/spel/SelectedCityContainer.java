@@ -14,8 +14,8 @@ public class SelectedCityContainer {
 
   public void setSelectedCities(List<City> selectedCities) {
     this.selectedCities = selectedCities;
-  }  
-  
+  }
+
   public City getFirstCity() {
     return firstCity;
   }

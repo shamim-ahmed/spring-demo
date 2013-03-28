@@ -9,36 +9,34 @@ public class City {
   private int population;
 
   public String getName() {
-	return name;
+    return name;
   }
 
   public void setName(String name) {
-	this.name = name;
+    this.name = name;
   }
 
   public String getState() {
-	return state;
+    return state;
   }
 
   public void setState(String state) {
-	this.state = state;
+    this.state = state;
   }
 
   public int getPopulation() {
-	return population;
+    return population;
   }
 
   public void setPopulation(int population) {
-	this.population = population;
+    this.population = population;
   }
-  
+
   @Override
   public String toString() {
-	ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
-	builder.append("name", name)
-	       .append("state", state)
-	       .append("population", population);
-	
-	return builder.toString();
+    ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
+    builder.append("name", name).append("state", state).append("population", population);
+
+    return builder.toString();
   }
 }

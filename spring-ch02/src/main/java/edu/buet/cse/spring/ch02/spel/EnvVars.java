@@ -6,26 +6,26 @@ public class EnvVars {
   private String user;
 
   public String getHome() {
-	return home;
+    return home;
   }
 
   public void setHome(String home) {
-	this.home = home;
+    this.home = home;
   }
 
   public String getPath() {
-	return path;
+    return path;
   }
 
   public void setPath(String path) {
-	this.path = path;
+    this.path = path;
   }
 
   public String getUser() {
-	return user;
+    return user;
   }
 
   public void setUser(String user) {
-	this.user = user;
+    this.user = user;
   }
 }

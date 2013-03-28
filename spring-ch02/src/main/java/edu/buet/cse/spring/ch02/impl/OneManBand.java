@@ -10,19 +10,19 @@ public class OneManBand implements Performer {
   private Collection<Instrument> instruments;
 
   public void setInstruments(Collection<Instrument> instruments) {
-	this.instruments = instruments;
+    this.instruments = instruments;
   }
-  
+
   public Collection<Instrument> getInstruments() {
     return Collections.unmodifiableCollection(instruments);
   }
 
   @Override
   public void perform() throws PerformanceException {
-	System.out.printf("Playing several instruments all alone:%n");
+    System.out.printf("Playing several instruments all alone:%n");
 
-	for (Instrument instr : instruments) {
-	  instr.play();
-	}
+    for (Instrument instr : instruments) {
+      instr.play();
+    }
   }
 }

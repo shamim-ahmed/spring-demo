@@ -6,26 +6,26 @@ public class SystemProperties {
   private String javaVendor;
 
   public String getLineSeparator() {
-	return lineSeparator;
+    return lineSeparator;
   }
 
   public void setLineSeparator(String lineSeparator) {
-	this.lineSeparator = lineSeparator;
+    this.lineSeparator = lineSeparator;
   }
 
   public String getJavaHome() {
-	return javaHome;
+    return javaHome;
   }
 
   public void setJavaHome(String javaHome) {
-	this.javaHome = javaHome;
+    this.javaHome = javaHome;
   }
 
   public String getJavaVendor() {
-	return javaVendor;
+    return javaVendor;
   }
 
   public void setJavaVendor(String javaVendor) {
-	this.javaVendor = javaVendor;
+    this.javaVendor = javaVendor;
   }
 }

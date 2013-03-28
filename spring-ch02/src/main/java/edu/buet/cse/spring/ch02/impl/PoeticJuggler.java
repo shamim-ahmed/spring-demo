@@ -8,12 +8,12 @@ import edu.buet.cse.spring.ch02.model.Poem;
 public class PoeticJuggler implements Performer {
   private final Poem poem;
   private final int beanCount;
-  
+
   public PoeticJuggler(Poem poem, int beanCount) {
-	this.poem = Objects.requireNonNull(poem);
-	this.beanCount = beanCount;
+    this.poem = Objects.requireNonNull(poem);
+    this.beanCount = beanCount;
   }
-  
+
   public Poem getPoem() {
     return poem;
   }
@@ -24,7 +24,7 @@ public class PoeticJuggler implements Performer {
 
   @Override
   public void perform() {
-	System.out.printf("Juggling %d beans while reciting the poem:%n", beanCount);
-	poem.recite();
+    System.out.printf("Juggling %d beans while reciting the poem:%n", beanCount);
+    poem.recite();
   }
 }

@@ -14,18 +14,18 @@ public class Circle {
   }
 
   public double getCircumference() {
-	return circumference;
+    return circumference;
   }
 
   public void setCircumference(double circumference) {
-	this.circumference = circumference;
+    this.circumference = circumference;
   }
 
   public double getArea() {
-	return area;
+    return area;
   }
 
   public void setArea(double area) {
-	this.area = area;
+    this.area = area;
   }
 }

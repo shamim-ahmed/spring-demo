@@ -5,18 +5,18 @@ public class CircleUtil {
   private double multiplier;
 
   public double getMultiplier() {
-	return multiplier;
+    return multiplier;
   }
 
   public void setMultiplier(double multiplier) {
-	this.multiplier = multiplier;
+    this.multiplier = multiplier;
   }
-  
+
   public double computeArea(double radius) {
-	return multiplier * Math.pow(radius, 2);
+    return multiplier * Math.pow(radius, 2);
   }
-  
+
   public double computeCircumference(double radius) {
-	return 2 * multiplier * radius;
+    return 2 * multiplier * radius;
   }
 }

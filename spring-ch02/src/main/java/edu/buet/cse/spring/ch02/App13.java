@@ -8,13 +8,13 @@ import edu.buet.cse.spring.ch02.model.Performer;
 
 public class App13 {
   public static void main(String... args) {
-	ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch02/spring-beans.xml");
-	Performer airSupply = (Performer) appContext.getBean("airSupply");
+    ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch02/spring-beans.xml");
+    Performer airSupply = (Performer) appContext.getBean("airSupply");
 
-	try {
-	  airSupply.perform();
-	} catch (PerformanceException ex) {
-	  ex.printStackTrace(System.err);
-	}
+    try {
+      airSupply.perform();
+    } catch (PerformanceException ex) {
+      ex.printStackTrace(System.err);
+    }
   }
 }
