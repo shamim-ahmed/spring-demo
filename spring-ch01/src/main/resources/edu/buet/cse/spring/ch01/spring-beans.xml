@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans" 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-  
-  <bean id="quest" class="edu.buet.cse.spring.ch01.impl.SlayDragonQuest"/>
-  
+
+  <bean id="quest" class="edu.buet.cse.spring.ch01.impl.SlayDragonQuest" />
+
   <bean id="knight" class="edu.buet.cse.spring.ch01.impl.BraveKnight">
-    <constructor-arg ref="quest"/>
+    <constructor-arg ref="quest" />
   </bean>
-  
-  <bean id="clarkKent" class="edu.buet.cse.spring.ch01.impl.NamedKnight"/>
-  
-  <bean id="minstrel" class="edu.buet.cse.spring.ch01.impl.Minstrel"/>
-  
+
+  <bean id="clarkKent" class="edu.buet.cse.spring.ch01.impl.NamedKnight" />
+
+  <bean id="minstrel" class="edu.buet.cse.spring.ch01.impl.Minstrel" />
+
   <!-- basic AOP configuration -->
   <aop:config>
-  	<aop:pointcut id="embark-quest" expression="execution(* edu.buet.cse.spring.ch01.model.Knight.embarkOnQuest(..))"/>
-  	
-  	<aop:aspect ref="minstrel">
-  	  <aop:before pointcut-ref="embark-quest" method="singBeforeQuest"/>
-  	  <aop:after pointcut-ref="embark-quest" method="singAfterQuest"/>
-  	</aop:aspect>
+    <aop:pointcut id="embark-quest" expression="execution(* edu.buet.cse.spring.ch01.model.Knight.embarkOnQuest(..))" />
+
+    <aop:aspect ref="minstrel">
+      <aop:before pointcut-ref="embark-quest" method="singBeforeQuest" />
+      <aop:after pointcut-ref="embark-quest" method="singAfterQuest" />
+    </aop:aspect>
   </aop:config>
-  
+
   <!-- jdbc configuration -->
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-    <property name="url" value="jdbc:mysql://localhost:3306/springdb"/>
-    <property name="username" value="root"/>
-    <property name="password" value="admin"/>
-    <property name="maxActive" value="5"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/springdb" />
+    <property name="username" value="root" />
+    <property name="password" value="admin" />
+    <property name="maxActive" value="5" />
   </bean>
-  
+
   <bean id="jdbcTmpl" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
-    <constructor-arg ref="dataSource"/>
+    <constructor-arg ref="dataSource" />
   </bean>
-  
+
   <bean id="userDao" class="edu.buet.cse.spring.ch01.jdbc.UserDao">
-    <constructor-arg ref="jdbcTmpl"/>
+    <constructor-arg ref="jdbcTmpl" />
   </bean>
 </beans>

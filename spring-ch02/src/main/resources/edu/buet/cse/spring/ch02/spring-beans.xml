@@ -1,75 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans" 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:p="http://www.springframework.org/schema/p" 
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
   <!-- demonstrates simple value injection -->
   <bean id="duke" class="edu.buet.cse.spring.ch02.impl.BeanJuggler">
-    <property name="beanCount" value="5"/>
+    <property name="beanCount" value="5" />
   </bean>
-  
+
   <!-- demonstrates bean injection -->
-  <bean id="poem" class="edu.buet.cse.spring.ch02.impl.ToHelen"/>
-  
+  <bean id="poem" class="edu.buet.cse.spring.ch02.impl.ToHelen" />
+
   <bean id="alanPoe" class="edu.buet.cse.spring.ch02.impl.PoeticJuggler">
-    <constructor-arg name="poem" ref="poem"/>
-    <constructor-arg name="beanCount" value="5"/>
+    <constructor-arg name="poem" ref="poem" />
+    <constructor-arg name="beanCount" value="5" />
   </bean>
-  
+
   <!-- demonstrates the use of factory methods -->
-  <bean id="stage" class="edu.buet.cse.spring.ch02.impl.Stage" factory-method="getInstance"/>
-  
+  <bean id="stage" class="edu.buet.cse.spring.ch02.impl.Stage" factory-method="getInstance" />
+
   <!-- demonstrates the use of bean scoping -->
-  <bean id="ticket" class="edu.buet.cse.spring.ch02.impl.Ticket" scope="prototype"/>
-  
+  <bean id="ticket" class="edu.buet.cse.spring.ch02.impl.Ticket" scope="prototype" />
+
   <!-- demonstrates the use of initialization and destroy methods -->
-  <!-- 
-  <bean id="auditorium" class="edu.buet.cse.spring.ch02.impl.Auditorium"
-                        init-method="turnOnLights" destroy-method="turnOffLights"/> -->
-                         
+  <!-- <bean id="auditorium" class="edu.buet.cse.spring.ch02.impl.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"/> -->
+
   <!-- inner bean declaration example -->
   <bean id="kenny" class="edu.buet.cse.spring.ch02.impl.Instrumentalist">
     <property name="instrument">
-      <bean class="edu.buet.cse.spring.ch02.impl.Saxophone"/>
+      <bean class="edu.buet.cse.spring.ch02.impl.Saxophone" />
     </property>
-    <property name="song" value="Forever in Love"/>
+    <property name="song" value="Forever in Love" />
   </bean>
-  
+
   <!-- use of p namespace -->
-  <bean id="piano" class="edu.buet.cse.spring.ch02.impl.Piano"/>
-  
-  <bean id="yanni" class="edu.buet.cse.spring.ch02.impl.Instrumentalist"
-        p:song="In the Morning Light"
-        p:instrument-ref="piano"/>
-        
+  <bean id="piano" class="edu.buet.cse.spring.ch02.impl.Piano" />
+
+  <bean id="yanni" class="edu.buet.cse.spring.ch02.impl.Instrumentalist" p:song="In the Morning Light"
+    p:instrument-ref="piano" />
+
   <!-- example of collection usage -->
-  <bean id="flute" class="edu.buet.cse.spring.ch02.impl.Flute"/>
-  <bean id="harmonica" class="edu.buet.cse.spring.ch02.impl.Harmonica"/>
-  
+  <bean id="flute" class="edu.buet.cse.spring.ch02.impl.Flute" />
+  <bean id="harmonica" class="edu.buet.cse.spring.ch02.impl.Harmonica" />
+
   <bean id="hank" class="edu.buet.cse.spring.ch02.impl.OneManBand">
     <property name="instruments">
       <set>
-        <ref bean="piano"/>
-        <ref bean="flute"/>
-        <ref bean="harmonica"/>
+        <ref bean="piano" />
+        <ref bean="flute" />
+        <ref bean="harmonica" />
       </set>
     </property>
   </bean>
-  
+
   <!-- example of map injection via constructor -->
   <bean id="plank" class="edu.buet.cse.spring.ch02.impl.ModifiedOneManBand">
     <constructor-arg>
       <map>
-        <entry key="Piano" value-ref="piano"/>
-        <entry key="Flute" value-ref="flute"/>
-        <entry key="Harmonica" value-ref="harmonica"/>
+        <entry key="Piano" value-ref="piano" />
+        <entry key="Flute" value-ref="flute" />
+        <entry key="Harmonica" value-ref="harmonica" />
       </map>
     </constructor-arg>
   </bean>
-  
+
   <!-- example of Properties injection via constructor -->
   <bean id="lank" class="edu.buet.cse.spring.ch02.impl.PropertyBasedOneManBand">
     <constructor-arg>
@@ -80,89 +77,84 @@
       </props>
     </constructor-arg>
   </bean>
-  
+
   <!-- SpEL basic example -->
   <bean id="person" class="edu.buet.cse.spring.ch02.spel.Person">
-    <property name="name" value="#{'John Doe'}"/>
-    <property name="age" value="#{45}"/>
-    <property name="employed" value="#{false}"/>
+    <property name="name" value="#{'John Doe'}" />
+    <property name="age" value="#{45}" />
+    <property name="employed" value="#{false}" />
   </bean>
-  
+
   <!-- SpEL bean injection and property access example -->
   <bean id="zamfir" class="edu.buet.cse.spring.ch02.impl.Instrumentalist">
-    <property name="instrument" value="#{piano}"/>
-    <property name="song" value="#{kenny.song}"/>
+    <property name="instrument" value="#{piano}" />
+    <property name="song" value="#{kenny.song}" />
   </bean>
-  
-  <!-- SpEL method invocation via chaining (with null check)-->
-  <bean id="songSelector" class="edu.buet.cse.spring.ch02.spel.SongSelector"/>
-  
+
+  <!-- SpEL method invocation via chaining (with null check) -->
+  <bean id="songSelector" class="edu.buet.cse.spring.ch02.spel.SongSelector" />
+
   <bean id="airSupply" class="edu.buet.cse.spring.ch02.spel.AirSupplyBand">
-    <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}"/>
+    <property name="song" value="#{songSelector.selectSong()?.toUpperCase()}" />
   </bean>
-  
-  <!-- accessing static constants via SpEL-->
+
+  <!-- accessing static constants via SpEL -->
   <bean id="circleUtil" class="edu.buet.cse.spring.ch02.spel.CircleUtil">
-    <property name="multiplier" value="#{T(java.lang.Math).PI}"/>
+    <property name="multiplier" value="#{T(java.lang.Math).PI}" />
   </bean>
-  
+
   <!-- examples of arithmetic using SpEL -->
   <bean id="circle" class="edu.buet.cse.spring.ch02.spel.Circle">
-    <property name="radius" value="#{5.0}"/>
-    <property name="circumference" value="#{2 * T(java.lang.Math).PI * 5.0}"/>
-    <property name="area" value="#{T(java.lang.Math).PI * T(java.lang.Math).pow(5.0, 2)}"/>
+    <property name="radius" value="#{5.0}" />
+    <property name="circumference" value="#{2 * T(java.lang.Math).PI * 5.0}" />
+    <property name="area" value="#{T(java.lang.Math).PI * T(java.lang.Math).pow(5.0, 2)}" />
   </bean>
-  
+
   <!-- example of accessing environment variables using SpEL -->
   <bean id="envvars" class="edu.buet.cse.spring.ch02.spel.EnvVars">
-    <property name="home" value="#{systemEnvironment['HOME']}"/>
-    <property name="path" value="#{systemEnvironment['PATH']}"/>
-    <property name="user" value="#{systemEnvironment['USER']}"/>
+    <property name="home" value="#{systemEnvironment['HOME']}" />
+    <property name="path" value="#{systemEnvironment['PATH']}" />
+    <property name="user" value="#{systemEnvironment['USER']}" />
   </bean>
-  
+
   <!-- example of accessing properties using SpEL -->
   <bean id="sysProps" class="edu.buet.cse.spring.ch02.spel.SystemProperties">
-    <property name="javaHome" value="#{systemProperties['java.home']}"/>
-    <property name="javaVendor" value="#{systemProperties['java.vendor']}"/>
-    <property name="lineSeparator" value="#{systemProperties['line.separator']}"/>
+    <property name="javaHome" value="#{systemProperties['java.home']}" />
+    <property name="javaVendor" value="#{systemProperties['java.vendor']}" />
+    <property name="lineSeparator" value="#{systemProperties['line.separator']}" />
   </bean>
-  
+
   <!-- example of loading a properties file -->
-  <util:properties id="settings" location="/edu/buet/cse/spring/ch02/spel/settings.properties"/>
-  
+  <util:properties id="settings" location="/edu/buet/cse/spring/ch02/spel/settings.properties" />
+
   <!-- an example of creating a list as a bean -->
   <util:list id="cities" value-type="edu.buet.cse.spring.ch02.spel.City">
-    <bean class="edu.buet.cse.spring.ch02.spel.City"
-          p:name="Chicago" p:state="IL" p:population="2853114"/>
-    <bean class="edu.buet.cse.spring.ch02.spel.City"
-          p:name="Atlanta" p:state="GA" p:population="5379584"/>
-    <bean class="edu.buet.cse.spring.ch02.spel.City"
-          p:name="Dallas" p:state="TX" p:population="1279910"/>
-    <bean class="edu.buet.cse.spring.ch02.spel.City"
-          p:name="Houston" p:state="TX" p:population="2242193"/>
-    <bean class="edu.buet.cse.spring.ch02.spel.City"
-          p:name="Las Cruces" p:state="NM" p:population="91865"/>
+    <bean class="edu.buet.cse.spring.ch02.spel.City" p:name="Chicago" p:state="IL" p:population="2853114" />
+    <bean class="edu.buet.cse.spring.ch02.spel.City" p:name="Atlanta" p:state="GA" p:population="5379584" />
+    <bean class="edu.buet.cse.spring.ch02.spel.City" p:name="Dallas" p:state="TX" p:population="1279910" />
+    <bean class="edu.buet.cse.spring.ch02.spel.City" p:name="Houston" p:state="TX" p:population="2242193" />
+    <bean class="edu.buet.cse.spring.ch02.spel.City" p:name="Las Cruces" p:state="NM" p:population="91865" />
   </util:list>
-  
+
   <!-- example of filtering a list using SpEL -->
   <bean id="selectedCityContainer" class="edu.buet.cse.spring.ch02.spel.SelectedCityContainer">
-    <property name="selectedCities" value="#{cities.?[population gt 2000000]}"/>
-    <property name="firstCity" value="#{cities.^[population gt 2000000]}"/>
-    <property name="lastCity" value="#{cities.$[population gt 2000000]}"/>
+    <property name="selectedCities" value="#{cities.?[population gt 2000000]}" />
+    <property name="firstCity" value="#{cities.^[population gt 2000000]}" />
+    <property name="lastCity" value="#{cities.$[population gt 2000000]}" />
   </bean>
-  
+
   <!-- example of projection using SpEL -->
   <bean id="cityNameContainer" class="edu.buet.cse.spring.ch02.spel.CityNameContainer">
-    <property name="cityNames" value="#{cities.![name]}"/>
+    <property name="cityNames" value="#{cities.![name]}" />
   </bean>
-  
-  <!-- example of projecting multiple values-->
+
+  <!-- example of projecting multiple values -->
   <bean id="cityNameContainer2" class="edu.buet.cse.spring.ch02.spel.CityNameContainer">
-    <property name="cityNames" value="#{cities.![name + ', ' + state]}"/>
+    <property name="cityNames" value="#{cities.![name + ', ' + state]}" />
   </bean>
-  
+
   <!-- example of projection after filtering -->
   <bean id="cityNameContainer3" class="edu.buet.cse.spring.ch02.spel.CityNameContainer">
-    <property name="cityNames" value="#{cities.?[population gt 2000000].![name + ', ' + state]}"/>
+    <property name="cityNames" value="#{cities.?[population gt 2000000].![name + ', ' + state]}" />
   </bean>
 </beans>
