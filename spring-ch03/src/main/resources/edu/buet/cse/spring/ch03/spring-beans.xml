@@ -8,5 +8,12 @@
   
   <bean id="kenny" class="edu.buet.cse.spring.ch03.impl.Instrumentalist" autowire="byName">
     <property name="song" value="Forever in love"/>
+  </bean>
+  
+  <!-- autowiring by type -->
+  <bean id="toHelen" class="edu.buet.cse.spring.ch03.impl.ToHelen"/>
+  
+  <bean id="poe" class="edu.buet.cse.spring.ch03.impl.PoeticJuggler" autowire="byType">
+    <property name="beanCount" value="8"/>
   </bean>     
 </beans>
