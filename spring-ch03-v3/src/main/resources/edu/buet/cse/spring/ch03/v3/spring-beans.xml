@@ -17,4 +17,8 @@
   <bean id="duke" class="edu.buet.cse.spring.ch03.v3.impl.PoeticJuggler">
     <property name="beanCount" value="8"/>
   </bean>
+  
+  <bean id="provider" class="edu.buet.cse.spring.ch03.v3.impl.KnifeProvider"/>
+  
+  <bean id="houdini" class="edu.buet.cse.spring.ch03.v3.impl.KnifeJuggler"/>
 </beans>
