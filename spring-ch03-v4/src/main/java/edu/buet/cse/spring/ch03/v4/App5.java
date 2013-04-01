@@ -5,13 +5,12 @@ import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.spring.ch03.v4.model.Performer;
+import edu.buet.cse.spring.ch03.v4.model.Poem;
 
-// this class lists all performers registered in application context
-public class App4 {
+public class App5 {
   public static void main(String... args) {
     ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch03/v4/spring-beans.xml");
-    listBeansOfType(appContext, Performer.class);
+    listBeansOfType(appContext, Poem.class);
   }
   
   private static <T> void listBeansOfType(ApplicationContext appContext, Class<T> classObj) {

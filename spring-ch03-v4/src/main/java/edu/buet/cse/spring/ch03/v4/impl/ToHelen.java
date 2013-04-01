@@ -1,10 +1,7 @@
 package edu.buet.cse.spring.ch03.v4.impl;
 
-import org.springframework.stereotype.Component;
-
 import edu.buet.cse.spring.ch03.v4.model.Poem;
 
-@Component("toHelen")
 public class ToHelen implements Poem {
   private static final String[] LINES = { 
     "Helen, thy beauty is to me", 
