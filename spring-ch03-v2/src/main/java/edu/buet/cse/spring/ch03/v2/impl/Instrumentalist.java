@@ -9,6 +9,7 @@ import edu.buet.cse.spring.ch03.v2.model.Performer;
 public class Instrumentalist implements Performer {
   private String song;
   
+  // example of qualification with bean name
   @Autowired
   @Qualifier("saxophone")
   private Instrument instrument;

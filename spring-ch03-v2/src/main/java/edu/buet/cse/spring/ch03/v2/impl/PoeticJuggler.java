@@ -7,6 +7,7 @@ import edu.buet.cse.spring.ch03.v2.model.Performer;
 import edu.buet.cse.spring.ch03.v2.model.Poem;
 
 public class PoeticJuggler implements Performer {
+  // example of qualification with attribute (added in the bean source code)
   @Autowired
   @Qualifier("romantic")
   private Poem poem;

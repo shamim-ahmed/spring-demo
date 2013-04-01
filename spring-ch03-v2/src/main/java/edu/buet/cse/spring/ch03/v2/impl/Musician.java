@@ -7,6 +7,7 @@ import edu.buet.cse.spring.ch03.v2.model.Instrument;
 import edu.buet.cse.spring.ch03.v2.model.Performer;
 
 public class Musician implements Performer {
+  // example of qualification with bean name
   @Autowired
   @Qualifier("guiter")
   private Instrument musicalInstrument;
