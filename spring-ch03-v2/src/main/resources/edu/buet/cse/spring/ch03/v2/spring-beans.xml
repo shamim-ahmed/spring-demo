@@ -29,4 +29,7 @@
   <bean id="herrick" class="edu.buet.cse.spring.ch03.v2.impl.PoemReciter"/>
   
   <bean id="hendrix" class="edu.buet.cse.spring.ch03.v2.impl.Guiterist"/>
+  
+  <!-- the bean that contains value of some environment variables -->
+  <bean id="envVars" class="edu.buet.cse.spring.ch03.v2.spel.EnvVars"/>
 </beans>
