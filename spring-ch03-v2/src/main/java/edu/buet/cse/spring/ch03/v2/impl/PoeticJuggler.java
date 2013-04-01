@@ -1,12 +1,14 @@
 package edu.buet.cse.spring.ch03.v2.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import edu.buet.cse.spring.ch03.v2.model.Performer;
 import edu.buet.cse.spring.ch03.v2.model.Poem;
 
 public class PoeticJuggler implements Performer {
   @Autowired
+  @Qualifier("romantic")
   private Poem poem;
   private int beanCount;
 

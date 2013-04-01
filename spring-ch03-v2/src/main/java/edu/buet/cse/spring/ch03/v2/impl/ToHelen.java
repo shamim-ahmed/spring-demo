@@ -1,7 +1,10 @@
 package edu.buet.cse.spring.ch03.v2.impl;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import edu.buet.cse.spring.ch03.v2.model.Poem;
 
+@Qualifier("romantic")
 public class ToHelen implements Poem {
   private static final String[] LINES = { 
     "Helen, thy beauty is to me", 

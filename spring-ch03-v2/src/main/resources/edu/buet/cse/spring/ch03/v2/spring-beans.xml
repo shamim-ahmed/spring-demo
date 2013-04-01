@@ -9,6 +9,7 @@
   <bean id="saxophone" class="edu.buet.cse.spring.ch03.v2.impl.Saxophone" />
   <bean id="guiter" class="edu.buet.cse.spring.ch03.v2.impl.Guiter"/>
   <bean id="toHelen" class="edu.buet.cse.spring.ch03.v2.impl.ToHelen" />
+  <bean id="toDaffodils" class="edu.buet.cse.spring.ch03.v2.impl.ToDaffodils"/>
 
   <bean id="kenny" class="edu.buet.cse.spring.ch03.v2.impl.Instrumentalist">
     <property name="song" value="Forever in Love" />
@@ -19,4 +20,6 @@
   </bean>
   
   <bean id="yanni" class="edu.buet.cse.spring.ch03.v2.impl.Musician"/>
+  
+  <bean id="herrick" class="edu.buet.cse.spring.ch03.v2.impl.PoemReciter"/>
 </beans>
