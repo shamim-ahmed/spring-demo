@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  <!-- autowiring by name -->
+  <bean id="instrument" class="edu.buet.cse.spring.ch03.v1.impl.Saxophone"/>
+  
+  <bean id="kenny" class="edu.buet.cse.spring.ch03.v1.impl.Instrumentalist" autowire="byName">
+    <property name="song" value="Forever in love"/>
+  </bean>
+  
+  <!-- autowiring by type -->
+  <bean id="toHelen" class="edu.buet.cse.spring.ch03.v1.impl.ToHelen"/>
+  
+  <bean id="poe" class="edu.buet.cse.spring.ch03.v1.impl.PoeticJuggler" autowire="byType">
+    <property name="beanCount" value="8"/>
+  </bean>  
+  
+  <!-- autowiring by constructor -->
+  <bean id="benny" class="edu.buet.cse.spring.ch03.v1.impl.Musician" autowire="constructor"/>   
+</beans>
