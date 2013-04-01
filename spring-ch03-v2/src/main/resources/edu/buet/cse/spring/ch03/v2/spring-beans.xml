@@ -7,6 +7,7 @@
   <context:annotation-config />
 
   <bean id="saxophone" class="edu.buet.cse.spring.ch03.v2.impl.Saxophone" />
+  <bean id="guiter" class="edu.buet.cse.spring.ch03.v2.impl.Guiter"/>
   <bean id="toHelen" class="edu.buet.cse.spring.ch03.v2.impl.ToHelen" />
 
   <bean id="kenny" class="edu.buet.cse.spring.ch03.v2.impl.Instrumentalist">

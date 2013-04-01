@@ -1,6 +1,7 @@
 package edu.buet.cse.spring.ch03.v2.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import edu.buet.cse.spring.ch03.v2.model.Instrument;
 import edu.buet.cse.spring.ch03.v2.model.Performer;
@@ -9,6 +10,7 @@ public class Instrumentalist implements Performer {
   private String song;
   
   @Autowired
+  @Qualifier("saxophone")
   private Instrument instrument;
 
   public void setSong(String song) {
