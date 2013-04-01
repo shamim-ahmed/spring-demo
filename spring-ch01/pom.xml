@@ -9,6 +9,7 @@
 
   <name>spring-basic</name>
   <url>http://maven.apache.org</url>
+  <description>A projects that introduces various aspects of Spring to a newcomer</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
