@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans" 
+<beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
   <context:annotation-config/>
   
   <!-- the instruments -->
   <bean id="saxophone" class="edu.buet.cse.spring.ch03.v3.impl.Saxophone"/>
   <bean id="piano" class="edu.buet.cse.spring.ch03.v3.impl.Piano"/>
+  <bean id="guiter" class="edu.buet.cse.spring.ch03.v3.impl.Guiter"/>
   
   <!-- the poems -->
   <bean id="toHelen" class="edu.buet.cse.spring.ch03.v3.impl.ToHelen"/>
@@ -28,4 +29,6 @@
   <bean id="houdini" class="edu.buet.cse.spring.ch03.v3.impl.KnifeJuggler"/>
   
   <bean id="yanni" class="edu.buet.cse.spring.ch03.v3.impl.Musician"/>
+  
+  <bean id="hendrix" class="edu.buet.cse.spring.ch03.v3.impl.Guiterist"/>
 </beans>
