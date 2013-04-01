@@ -2,8 +2,10 @@ package edu.buet.cse.spring.ch03.v2.impl;
 
 import edu.buet.cse.spring.ch03.v2.model.Instrument;
 import edu.buet.cse.spring.ch03.v2.qualifier.StringedInstrument;
+import edu.buet.cse.spring.ch03.v2.qualifier.Strummed;
 
 @StringedInstrument
+@Strummed
 public class Guiter implements Instrument {
   private static final String GUITER_NAME = "Guiter";
   

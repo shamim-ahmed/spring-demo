@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import edu.buet.cse.spring.ch03.v2.model.Instrument;
 import edu.buet.cse.spring.ch03.v2.model.Performer;
 import edu.buet.cse.spring.ch03.v2.qualifier.StringedInstrument;
+import edu.buet.cse.spring.ch03.v2.qualifier.Strummed;
 
 public class Guiterist implements Performer {
   // an example of qualification using a custom annotation
   @Autowired
   @StringedInstrument
+  @Strummed
   private Instrument instrument;
   
   public Instrument getInstrument() {
