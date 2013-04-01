@@ -1,9 +1,12 @@
 package edu.buet.cse.spring.ch03.v3.impl;
 
+import javax.inject.Inject;
+
 import edu.buet.cse.spring.ch03.v3.model.Performer;
 import edu.buet.cse.spring.ch03.v3.model.Poem;
 
 public class PoeticJuggler implements Performer {
+  @Inject
   private Poem poem;
   private int beanCount;
 

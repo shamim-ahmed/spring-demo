@@ -8,6 +8,7 @@ import edu.buet.cse.spring.ch03.v3.model.Performer;
 public class Instrumentalist implements Performer {
   private String song;
   
+  // an example of injection using standard JSR-330 annotation, which is not spring specific
   @Inject
   private Instrument instrument;
 

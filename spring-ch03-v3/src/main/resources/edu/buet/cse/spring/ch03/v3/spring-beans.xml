@@ -8,8 +8,13 @@
   <context:annotation-config/>
   
   <bean id="saxophone" class="edu.buet.cse.spring.ch03.v3.impl.Saxophone"/>
+  <bean id="toHelen" class="edu.buet.cse.spring.ch03.v3.impl.ToHelen"/>
   
   <bean id="kenny" class="edu.buet.cse.spring.ch03.v3.impl.Instrumentalist">
     <property name="song" value="Forever in Love"/>
+  </bean>
+  
+  <bean id="duke" class="edu.buet.cse.spring.ch03.v3.impl.PoeticJuggler">
+    <property name="beanCount" value="8"/>
   </bean>
 </beans>
