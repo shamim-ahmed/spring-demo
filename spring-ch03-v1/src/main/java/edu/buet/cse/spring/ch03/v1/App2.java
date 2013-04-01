@@ -8,7 +8,8 @@ import edu.buet.cse.spring.ch03.v1.model.Performer;
 public class App2 {
   public static void main(String... args) {
     ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch03/v1/spring-beans.xml");
-    Performer poe = (Performer) appContext.getBean("poe");
+    Performer poe = appContext.getBean("poe", Performer.class);
     poe.perform();
   }
 }
+

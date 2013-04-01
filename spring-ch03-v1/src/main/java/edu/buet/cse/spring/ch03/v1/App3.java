@@ -8,7 +8,7 @@ import edu.buet.cse.spring.ch03.v1.model.Performer;
 public class App3 {
   public static void main(String... args) {
     ApplicationContext appContext = new ClassPathXmlApplicationContext("/edu/buet/cse/spring/ch03/v1/spring-beans.xml");
-    Performer benny = (Performer) appContext.getBean("benny");
+    Performer benny = appContext.getBean("benny", Performer.class);
     benny.perform();
   }
 }
