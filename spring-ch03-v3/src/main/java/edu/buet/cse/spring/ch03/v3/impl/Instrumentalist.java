@@ -1,6 +1,7 @@
 package edu.buet.cse.spring.ch03.v3.impl;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import edu.buet.cse.spring.ch03.v3.model.Instrument;
 import edu.buet.cse.spring.ch03.v3.model.Performer;
@@ -10,6 +11,7 @@ public class Instrumentalist implements Performer {
   
   // an example of injection using standard JSR-330 annotation, which is not spring specific
   @Inject
+  @Named("saxophone")
   private Instrument instrument;
 
   public void setSong(String song) {

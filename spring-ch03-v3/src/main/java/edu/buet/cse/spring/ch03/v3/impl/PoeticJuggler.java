@@ -6,7 +6,7 @@ import edu.buet.cse.spring.ch03.v3.model.Performer;
 import edu.buet.cse.spring.ch03.v3.model.Poem;
 
 public class PoeticJuggler implements Performer {
-  // an example of DI using JSR-330 annotation, which is not spring specific
+  // an example of DI using JSR-330 annotation without qualification
   @Inject
   private Poem poem;
   private int beanCount;
