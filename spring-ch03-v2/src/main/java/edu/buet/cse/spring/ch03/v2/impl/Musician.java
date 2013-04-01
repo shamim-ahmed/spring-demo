@@ -1,19 +1,20 @@
 package edu.buet.cse.spring.ch03.v2.impl;
 
-import java.util.Objects;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.buet.cse.spring.ch03.v2.model.Instrument;
 import edu.buet.cse.spring.ch03.v2.model.Performer;
 
 public class Musician implements Performer {
-  private final Instrument musicalInstrument;
+  @Autowired
+  private Instrument musicalInstrument;
+
+  public void setMusicalInstrument(Instrument musicalInstrument) {
+    this.musicalInstrument = musicalInstrument;
+  }
 
   public Instrument getMusicalInstrument() {
     return musicalInstrument;
-  }
-  
-  public Musician(Instrument musiInstrument) {
-    this.musicalInstrument = Objects.requireNonNull(musiInstrument);
   }
 
   @Override

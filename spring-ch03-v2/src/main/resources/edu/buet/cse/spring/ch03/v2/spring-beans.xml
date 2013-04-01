@@ -6,8 +6,8 @@
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
   <context:annotation-config />
 
-  <bean id="instrument" class="edu.buet.cse.spring.ch03.v2.impl.Saxophone" />
-  <bean id="poem" class="edu.buet.cse.spring.ch03.v2.impl.ToHelen" />
+  <bean id="saxophone" class="edu.buet.cse.spring.ch03.v2.impl.Saxophone" />
+  <bean id="toHelen" class="edu.buet.cse.spring.ch03.v2.impl.ToHelen" />
 
   <bean id="kenny" class="edu.buet.cse.spring.ch03.v2.impl.Instrumentalist">
     <property name="song" value="Forever in Love" />
@@ -16,4 +16,6 @@
   <bean id="duke" class="edu.buet.cse.spring.ch03.v2.impl.PoeticJuggler">
     <property name="beanCount" value="5" />
   </bean>
+  
+  <bean id="yanni" class="edu.buet.cse.spring.ch03.v2.impl.Musician"/>
 </beans>
