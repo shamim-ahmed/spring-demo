@@ -3,7 +3,6 @@ package edu.buet.cse.spring.ch02.impl;
 import java.util.Collection;
 import java.util.Collections;
 
-import edu.buet.cse.spring.ch02.ex.PerformanceException;
 import edu.buet.cse.spring.ch02.model.Instrument;
 import edu.buet.cse.spring.ch02.model.Performer;
 
@@ -19,7 +18,7 @@ public class OneManBand implements Performer {
   }
 
   @Override
-  public void perform() throws PerformanceException {
+  public void perform() {
     System.out.printf("Playing several instruments all alone:%n");
 
     for (Instrument instr : instruments) {

@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.buet.cse</groupId>
-  <artifactId>spring-ch03-annotations</artifactId>
+  <artifactId>spring-ch03-v3</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-ch03-annotations</name>
+  <name>spring-ch03-v3</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use Spring autowiring features using Spring annotations</description>
+  <description>This project demonstrates how to use autowiring features using JSR-330 annotations.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,15 +23,22 @@
       <version>${org.springframework.version}</version>
       <scope>compile</scope>
     </dependency>
-
+    
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>${org.springframework.version}</version>
       <scope>compile</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
-
+  
   <build>
     <plugins>
       <plugin>
