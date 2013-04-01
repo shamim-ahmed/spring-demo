@@ -9,7 +9,7 @@ import edu.buet.cse.spring.ch03.v2.model.Performer;
 public class Musician implements Performer {
   // example of qualification with bean name
   @Autowired
-  @Qualifier("guiter")
+  @Qualifier("piano")
   private Instrument musicalInstrument;
 
   public void setMusicalInstrument(Instrument musicalInstrument) {
