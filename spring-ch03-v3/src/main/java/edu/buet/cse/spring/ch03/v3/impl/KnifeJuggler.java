@@ -12,6 +12,7 @@ public class KnifeJuggler implements Performer {
   private static final int MAX = 5;
   private final HashSet<Knife> knives;
   
+  // example of injecting a provider
   @Inject
   public KnifeJuggler(Provider<Knife> provider) {
     knives = new HashSet<>();
