@@ -5,18 +5,27 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-                             
+                 
+  <!-- instrument beans -->                           
   <bean id="saxophone" class="edu.buet.cse.spring.ch04.v1.impl.Saxophone"/>
+  <bean id="piano" class="edu.buet.cse.spring.ch04.v1.impl.Piano"/>
   
+  <!-- performer beans -->
   <bean id="kenny" class="edu.buet.cse.spring.ch04.v1.impl.Instrumentalist">
     <property name="song" value="Forever in Love"/>
     <property name="instrument" value="#{saxophone}"/>
   </bean>     
   
+  <bean id="yanni" class="edu.buet.cse.spring.ch04.v1.impl.Musician">
+    <constructor-arg ref="piano"/>
+  </bean>
+  
+  <!-- AOP related configuration -->
   <bean id="logger" class="edu.buet.cse.spring.ch04.v1.aop.InstrumentLogger"/>  
   
   <aop:config>
-    <aop:pointcut id="instrument-log" expression="execution(* edu.buet.cse.spring.ch04.v1.model.Instrument.play(..))"/>
+    <!-- only saxophone uses will be logged -->
+    <aop:pointcut id="instrument-log" expression="execution(* edu.buet.cse.spring.ch04.v1.model.Instrument.play(..)) and bean(saxophone)"/>
     
     <aop:aspect ref="logger">
       <aop:before pointcut-ref="instrument-log" method="beforeUse"/>
