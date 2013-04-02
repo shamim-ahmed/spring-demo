@@ -20,7 +20,7 @@
     <constructor-arg ref="piano"/>
   </bean>
   
-  <!-- AOP related configuration -->
+  <!-- logging related AOP configuration -->
   <bean id="logger" class="edu.buet.cse.spring.ch04.v1.aop.InstrumentLogger"/>  
   
   <aop:config>
@@ -30,6 +30,20 @@
     <aop:aspect ref="logger">
       <aop:before pointcut-ref="instrument-log" method="beforeUse"/>
       <aop:after pointcut-ref="instrument-log" method="afterUse"/>
+    </aop:aspect>
+  </aop:config>
+  
+  <!-- audience related AOP configuration -->
+  <bean id="audience" class="edu.buet.cse.spring.ch04.v1.impl.Audience"/>
+  
+  <aop:config>
+    <aop:pointcut id="perform-pointcut" expression="execution(* edu.buet.cse.spring.ch04.v1.model.Performer.perform(..))"/>
+    
+    <aop:aspect ref="audience">
+      <aop:before pointcut-ref="perform-pointcut" method="takeSeats"/>
+      <aop:before pointcut-ref="perform-pointcut" method="turnOffCellPhones"/>
+      <aop:after-returning pointcut-ref="perform-pointcut" method="applaud"/>
+      <aop:after-throwing pointcut-ref="perform-pointcut" method="demandRefund"/>
     </aop:aspect>
   </aop:config>
 </beans>
