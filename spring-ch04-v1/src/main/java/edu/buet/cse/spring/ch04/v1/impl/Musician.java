@@ -12,6 +12,10 @@ public class Musician implements Performer {
     this.instrument = Objects.requireNonNull(instrument);
   }
   
+  public Instrument getInstrument() {
+    return instrument;
+  }
+  
   @Override
   public void perform() {
     System.out.printf("Playing the instrument %s%n", instrument.getName());

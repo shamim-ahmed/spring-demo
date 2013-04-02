@@ -9,6 +9,7 @@
   <!-- instrument beans -->                           
   <bean id="saxophone" class="edu.buet.cse.spring.ch04.v1.impl.Saxophone"/>
   <bean id="piano" class="edu.buet.cse.spring.ch04.v1.impl.Piano"/>
+  <bean id="guiter" class="edu.buet.cse.spring.ch04.v1.impl.Guiter"/>
   
   <!-- performer beans -->
   <bean id="kenny" class="edu.buet.cse.spring.ch04.v1.impl.Instrumentalist">
@@ -18,6 +19,10 @@
   
   <bean id="yanni" class="edu.buet.cse.spring.ch04.v1.impl.Musician">
     <constructor-arg ref="piano"/>
+  </bean>
+  
+  <bean id="bieber" class="edu.buet.cse.spring.ch04.v1.impl.ErraticPerformer">
+    <constructor-arg value="#{guiter}"/>
   </bean>
   
   <!-- logging related AOP configuration -->
