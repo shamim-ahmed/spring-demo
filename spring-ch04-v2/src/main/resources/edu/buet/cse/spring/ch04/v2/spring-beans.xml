@@ -23,4 +23,16 @@
       <aop:around pointcut-ref="perform-pointcut" method="watchPerformance"/>
     </aop:aspect>
   </aop:config>
+  
+  <!-- mind-reading related AOP configuration -->
+  <bean id="plato" class="edu.buet.cse.spring.ch04.v2.impl.Philosopher"/>
+  <bean id="houdini" class="edu.buet.cse.spring.ch04.v2.impl.Magician"/>
+  
+  <aop:config>
+    <aop:pointcut id="think-pointcut" expression="execution(* edu.buet.cse.spring.ch04.v2.model.Thinker.thinkOfSomething(String)) and args(tht)"/>
+    
+    <aop:aspect ref="houdini">
+      <aop:before pointcut-ref="think-pointcut" method="interceptThought" arg-names="tht"/>
+    </aop:aspect>
+  </aop:config>
 </beans>
