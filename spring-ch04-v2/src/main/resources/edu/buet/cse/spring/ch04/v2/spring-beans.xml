@@ -35,4 +35,19 @@
       <aop:before pointcut-ref="think-pointcut" method="interceptThought" arg-names="tht"/>
     </aop:aspect>
   </aop:config>
+  
+  <!-- example of adding new functionality with AOP -->
+  <bean id="yanni" class="edu.buet.cse.spring.ch04.v2.impl.Musician">
+    <constructor-arg>
+      <bean class="edu.buet.cse.spring.ch04.v2.impl.Piano"/>
+    </constructor-arg>
+  </bean>
+  
+  <aop:config>
+    <aop:aspect>
+      <aop:declare-parents types-matching="edu.buet.cse.spring.ch04.v2.model.Performer+" 
+                           implement-interface="edu.buet.cse.spring.ch04.v2.model.Contestant"
+                           default-impl="edu.buet.cse.spring.ch04.v2.impl.GraciousContestant"/>
+    </aop:aspect>
+  </aop:config>
 </beans>

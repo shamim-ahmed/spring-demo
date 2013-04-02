@@ -9,7 +9,10 @@
 
   <name>spring-ch04-v2</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use &lt;aop:around/&gt; in XML configuration</description>
+  <description>
+    This project demonstrates some advanced AOP features like the use of &lt;aop:around/&gt; in XML 
+    configuration, argument passing to aspects and adding new functionality with aspects.
+  </description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
