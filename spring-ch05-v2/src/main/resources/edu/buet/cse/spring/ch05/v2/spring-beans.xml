@@ -11,7 +11,7 @@
     <property name="maxActive" value="10"/>
   </bean>                           
   
-  <bean id="chirperDao" class="edu.buet.cse.spring.ch05.v2.dao.ChirperDao">
+  <bean id="chirperDao" class="edu.buet.cse.spring.ch05.v2.dao.ChirperDaoImpl">
     <property name="dataSource" ref="dataSource"/>
   </bean>
 </beans>
