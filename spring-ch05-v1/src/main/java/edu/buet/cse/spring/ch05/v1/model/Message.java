@@ -7,8 +7,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class Message {
   private Long id;
-  private Date creationDate;
   private String content;
+  private Date creationDate;
   private Long userId;
 
   public Long getId() {
@@ -18,6 +18,14 @@ public class Message {
   public void setId(Long id) {
     this.id = id;
   }
+  
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
 
   public Date getCreationDate() {
     return creationDate;
@@ -25,14 +33,6 @@ public class Message {
 
   public void setCreationDate(Date creationDate) {
     this.creationDate = creationDate;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
   }
 
   public Long getUserId() {
@@ -47,8 +47,8 @@ public class Message {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("id", id)
-           .append("creationDate", creationDate)
            .append("content", content)
+           .append("creationDate", creationDate)
            .append("userId", userId);
     
     return builder.toString();
