@@ -9,7 +9,7 @@
 
   <name>spring-ch05-v1</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use SimpleJdbcTemplate in conjunction with </description>
+  <description>This project demonstrates how to use SimpleJdbcDaoSupport</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
