@@ -2,6 +2,7 @@ package edu.buet.cse.spring.ch05.v1.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.HashMap;
@@ -47,14 +48,14 @@ public class ChirperDaoImpl implements ChirperDao {
 
   @Override
   public boolean createUser(User user) {
-    SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+    DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
     int count = jdbcTemplate.update(CREATE_USER_SQL, user.getUsername(), user.getPassword(), dateFormat.format(user.getJoinDate()), user.isReceiveEmail());
     return count == 1;
   }
 
   @Override
   public boolean createMessage(Message message) {
-    SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+    DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
     
     Map<String, Object> paramMap = new HashMap<>();
     paramMap.put("msgText", message.getContent());
