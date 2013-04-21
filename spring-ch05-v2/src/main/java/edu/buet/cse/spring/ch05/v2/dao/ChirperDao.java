@@ -3,7 +3,9 @@ package edu.buet.cse.spring.ch05.v2.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
@@ -14,7 +16,7 @@ import edu.buet.cse.spring.ch05.v2.model.User;
 public class ChirperDao extends SimpleJdbcDaoSupport {
   public static final int MAX_MESSAGES = 10;
   private static final String SELECT_USER_QUERY = "SELECT * FROM User WHERE id = ?";
-  private static final String SELECT_MESSAGE_QUERY = "SELECT * FROM Message WHERE id = ?";
+  private static final String SELECT_MESSAGE_QUERY = "SELECT * FROM Message WHERE id = :msgId";
   private static final String SELECT_LATEST_MESSAGES_QUERY = "SELECT * FROM Message ORDER BY id DESC LIMIT ?";
   private final UserRowMapper userRowMapper = new UserRowMapper();
   private final MessageRowMapper messageRowMapper = new MessageRowMapper();
@@ -25,7 +27,10 @@ public class ChirperDao extends SimpleJdbcDaoSupport {
   }
 
   public Message getMessage(Long id) {
-    Message message = getSimpleJdbcTemplate().queryForObject(SELECT_MESSAGE_QUERY, messageRowMapper, id);
+    Map<String, Object> paramMap = new HashMap<>();
+    paramMap.put("msgId", id);
+    Message message = getSimpleJdbcTemplate().queryForObject(SELECT_MESSAGE_QUERY, messageRowMapper, paramMap);
+    
     return message;
   }
     
