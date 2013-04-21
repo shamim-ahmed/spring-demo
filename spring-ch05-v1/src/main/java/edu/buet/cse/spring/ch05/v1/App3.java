@@ -3,7 +3,7 @@ package edu.buet.cse.spring.ch05.v1;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.spring.ch05.v1.dao.impl.ChirperDaoImpl;
+import edu.buet.cse.spring.ch05.v1.dao.ChirperDaoImpl;
 import edu.buet.cse.spring.ch05.v1.model.Message;
 
 public class App3 {

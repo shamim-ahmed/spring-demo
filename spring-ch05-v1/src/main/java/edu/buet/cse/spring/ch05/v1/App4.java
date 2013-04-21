@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import edu.buet.cse.spring.ch05.v1.dao.model.ChirperDao;
+import edu.buet.cse.spring.ch05.v1.dao.ChirperDao;
 import edu.buet.cse.spring.ch05.v1.model.Message;
 import edu.buet.cse.spring.ch05.v1.model.User;
 

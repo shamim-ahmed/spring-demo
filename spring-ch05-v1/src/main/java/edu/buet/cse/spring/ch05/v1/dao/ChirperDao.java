@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.ch05.v1.dao.model;
+package edu.buet.cse.spring.ch05.v1.dao;
 
 import java.util.List;
 

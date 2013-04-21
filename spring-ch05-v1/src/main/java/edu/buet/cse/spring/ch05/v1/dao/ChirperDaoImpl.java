@@ -1,4 +1,4 @@
-package edu.buet.cse.spring.ch05.v1.dao.impl;
+package edu.buet.cse.spring.ch05.v1.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +11,6 @@ import java.util.Map;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
-import edu.buet.cse.spring.ch05.v1.dao.model.ChirperDao;
 import edu.buet.cse.spring.ch05.v1.model.Message;
 import edu.buet.cse.spring.ch05.v1.model.User;
 
