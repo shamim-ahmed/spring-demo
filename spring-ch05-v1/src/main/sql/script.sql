@@ -18,3 +18,6 @@ CREATE TABLE Message(
 );
 
 INSERT INTO User(id, username, password, join_date, receive_email) VALUES (1, 'johnson', 'spring', '2013-04-21', true);
+INSERT INTO User(id, username, password, join_date, receive_email) VALUES (2, 'gavin', 'hibernate', '2013-04-21', false);
+INSERT INTO Message(id, content, created_on, user_id) VALUES (1, 'Spring rocks !', '2013-04-21', 1);
+INSERT INTO Message(id, content, created_on, user_id) VALUES (2, 'Hibernate rocks !', '2013-04-21', 2);

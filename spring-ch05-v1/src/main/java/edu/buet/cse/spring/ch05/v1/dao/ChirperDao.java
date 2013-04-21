@@ -2,6 +2,8 @@ package edu.buet.cse.spring.ch05.v1.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collections;
+import java.util.List;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
@@ -10,8 +12,10 @@ import edu.buet.cse.spring.ch05.v1.model.Message;
 import edu.buet.cse.spring.ch05.v1.model.User;
 
 public class ChirperDao {
+  public static final int MAX_MESSAGES = 10;
   private static final String SELECT_USER_QUERY = "SELECT * FROM User WHERE id = ?";
   private static final String SELECT_MESSAGE_QUERY = "SELECT * FROM Message WHERE id = ?";
+  private static final String SELECT_LATEST_MESSAGES_QUERY = "SELECT * FROM Message ORDER BY id DESC LIMIT ?";
   private final UserRowMapper userRowMapper = new UserRowMapper();
   private final MessageRowMapper messageRowMapper = new MessageRowMapper();
   private final SimpleJdbcTemplate jdbcTemplate;
@@ -28,6 +32,18 @@ public class ChirperDao {
   public Message getMessage(Long id) {
     Message message = jdbcTemplate.queryForObject(SELECT_MESSAGE_QUERY, messageRowMapper, id);
     return message;
+  }
+    
+  public List<Message> getLatestMessages(int count) {
+    if (count < 0) {
+      return Collections.emptyList();
+    }
+    
+    if (count > MAX_MESSAGES) {
+      count = MAX_MESSAGES;
+    }
+    
+    return jdbcTemplate.query(SELECT_LATEST_MESSAGES_QUERY, messageRowMapper, count);
   }
 
   private static class UserRowMapper implements RowMapper<User> {
