@@ -9,10 +9,7 @@
 
   <name>spring-ch05-v1</name>
   <url>http://maven.apache.org</url>
-  <description>
-    This project demonstrates how to use SimpleJdbcTemplate to retrieve data from database. We demonstrate this
-    in the context of a fictitious twitter-like application called 'Chirper'.
-  </description>
+  <description>This project demonstrates how to use SimpleJdbcTemplate to retrieve data from database. We demonstrate this in the context of a fictitious twitter-like application called 'Chirper'.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -3,16 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.buet.cse</groupId>
-  <artifactId>spring-ch05-v1</artifactId>
+  <artifactId>spring-ch05-v3</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-ch05-v1</name>
+  <name>spring-ch05-v3</name>
   <url>http://maven.apache.org</url>
-  <description>
-    This project demonstrates how to use Spring and Hibernate together. The DAO for this project uses
-    a HibernateTemplate. 
-  </description>
+  <description>This project demonstrates how to use Spring and Hibernate together. The DAO for this project uses a LocalSessionFactoryBean.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
