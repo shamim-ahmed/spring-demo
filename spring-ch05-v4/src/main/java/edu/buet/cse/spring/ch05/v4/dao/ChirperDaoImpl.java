@@ -7,24 +7,32 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import edu.buet.cse.spring.ch05.v4.model.Message;
 import edu.buet.cse.spring.ch05.v4.model.User;
 
-public class ChirperDaoImpl implements ChirperDao {
+@Repository(value = "chirperDao")
+public class ChirperDaoImpl implements ChirperDao, InitializingBean, DisposableBean {
   public static final int MAX_RESULTS = 10;
   private final SessionFactory sessionFactory;
   private Session session;
 
+  @Autowired
   public ChirperDaoImpl(SessionFactory sessionFactory) {
     this.sessionFactory = sessionFactory;
   }
 
-  public void init() {
+  @Override
+  public void afterPropertiesSet() {
     session = sessionFactory.openSession();
   }
 
-  public void cleanUp() {
+  @Override
+  public void destroy() {
     session.close();
   }
 
@@ -33,7 +41,7 @@ public class ChirperDaoImpl implements ChirperDao {
     Transaction tx = session.beginTransaction();
     User user = (User) session.get(User.class, id);
     tx.commit();
-    
+
     return user;
   }
 
@@ -62,7 +70,7 @@ public class ChirperDaoImpl implements ChirperDao {
     Transaction tx = session.beginTransaction();
     Message message = (Message) session.get(Message.class, id);
     tx.commit();
-    
+
     return message;
   }
 

@@ -70,7 +70,8 @@ public class User {
            .append("username", username)
            .append("password", password)
            .append("joinDate", joinDate)
-           .append("receiveEmail", receiveEmail);
+           .append("receiveEmail", receiveEmail)
+           .append("messageCount", messages.size());
     
     return builder.toString();
   }
