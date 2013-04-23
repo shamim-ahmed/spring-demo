@@ -1,5 +1,6 @@
 package edu.buet.cse.spring.ch05.v3.dao;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -36,13 +37,22 @@ public class ChirperDaoImpl implements ChirperDao {
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public List<Message> getLatestMessages(int count) {
-    Session session = hibernateTemplate.getSessionFactory().openSession();
-    Query query = session.createQuery("from Message");
-    query.setMaxResults(count);
-    @SuppressWarnings("unchecked")
-    List<Message> messages = query.list();
-    
+    Session session = null;
+    List<Message> messages = Collections.emptyList();
+
+    try {
+      session = hibernateTemplate.getSessionFactory().openSession();
+      Query query = session.createQuery("from Message");
+      query.setMaxResults(count);
+      messages = query.list();
+    } finally {
+      if (session != null) {
+        session.close();
+      }
+    }
+
     return messages;
   }
 
