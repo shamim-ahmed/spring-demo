@@ -3,15 +3,19 @@ package edu.buet.cse.spring.ch05.v3.dao;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 
 import edu.buet.cse.spring.ch05.v3.model.Message;
 import edu.buet.cse.spring.ch05.v3.model.User;
 
+@Repository(value = "chirperDao")
 public class ChirperDaoImpl implements ChirperDao {
   public static final int MAX_RESULTS = 10;
   private final HibernateTemplate hibernateTemplate;
 
+  @Autowired
   public ChirperDaoImpl(HibernateTemplate hibernateTemplate) {
     this.hibernateTemplate = hibernateTemplate;
   }
