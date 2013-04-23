@@ -1,8 +1,9 @@
 package edu.buet.cse.spring.ch05.v3.dao;
 
-import java.util.Collections;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import edu.buet.cse.spring.ch05.v3.model.Message;
@@ -36,11 +37,18 @@ public class ChirperDaoImpl implements ChirperDao {
 
   @Override
   public List<Message> getLatestMessages(int count) {
-    return Collections.emptyList();
+    Session session = hibernateTemplate.getSessionFactory().openSession();
+    Query query = session.createQuery("from Message");
+    query.setMaxResults(count);
+    @SuppressWarnings("unchecked")
+    List<Message> messages = query.list();
+    
+    return messages;
   }
 
   @Override
   public boolean createMessage(Message message) {
-    return false;
+    Long id = (Long) hibernateTemplate.save(message);
+    return id != null;
   }
 }
