@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>edu.buet.cse</groupId>
+  <artifactId>spring-ch06-v4</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-ch06-v4</name>
+  <url>http://maven.apache.org</url>
+  <description>This project demonstrates how to use transaction in the context of Spring-Hibernate combination.</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.springframework.version>3.0.6.RELEASE</org.springframework.version>
+  </properties>
+
+  <dependencies>
+    <!-- core spring dependencies -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${org.springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- spring hibernate integration -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-hibernate3</artifactId>
+      <version>2.0.8</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- transaction support -->    
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- AOP -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjtools</artifactId>
+      <version>1.6.2</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- connection pooling -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.4</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- mysql jdbc driver -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.21</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- misc -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
