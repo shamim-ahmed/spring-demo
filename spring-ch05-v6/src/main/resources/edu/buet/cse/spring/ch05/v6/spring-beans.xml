@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+  
+  <!-- this enables automatic registration of the repository as a bean -->  
+  <context:component-scan base-package="edu.buet.cse.spring.ch05.v6.dao"/>
+  
+  <!-- this bean enables exception translation for a repository -->
+  <bean class="org.springframework.dao.support.PersistenceExceptionTranslationInterceptor"/>
+  
+  <!-- this enables automatic injection of entity manager-->
+  <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor "/>
+  
+  <bean id="emf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    <property name="persistenceUnitName" value="springInAction"/>
+  </bean>
+  
+  <!--  this enables transactions -->
+  <tx:annotation-driven/>
+       
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="emf"/>
+  </bean>
+</beans>
