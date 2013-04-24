@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+                                   
+<hibernate-mapping>
+  <class name="edu.buet.cse.spring.ch06.v3.model.Message" table="Message">
+    <id name="id" column="id" type="long">
+      <generator class="increment"/>
+    </id>
+    
+    <property name="content" column="content" type="string" not-null="true"/>
+    <property name="creationDate" column="created_on" type="date" not-null="true"/>
+    
+    <many-to-one name="user" class="edu.buet.cse.spring.ch06.v3.model.User">
+      <column name="user_id" not-null="true"/>
+    </many-to-one>
+  </class>  
+</hibernate-mapping>
