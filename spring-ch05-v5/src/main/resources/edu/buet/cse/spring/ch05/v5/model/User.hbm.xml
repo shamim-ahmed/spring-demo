@@ -8,7 +8,7 @@
       <generator class="increment"/>
     </id>
     
-    <property name="username" column="username" type="string" not-null="true"/>
+    <property name="username" column="username" type="string" not-null="true" unique="true"/>
     <property name="password" column="password" type="string" not-null="true"/>
     <property name="joinDate" column="join_date" type="date" not-null="true"/>
     <property name="receiveEmail" column="receive_email" type="boolean" not-null="true"/>
