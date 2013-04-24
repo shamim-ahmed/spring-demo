@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="edu.buet.cse.spring.ch06.v5.model.User" table="User">
+    <id name="id" column="id" type="long">
+      <generator class="increment"/>
+    </id>
+    
+    <property name="username" column="username" type="string" not-null="true" unique="true"/>
+    <property name="password" column="password" type="string" not-null="true"/>
+    <property name="joinDate" column="join_date" type="date" not-null="true"/>
+    <property name="receiveEmail" column="receive_email" type="boolean" not-null="true"/>
+    
+    <set name="messages" lazy="false">
+      <key>
+        <column name="user_id" not-null="true"/>
+      </key>
+      
+      <one-to-many class="edu.buet.cse.spring.ch06.v5.model.Message"/>
+    </set>
+  </class>
+</hibernate-mapping>
