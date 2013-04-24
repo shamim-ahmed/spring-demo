@@ -6,7 +6,8 @@ CREATE TABLE User(
   username VARCHAR(50) NOT NULL,
   password VARCHAR(50) NOT NULL,
   join_date DATE NOT NULL,
-  receive_email BOOLEAN NOT NULL DEFAULT 0
+  receive_email BOOLEAN NOT NULL DEFAULT 0,
+  CONSTRAINT username_uniq UNIQUE(username)
 );
 
 CREATE TABLE Message(
