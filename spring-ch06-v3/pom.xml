@@ -9,7 +9,7 @@
 
   <name>spring-ch06-v3</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use transaction in the context of Spring-Hibernate combination.</description>
+  <description>This project demonstrates how to use TransactionTemplate in the context of Spring-Hibernate combination.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
