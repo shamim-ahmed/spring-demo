@@ -9,7 +9,7 @@
 
   <name>spring-ch05-v6</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use Spring and Hibernate together. The DAO implementation class in this project extends HibernateDaoSupport.</description>
+  <description>This project demonstrates how to use Spring and JPA (EclipseLink) together.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
