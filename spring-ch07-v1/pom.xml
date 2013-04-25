@@ -55,7 +55,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <warFileName>${project.name}</warFileName>
+          <warName>${project.name}</warName>
           
           <webResources>
             <resource>
