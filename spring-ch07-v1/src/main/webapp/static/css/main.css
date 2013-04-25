@@ -15,6 +15,10 @@ div#header h1 {
   font-size: 30px !important;
 }
 
+body h2 {
+  font-size: 20px;
+}
+
 div#main {
   background-color: #dcdcdc;
 }
@@ -28,6 +32,7 @@ div#main div.messages {
 }
 
 div#main div.messages ul {
+  margin-top: 10px;
   padding-left: 20px;
 }
 

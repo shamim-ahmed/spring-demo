@@ -22,7 +22,7 @@
     </div>
     
     <div class="messages">
-      <h3>Some recent messages</h3>
+      <h2>Some Recent Messages</h2>
       
       <c:if test="${not empty requestScope.messages}">
         <ul>
