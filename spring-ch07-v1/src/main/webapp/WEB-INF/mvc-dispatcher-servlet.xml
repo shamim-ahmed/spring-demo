@@ -12,7 +12,7 @@
   <mvc:annotation-driven/>
   
   <!-- configuration for auto-registration of controllers -->
-  <context:component-scan base-package="edu.buet.cse.spring.ch07.v1.controller"/>                  
+  <context:component-scan base-package="edu.buet.cse.spring.ch07.v1"/>                  
   
   <!-- configuration for serving static files -->         
   <mvc:resources location="/static/" mapping="/static/**"/> 

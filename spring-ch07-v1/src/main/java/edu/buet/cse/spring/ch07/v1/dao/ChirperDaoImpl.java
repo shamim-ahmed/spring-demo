@@ -2,9 +2,12 @@ package edu.buet.cse.spring.ch07.v1.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import edu.buet.cse.spring.ch07.v1.model.Message;
 import edu.buet.cse.spring.ch07.v1.model.User;
 
+@Component("chirperDao")
 public class ChirperDaoImpl implements ChirperDao {
 
   @Override

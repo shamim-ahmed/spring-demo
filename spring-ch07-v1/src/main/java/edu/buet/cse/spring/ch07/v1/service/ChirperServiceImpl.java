@@ -4,15 +4,19 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import edu.buet.cse.spring.ch07.v1.dao.ChirperDao;
 import edu.buet.cse.spring.ch07.v1.model.Message;
 import edu.buet.cse.spring.ch07.v1.model.User;
 
+@Component("chirperService")
 public class ChirperServiceImpl implements ChirperService {
   public static final int MAX_MESSAGE_COUNT = 10;
-  
   private final ChirperDao chirperDao;
   
+  @Autowired
   public ChirperServiceImpl(ChirperDao chirperDao) {
     this.chirperDao = chirperDao;
   }
