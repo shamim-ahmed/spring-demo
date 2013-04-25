@@ -56,6 +56,16 @@
         <version>2.2</version>
         <configuration>
           <warFileName>${project.name}</warFileName>
+          
+          <webResources>
+            <resource>
+              <filtering>true</filtering>
+              <directory>src/main/webapp</directory>
+              <includes>
+                <include>**/web.xml</include>
+              </includes>
+            </resource>
+          </webResources>
         </configuration>
       </plugin>
     </plugins>
