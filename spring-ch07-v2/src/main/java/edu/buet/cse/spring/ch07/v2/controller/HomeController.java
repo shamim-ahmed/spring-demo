@@ -38,6 +38,6 @@ public class HomeController {
     
     modelMap.put("messages", messages);
     
-    return user != null ? "home/custom" : "home/generic";
+    return user != null ? "homeCustom" : "homeGeneric";
   }
 }

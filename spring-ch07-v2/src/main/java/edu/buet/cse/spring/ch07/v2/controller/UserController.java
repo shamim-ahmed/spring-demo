@@ -26,7 +26,7 @@ public class UserController {
   
   @RequestMapping(value = "/login-form", method = RequestMethod.GET)
   public String showLoginForm() {
-    return "login/loginForm";
+    return "loginForm";
   }
   
   @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -35,21 +35,21 @@ public class UserController {
     
     if (user != null && user.getPassword().equalsIgnoreCase(password)) {
       session.setAttribute(AttributeNames.USER_ATTRIBUTE_NAME, user);
-      return "login/success";
+      return "loginSuccess";
     }
     
-    return "login/error";
+    return "loginError";
   }
   
   @RequestMapping(value = "/register-form", method = RequestMethod.GET)
   public String registerForm() {
-    return "registration/registrationForm";
+    return "registrationForm";
   }
   
   @RequestMapping(value = "/register", method = RequestMethod.POST)
   public String register(@RequestParam String username, @RequestParam String password, @RequestParam(required = false) String receiveEmail) {
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
-      return "registration/error";
+      return "registrationError";
     }
     
     User user = new User();
@@ -60,13 +60,13 @@ public class UserController {
     user.setReceiveEmail(receiveEmail != null ? Boolean.TRUE : Boolean.FALSE);
     boolean result = chirperService.addUser(user);
     
-    return result ? "registration/success" : "registration/error";
+    return result ? "registrationSuccess" : "registrationError";
   }
   
   @RequestMapping(value = "/logout", method = RequestMethod.GET)
   public String logout(HttpSession session) {
     session.removeAttribute(AttributeNames.USER_ATTRIBUTE_NAME);
     
-    return "logout/redirect";
+    return "logoutRedirect";
   }
 }

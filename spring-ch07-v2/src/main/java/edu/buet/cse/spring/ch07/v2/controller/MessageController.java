@@ -23,13 +23,13 @@ public class MessageController {
   
   @RequestMapping(value = "/message-form", method = RequestMethod.GET)
   public String showMessageForm() {
-    return "message/messageForm";
+    return "messageForm";
   }
   
   @RequestMapping(value = "/create-message", method = RequestMethod.POST)
   public String createMessage(@RequestParam String content, @RequestParam Long userId) {
     if (StringUtils.isBlank(content)) {
-      return "message/error";
+      return "messageError";
     }
     
     Message message = new Message();
@@ -38,6 +38,6 @@ public class MessageController {
     message.setUser(chirperService.getUser(userId));
     boolean result = chirperService.addMessage(message);
     
-    return result ? "message/success" : "message/error";
+    return result ? "messageSuccess" : "messageError";
   }
 }

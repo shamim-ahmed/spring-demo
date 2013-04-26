@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions> 
+  <definition name="baseLayout" template="/WEB-INF/templates/common/baseLayout.jsp">
+    <put-attribute name="title" value="Chirper"/>
+    <put-attribute name="headerMarkup" value="/WEB-INF/templates/common/header.jsp"/>
+    <put-attribute name="mainMarkup" value=""/>
+    <put-attribute name="footerMarkup" value="/WEB-INF/templates/common/footer.jsp"/>
+  </definition>
+  
+  <definition name="homeGeneric" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/home/generic.jsp"/>
+  </definition>
+  
+  <definition name="homeCustom" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/home/custom.jsp"/>
+  </definition>
+  
+  <definition name="loginForm" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/login/loginForm.jsp"/>
+  </definition>
+  
+  <definition name="loginSuccess" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/login/success.jsp"/>
+  </definition>
+  
+  <definition name="loginError" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/login/error.jsp"/>
+  </definition>
+  
+  <definition name="logoutRedirect" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/logout/redirect.jsp"/>
+  </definition>
+  
+  <definition name="messageForm" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/message/messageForm.jsp"/>
+  </definition>
+  
+  <definition name="messageSuccess" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/message/success.jsp"/>
+  </definition>
+  
+  <definition name="messageError" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/message/error.jsp"/>
+  </definition>
+  
+  <definition name="registrationForm" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/registration/registrationForm.jsp"/>
+  </definition>
+  
+  <definition name="registrationSuccess" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/registration/success.jsp"/>
+  </definition>
+  
+  <definition name="registrationError" extends="baseLayout">
+    <put-attribute name="mainMarkup" value="/WEB-INF/templates/registration/error.jsp"/>
+  </definition>
+</tiles-definitions> 
