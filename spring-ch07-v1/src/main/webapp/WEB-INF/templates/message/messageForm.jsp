@@ -25,7 +25,7 @@
     
     <form action="${pageContext.request.contextPath}/create-message" method="post">
       <input type="hidden" name="userId" value="${sessionScope.user.id}"/>     
-      <span class="label">Content</span><textarea name="content"></textarea><br/>     
+      <span class="label">Content</span><textarea name="content" rows="5" cols="25"></textarea><br/>     
       <input type="submit" value="Submit"/>
     </form>
   </div>

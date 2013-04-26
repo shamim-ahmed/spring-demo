@@ -54,6 +54,7 @@ form span.label {
   display: inline-block;
   width: 100px;
   text-align: left;
+  vertical-align: top;
 }
 
 div#main div.nav, div#main div.options {
