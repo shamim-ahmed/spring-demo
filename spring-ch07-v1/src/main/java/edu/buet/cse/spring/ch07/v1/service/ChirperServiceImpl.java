@@ -1,7 +1,6 @@
 package edu.buet.cse.spring.ch07.v1.service;
 
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,12 +52,12 @@ public class ChirperServiceImpl implements ChirperService {
   }
 
   @Override
-  public boolean addUser(String username, String password, Date joinDate, boolean receiveEmail) {
-    throw new UnsupportedOperationException("Not implemented yet");
+  public boolean addUser(User user) {
+    return chirperDao.createUser(user);
   }
 
   @Override
-  public boolean addMessage(String content, Date creationDate, Long userId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+  public boolean addMessage(Message message) {
+    return chirperDao.createMessage(message);
   }
 }
