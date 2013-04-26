@@ -12,6 +12,7 @@ import edu.buet.cse.spring.ch07.v1.service.ChirperService;
 
 @Controller
 public class HomeController {
+  private static final int MAX_MESSAGE_COUNT = 5;
   private final ChirperService chirperService;
   
   @Autowired
@@ -21,7 +22,7 @@ public class HomeController {
   
   @RequestMapping(value = "/")
   public String showHomePage(ModelMap modelMap) {
-    List<Message> messages = chirperService.getMessages(5);
+    List<Message> messages = chirperService.getMessages(MAX_MESSAGE_COUNT);
     modelMap.put("messages", messages);
     
     return "home";
