@@ -9,7 +9,7 @@
 
   <name>spring-ch07-v2</name>
   <url>http://maven.apache.org</url>
-  <description>This project focuses on building a web application called 'Chirper' using Spring MVC</description>
+  <description>This project focuses on building a web application called 'Chirper' using Spring MVC. In the view layer, we use Apache Tiles technology.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
