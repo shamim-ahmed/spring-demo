@@ -62,4 +62,11 @@ public class UserController {
     
     return result ? "registration/success" : "registration/error";
   }
+  
+  @RequestMapping(value = "/logout", method = RequestMethod.GET)
+  public String logout(HttpSession session) {
+    session.removeAttribute(AttributeNames.USER_ATTRIBUTE_NAME);
+    
+    return "logout/redirect";
+  }
 }

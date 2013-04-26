@@ -39,7 +39,7 @@
     </div>
     
     <div class="options">
-      <p>You can <a href="${pageContext.request.contextPath}/message-form">post</a> a new message.</p>      
+      <p>You can <a href="${pageContext.request.contextPath}/message-form">post</a> a new message or <a href="${pageContext.request.contextPath}/logout">logout</a></p>      
     </div>
   </div>
   
