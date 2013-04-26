@@ -100,6 +100,14 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- logging -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+      <scope>compile</scope>
+    </dependency>
+    
     <!-- misc -->
     <dependency>
       <groupId>org.apache.commons</groupId>
