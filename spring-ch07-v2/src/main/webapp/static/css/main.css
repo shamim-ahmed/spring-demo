@@ -1,0 +1,66 @@
+body > div {
+  padding: 20px !important;
+}
+
+div#header {
+  text-align: center;
+  font-size: 20px;
+  text-align: center;
+  background-color: #7fffd4;
+}
+
+div#header h1 {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  font-size: 30px !important;
+}
+
+body h2 {
+  font-size: 20px;
+}
+
+div#main {
+  background-color: #dcdcdc;
+}
+
+div#main div.info {
+  margin-top: 10px;
+}
+
+div#main div.messages {
+  margin-top: 20px;
+}
+
+div#main div.messages ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+div#main div.messages ul li {
+  list-style: disc;
+  margin-top: 5px;
+}
+
+div#main div.messages ul li span.content {
+  font-style: italic;
+}
+
+div#main div.messages ul li span.username {
+  font-color: blue;
+  font-weight: bold;
+}
+
+form span.label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  vertical-align: top;
+}
+
+div#main div.nav, div#main div.options {
+  margin-top: 10px;
+}
+
+div#footer {
+  background-color: #adff2f;
+}
