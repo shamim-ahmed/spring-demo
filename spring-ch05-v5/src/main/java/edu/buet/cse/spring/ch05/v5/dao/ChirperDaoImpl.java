@@ -46,7 +46,7 @@ public class ChirperDaoImpl extends HibernateDaoSupport implements ChirperDao {
     template.setMaxResults(count);
     
     @SuppressWarnings("unchecked")
-    List<Message> messages = template.find("from Message");
+    List<Message> messages = template.find("from Message m order by m.id desc");
     return messages;
   }
 

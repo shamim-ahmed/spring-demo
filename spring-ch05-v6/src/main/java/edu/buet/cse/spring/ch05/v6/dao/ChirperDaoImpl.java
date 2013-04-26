@@ -39,7 +39,7 @@ public class ChirperDaoImpl implements ChirperDao {
 
   @Override
   public List<Message> getLatestMessages(int count) {
-    Query query = entityManager.createQuery("SELECT m FROM Message m", Message.class);
+    Query query = entityManager.createQuery("select m from Message m order by m.id desc", Message.class);
     query.setMaxResults(count);
     @SuppressWarnings("unchecked")
     List<Message> messages = query.getResultList();

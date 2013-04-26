@@ -51,7 +51,7 @@ public class ChirperDaoImpl implements ChirperDao {
     hibernateTemplate.setMaxResults(count);
     
     @SuppressWarnings("unchecked")
-    List<Message> messages = hibernateTemplate.find("from Message");
+    List<Message> messages = hibernateTemplate.find("from Message m order by m.id desc");
     return messages;
   }
 

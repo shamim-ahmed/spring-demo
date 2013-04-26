@@ -77,7 +77,7 @@ public class ChirperDaoImpl implements ChirperDao, InitializingBean, DisposableB
   @Override
   public List<Message> getLatestMessages(int count) {
     Transaction tx = session.beginTransaction();
-    Query query = session.createQuery("from Message");
+    Query query = session.createQuery("from Message m order by m.id desc");
     query.setMaxResults(count);
     @SuppressWarnings("unchecked")
     List<Message> messages = query.list();
