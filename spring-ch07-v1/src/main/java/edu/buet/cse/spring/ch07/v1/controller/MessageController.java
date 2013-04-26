@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.buet.cse.spring.ch07.v1.model.Message;
@@ -20,12 +21,12 @@ public class MessageController {
     this.chirperService = chirperService;
   }
   
-  @RequestMapping("/message-form")
+  @RequestMapping(value = "/message-form", method = RequestMethod.GET)
   public String showMessageForm() {
     return "message/messageForm";
   }
   
-  @RequestMapping("/create-message")
+  @RequestMapping(value = "/create-message", method = RequestMethod.POST)
   public String createMessage(@RequestParam String content, @RequestParam Long userId) {
     if (StringUtils.isBlank(content)) {
       return "message/error";

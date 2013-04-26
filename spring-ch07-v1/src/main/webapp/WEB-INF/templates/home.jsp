@@ -36,6 +36,10 @@
         </ul>
       </c:if>
     </div>
+    
+    <div class="options">
+      To get started, please <a href="${pageContext.request.contextPath}/login-form">login</a> or <a href="${pageContext.request.contextPath}/register-form">register</a> .
+    </div>
   </div>
   
   <div id="footer">

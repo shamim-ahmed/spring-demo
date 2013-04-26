@@ -50,6 +50,16 @@ div#main div.messages ul li span.username {
   font-weight: bold;
 }
 
+form span.label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+
+div#main div.nav, div#main div.options {
+  margin-top: 10px;
+}
+
 div#footer {
   background-color: #adff2f;
 }
