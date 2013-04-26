@@ -2,6 +2,8 @@ package edu.buet.cse.spring.ch07.v1.controller;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.buet.cse.spring.ch07.v1.model.User;
 import edu.buet.cse.spring.ch07.v1.service.ChirperService;
+import edu.buet.cse.spring.ch07.v1.util.AttributeNames;
 
 @Controller
 public class UserController {
@@ -27,10 +30,11 @@ public class UserController {
   }
   
   @RequestMapping(value = "/login", method = RequestMethod.POST)
-  public String login(@RequestParam String username, @RequestParam String password) {
+  public String login(@RequestParam String username, @RequestParam String password, HttpSession session) {
     User user = chirperService.getUser(username);
     
     if (user != null && user.getPassword().equalsIgnoreCase(password)) {
+      session.setAttribute(AttributeNames.USER_ATTRIBUTE_NAME, user);
       return "login/success";
     }
     
