@@ -16,7 +16,7 @@ public interface ChirperDao {
 
   List<Message> getLatestMessages(int count);
   
-  List<Message> getLatestMessagesFromUser(String username, int count);
+  List<Message> getLatestMessagesFromUser(Long userId, int count);
 
   boolean createMessage(Message message);
 }

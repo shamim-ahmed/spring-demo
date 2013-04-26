@@ -1,8 +1,42 @@
 package edu.buet.cse.spring.ch07.v1.controller;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import edu.buet.cse.spring.ch07.v1.model.Message;
+import edu.buet.cse.spring.ch07.v1.service.ChirperService;
 
 @Controller
 public class MessageController {
-
+  private final ChirperService chirperService;
+  
+  @Autowired
+  public MessageController(ChirperService chirperService) {
+    this.chirperService = chirperService;
+  }
+  
+  @RequestMapping("/message-form")
+  public String showMessageForm() {
+    return "message/messageForm";
+  }
+  
+  @RequestMapping("/create-message")
+  public String createMessage(@RequestParam String content, @RequestParam Long userId) {
+    if (StringUtils.isBlank(content)) {
+      return "message/error";
+    }
+    
+    Message message = new Message();
+    message.setContent(content);
+    message.setCreationDate(new Date());
+    message.setUser(chirperService.getUser(userId));
+    boolean result = chirperService.addMessage(message);
+    
+    return result ? "message/success" : "message/error";
+  }
 }

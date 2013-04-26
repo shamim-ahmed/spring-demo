@@ -14,7 +14,7 @@ public interface ChirperService {
 
   List<Message> getMessages(int count);
   
-  List<Message> getMessagesFromUser(String username, int count);
+  List<Message> getMessagesFromUser(Long userId, int count);
 
   boolean addUser(User user);
 

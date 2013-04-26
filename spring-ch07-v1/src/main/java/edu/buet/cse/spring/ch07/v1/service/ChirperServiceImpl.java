@@ -15,27 +15,27 @@ import edu.buet.cse.spring.ch07.v1.model.User;
 public class ChirperServiceImpl implements ChirperService {
   public static final int MAX_MESSAGE_COUNT = 10;
   private final ChirperDao chirperDao;
-  
+
   @Autowired
   public ChirperServiceImpl(ChirperDao chirperDao) {
     this.chirperDao = chirperDao;
   }
-  
+
   @Override
   public User getUser(Long id) {
     if (id == null) {
       return null;
     }
-    
+
     return chirperDao.getUser(id);
   }
-  
+
   @Override
   public User getUser(String username) {
     if (StringUtils.isBlank(username)) {
       return null;
     }
-    
+
     return chirperDao.getUser(username);
   }
 
@@ -44,7 +44,7 @@ public class ChirperServiceImpl implements ChirperService {
     if (id == null) {
       return null;
     }
-    
+
     return chirperDao.getMessage(id);
   }
 
@@ -53,25 +53,25 @@ public class ChirperServiceImpl implements ChirperService {
     if (count <= 0) {
       return Collections.emptyList();
     }
-    
+
     if (count > MAX_MESSAGE_COUNT) {
       count = MAX_MESSAGE_COUNT;
     }
-    
+
     return chirperDao.getLatestMessages(count);
   }
-  
+
   @Override
-  public List<Message> getMessagesFromUser(String username, int count) {
-    if (StringUtils.isBlank(username) || count <= 0) {
+  public List<Message> getMessagesFromUser(Long userId, int count) {
+    if (userId == null || count <= 0) {
       return Collections.emptyList();
     }
-    
+
     if (count > MAX_MESSAGE_COUNT) {
       count = MAX_MESSAGE_COUNT;
     }
-    
-    return chirperDao.getLatestMessagesFromUser(username, count);
+
+    return chirperDao.getLatestMessagesFromUser(userId, count);
   }
 
   @Override
