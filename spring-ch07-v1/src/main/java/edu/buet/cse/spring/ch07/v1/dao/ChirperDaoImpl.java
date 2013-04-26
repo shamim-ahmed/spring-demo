@@ -26,6 +26,18 @@ public class ChirperDaoImpl implements ChirperDao {
     User user = (User) hibernateTemplate.get(User.class, id);
     return user;
   }
+  
+  @Override
+  public User getUser(String username) {
+    @SuppressWarnings("unchecked")
+    List<User>  users = hibernateTemplate.findByNamedParam("from User u where u.username = :name", "name", username);
+    
+    if (users != null && users.size() == 1) {
+      return users.get(0);
+    }
+    
+    return null;
+  }
 
   @Override
   @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
@@ -45,6 +57,15 @@ public class ChirperDaoImpl implements ChirperDao {
     hibernateTemplate.setMaxResults(count);
     @SuppressWarnings("unchecked")
     List<Message> messages = hibernateTemplate.find("from Message m order by m.id desc");
+    
+    return messages;
+  }
+  
+  @Override
+  public List<Message> getLatestMessagesFromUser(String username, int count) {
+    hibernateTemplate.setMaxResults(count);
+    @SuppressWarnings("unchecked")
+    List<Message> messages = hibernateTemplate.findByNamedParam("from Message m inner join User u where m.id = u.id and u.username = :name order by m.id desc", "name", username);
     
     return messages;
   }

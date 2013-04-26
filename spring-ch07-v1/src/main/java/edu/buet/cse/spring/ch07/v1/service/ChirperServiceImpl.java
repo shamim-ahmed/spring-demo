@@ -3,6 +3,7 @@ package edu.buet.cse.spring.ch07.v1.service;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +29,15 @@ public class ChirperServiceImpl implements ChirperService {
     
     return chirperDao.getUser(id);
   }
+  
+  @Override
+  public User getUser(String username) {
+    if (StringUtils.isBlank(username)) {
+      return null;
+    }
+    
+    return chirperDao.getUser(username);
+  }
 
   @Override
   public Message getMessage(Long id) {
@@ -49,6 +59,19 @@ public class ChirperServiceImpl implements ChirperService {
     }
     
     return chirperDao.getLatestMessages(count);
+  }
+  
+  @Override
+  public List<Message> getMessagesFromUser(String username, int count) {
+    if (StringUtils.isBlank(username) || count <= 0) {
+      return Collections.emptyList();
+    }
+    
+    if (count > MAX_MESSAGE_COUNT) {
+      count = MAX_MESSAGE_COUNT;
+    }
+    
+    return chirperDao.getLatestMessagesFromUser(username, count);
   }
 
   @Override
