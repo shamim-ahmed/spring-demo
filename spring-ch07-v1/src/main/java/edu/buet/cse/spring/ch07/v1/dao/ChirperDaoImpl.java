@@ -65,7 +65,7 @@ public class ChirperDaoImpl implements ChirperDao {
   public List<Message> getLatestMessagesFromUser(String username, int count) {
     hibernateTemplate.setMaxResults(count);
     @SuppressWarnings("unchecked")
-    List<Message> messages = hibernateTemplate.findByNamedParam("from Message m inner join User u where m.id = u.id and u.username = :name order by m.id desc", "name", username);
+    List<Message> messages = hibernateTemplate.findByNamedParam("select m from Message m join m.user u where u.username = :name order by m.id desc", "name", username);
     
     return messages;
   }
