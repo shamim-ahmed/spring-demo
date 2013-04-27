@@ -14,6 +14,10 @@
   </div>
   
   <div id="main">
+    <div class="nav">
+      <a href="${pageContext.request.contextPath}">Home</a>
+    </div>
+    
     <h2>Messages</h2>
     
     <ul>

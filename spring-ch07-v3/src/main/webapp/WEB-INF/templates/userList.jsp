@@ -15,7 +15,7 @@
   
   <div id="main">
     <div class="nav">
-      <a href="${pageContext.request.contextPath}/">Home</a>
+      <a href="${pageContext.request.contextPath}">Home</a>
     </div>
     
     <h2>Registered Users</h2>

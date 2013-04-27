@@ -24,6 +24,10 @@ div#main {
   background-color: #dcdcdc;
 }
 
+div#main div.nav {
+  margin-bottom: 10px;
+}
+
 div#main ul {
   margin-left: 20px;
 }
