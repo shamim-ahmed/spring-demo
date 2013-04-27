@@ -9,10 +9,7 @@
 
   <name>spring-ch07-v4</name>
   <url>http://maven.apache.org</url>
-  <description>
-    This project shows how to configure a simple web application with Spring-MVC. The view resolver used is 
-    InternalResourceViewResolver.
-  </description>
+  <description>This project shows how to configure a simple web application with Spring-MVC. SimpleUrlHandlerMapping is used to map an incoming request to a controller.</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
