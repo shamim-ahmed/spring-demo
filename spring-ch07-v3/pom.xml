@@ -9,7 +9,11 @@
 
   <name>spring-ch07-v3</name>
   <url>http://maven.apache.org</url>
-
+  <description>
+    This project shows how to configure a simple web application with Spring-MVC. The view resolver used is 
+    InternalResourceViewResolver.
+  </description>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <org.springframework.version>3.0.6.RELEASE</org.springframework.version>
