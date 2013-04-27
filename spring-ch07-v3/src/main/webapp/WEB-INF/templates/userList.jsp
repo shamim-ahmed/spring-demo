@@ -14,11 +14,13 @@
   </div>
   
   <div id="main">
-    <div class="info">Chirper is an application that allows users to post messages.</div>
+    <h2>Registered Users</h2>
     
-    <div class="options">
-      You can view lists of <a href="${pageContext.request.contextPath}/user-list">users</a> or <a href="${pageContext.request.contextPath}/message-list">messages</a>
-    </div> 
+    <ul>
+      <c:forEach var="user" items="${requestScope.users}">
+        <li><c:out value="${user.username}"/></li>
+      </c:forEach>
+    </ul>
   </div>
   
   <div id="footer">

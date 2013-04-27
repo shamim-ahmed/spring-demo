@@ -32,6 +32,10 @@ div#main ul li {
   list-style-type: disc;
 }
 
+div#main div.options {
+  margin-top: 10px;
+}
+
 div#footer {
   background-color: #adff2f;
 }
