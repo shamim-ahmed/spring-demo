@@ -9,6 +9,7 @@
 
   <name>spring-ch08-v1</name>
   <url>http://maven.apache.org</url>
+  <description>This project demonstrates how to configure a simple flow-based web application.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
