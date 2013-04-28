@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      You are at Stage 1
+      <h2>You are at Stage 1</h2>
     </div>
     
     <div class="options">

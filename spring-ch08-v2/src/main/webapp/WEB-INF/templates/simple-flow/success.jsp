@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      You've reached the Success page.
+      <h2>You've reached the Success page</h2>
     </div>
     
     <div class="options">
