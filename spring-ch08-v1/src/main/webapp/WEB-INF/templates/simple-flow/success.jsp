@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      Success !
+      <h2>Success !</h2>
     </div>
     
     <div class="options">

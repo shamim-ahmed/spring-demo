@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      Cancel
+      <h2>Cancel</h2>
     </div>
     
     <div class="options">
