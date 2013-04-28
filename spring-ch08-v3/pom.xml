@@ -9,7 +9,7 @@
 
   <name>spring-ch08-v3</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to save values entered by the user in a spring webflow based application</description>
+  <description>This project demonstrates how to perform validation using decision states in the context of spring webflow</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
