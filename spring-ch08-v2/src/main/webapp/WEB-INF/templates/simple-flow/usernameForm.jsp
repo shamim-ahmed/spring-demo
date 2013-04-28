@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      <h2>You are at Stage 0</h2>
+      <h2>Enter Username</h2>
     </div>
     
     <div class="options">

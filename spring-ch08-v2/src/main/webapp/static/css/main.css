@@ -40,8 +40,13 @@ div#main div.info div.userDetails {
   margin-top: 10px;
 }
 
+div.options button {
+  margin-top: 10px;
+}
+
 span.label {
   width: 100px;
+  margin-right: 5px;
 }
 
 div#footer {

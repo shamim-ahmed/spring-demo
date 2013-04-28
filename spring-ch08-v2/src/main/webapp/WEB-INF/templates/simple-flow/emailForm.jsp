@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      <h2>You are at Stage 2</h2>
+      <h2>Enter Email Address</h2>
     </div>
     
     <div class="options">

@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      <h2>You've reached the Success page</h2>
+      <h2>Thanks for your input</h2>
     </div>
     
     <div class="userDetails">
