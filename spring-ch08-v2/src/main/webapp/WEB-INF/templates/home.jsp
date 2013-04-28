@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        To get started, please click <a href="simple-flow">here</a>
+        To get started, please click <a href="user-flow">here</a>
       </form>
     </div> 
   </div>

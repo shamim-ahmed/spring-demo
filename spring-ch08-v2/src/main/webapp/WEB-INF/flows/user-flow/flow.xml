@@ -6,7 +6,7 @@
       start-state="askUsername">
   <var name="user" class="edu.buet.cse.spring.ch08.v2.model.User"/>
   
-  <view-state id="askUsername" view="simple-flow/usernameForm" model="customer">
+  <view-state id="askUsername" view="user-flow/usernameForm" model="customer">
     <transition on="next" to="saveUsername"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
@@ -16,7 +16,7 @@
     <transition to="askPassword"/>
   </action-state>
   
-  <view-state id="askPassword" view="simple-flow/passwordForm" model="customer">
+  <view-state id="askPassword" view="user-flow/passwordForm" model="customer">
     <transition on="next" to="savePassword"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
@@ -26,7 +26,7 @@
     <transition to="askEmail"/>
   </action-state>
   
-  <view-state id="askEmail" view="simple-flow/emailForm" model="customer">
+  <view-state id="askEmail" view="user-flow/emailForm" model="customer">
     <transition on="next" to="saveEmail"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
@@ -36,6 +36,6 @@
     <transition to="success"/>
   </action-state>
   
-  <view-state id="success" view="simple-flow/success" model="user"/>
-  <view-state id="cancel" view="simple-flow/cancel" model="user"/>
+  <view-state id="success" view="user-flow/success" model="user"/>
+  <view-state id="cancel" view="user-flow/cancel" model="user"/>
 </flow>
