@@ -14,11 +14,12 @@
   
   <div id="main">
     <div class="info">
-      <h2>You are at Stage 1</h2>
+      <h2>You are at Stage 2</h2>
     </div>
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
+        <span class="label">Email</span><input type="text" name="email"/><br/>
         <button type="submit" name="_eventId_next">Next</button>
         &nbsp;&nbsp;
         <button type="submit" name="_eventId_cancel">Cancel</button>

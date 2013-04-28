@@ -36,6 +36,14 @@ div#main div.options {
   margin-top: 10px;
 }
 
+div#main div.info div.userDetails {
+  margin-top: 10px;
+}
+
+span.label {
+  width: 100px;
+}
+
 div#footer {
   background-color: #adff2f;
 }

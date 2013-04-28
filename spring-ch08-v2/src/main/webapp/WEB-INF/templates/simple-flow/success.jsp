@@ -17,6 +17,12 @@
       <h2>You've reached the Success page</h2>
     </div>
     
+    <div class="userDetails">
+      <span class="label">Username: </span><span>${user.username}</span><br/>
+      <span class="label">Password: </span><span>${user.password}</span><br/>
+      <span class="label">Email: </span><span>${user.email}</span>
+    </div>
+    
     <div class="options">
       <p>Please go back to <a href="${pageContext.request.contextPath}">home</a></p>
     </div> 
