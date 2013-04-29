@@ -14,7 +14,7 @@
   
   <div id="main">
     <div class="info">
-      <h2>You've cancelled the order</h2>
+      <h2>You've cancelled the flow</h2>
     </div>
     
     <div class="options">

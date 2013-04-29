@@ -4,18 +4,32 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
       start-state="askMobileNumber">
-      
+        
   <view-state id="askMobileNumber" view="pizza-flow/mobileNumberForm">
-    <transition on="next" to="lookupUser"/>
+    <transition on="next" to="saveMobileNumberInFlowScope"/>
     <transition on="cancel" to="cancel"/>
   </view-state> 
   
-  <action-state id="lookupUser">
+  <!-- 
+    It is to be noted that multiple set directives in an action state DOES NOT work. Only the first one
+    is executed in such cases. So, when I need to set multiple values, I need to split set directives into 
+    several decision states. I do not know if a cleaner solution is available. 
+   -->
+  <action-state id="saveMobileNumberInFlowScope">
     <set name="flowScope.mobileNumber" value="requestParameters.mobileNumber"/>
-    <evaluate result="flowScope.user" expression="T(edu.buet.cse.spring.ch08.v4.service.UserService).getUser(requestParameters.mobileNumber)"/>
-    <transition on="#{flowScope.user != null}" to="askPizzaName"/>
-    <transition on="#{flowScope.user == null}" to="createUser"/>
+    <transition to="lookupUser"/>
   </action-state>
+  
+  <action-state id="lookupUser">
+    <set name="flowScope.user" value="userService.findUser(flowScope.mobileNumber)"/>
+    <transition to="checkUser"/>
+  </action-state>
+  
+  <decision-state id="checkUser">
+    <if test="flowScope.user != null" 
+        then="askPizzaName"
+        else="createUser"/>
+  </decision-state>
   
   <action-state id="createUser">
     <set name="flowScope.user" value="new edu.buet.cse.spring.ch08.v4.model.User()"/>
@@ -47,7 +61,7 @@
   </action-state>
   
   <decision-state id="checkCity">
-    <if test="T(edu.buet.cse.spring.ch08.v4.service.CityService).isDeliveryAvailable(flowScope.user.city)"
+    <if test="cityService.isDeliveryAvailable(flowScope.user.city)"
         then="askPizzaName"
         else="showWarning"/>
   </decision-state>
@@ -68,10 +82,12 @@
   </action-state>
   
   <action-state id="saveUser">
-    <evaluate expression="T(edu.buet.cse.spring.ch08.v4.service.UserService).addUser(flowScope.user)"/>
+    <evaluate expression="userService.addUser(flowScope.user)"/>
     <transition to="success"/>
   </action-state>
  
   <view-state id="success" view="pizza-flow/success"/>
   <view-state id="cancel" view="pizza-flow/cancel"/>
+  
+  <bean-import resource="flow-beans.xml"/>
 </flow>
