@@ -21,7 +21,7 @@
   </action-state>
   
   <action-state id="lookupUser">
-    <set name="flowScope.user" value="userService.findUser(flowScope.mobileNumber)"/>
+    <evaluate result="flowScope.user" expression="userService.findUser(flowScope.mobileNumber)"/>
     <transition to="checkUser"/>
   </action-state>
   
@@ -89,5 +89,6 @@
   <view-state id="success" view="pizza-flow/success"/>
   <view-state id="cancel" view="pizza-flow/cancel"/>
   
+  <!-- import the beans that are used in the expressions -->
   <bean-import resource="flow-beans.xml"/>
 </flow>

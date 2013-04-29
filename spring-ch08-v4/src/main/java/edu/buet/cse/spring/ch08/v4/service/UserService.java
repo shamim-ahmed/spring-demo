@@ -19,7 +19,6 @@ public class UserService {
       return;
     }
      
-    System.out.println(user);
     userMap.put(user.getMobileNumber(), user);
   }
 }
