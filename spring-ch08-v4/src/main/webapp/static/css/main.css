@@ -20,6 +20,10 @@ body h2 {
   margin-bottom: 5px;
 }
 
+h2.warning {
+  color: red;
+}
+
 div#main {
   background-color: #dcdcdc;
 }

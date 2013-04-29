@@ -54,6 +54,14 @@
       <version>6.0</version>
       <scope>provided</scope>
     </dependency>
+    
+    <!-- misc -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
   
   <build>

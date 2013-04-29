@@ -14,11 +14,22 @@
   
   <div id="main">
     <div class="info">
-      <h2>You've cancelled the order</h2>
+      <h2>Enter Pizza name</h2>
     </div>
     
     <div class="options">
-      Go to <a href="${pageContext.request.contextPath}">Home</a>
+      <form action="${flowExecutionUrl}" method="post">
+        <span class="label">Pizza Name: </span>
+        <select name="pizzaName">
+          <option value="thai">Thai</option>
+          <option value="grilled">Grilled</option>
+          <option value="seafood">Sea Food</option>
+        </select>
+        <br/>
+        <button type="submit" name="_eventId_next">Next</button>
+        &nbsp;
+        <button type="submit" name="_eventId_cancel">Cancel</button>
+      </form>
     </div>
   </div>
   

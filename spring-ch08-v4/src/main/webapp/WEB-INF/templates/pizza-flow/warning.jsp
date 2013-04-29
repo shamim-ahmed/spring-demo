@@ -14,11 +14,16 @@
   
   <div id="main">
     <div class="info">
-      <h2>You've cancelled the order</h2>
+      <h2 class="warning">Warning</h2>
     </div>
     
     <div class="options">
-      Go to <a href="${pageContext.request.contextPath}">Home</a>
+      <form action="${flowExecutionUrl}" method="post">
+        <p>Delivery is not available in ${user.city}. You have to collect the pizza yourself</p>
+        <button type="submit" name="_eventId_next">OK</button>
+        &nbsp;
+        <button type="submit" name="_eventId_cancel">Cancel</button>
+      </form>
     </div>
   </div>
   

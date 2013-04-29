@@ -14,11 +14,18 @@
   
   <div id="main">
     <div class="info">
-      <h2>Success !</h2>
+      <h2>Order Details</h2>
+    </div>
+    
+    <div class="orderDetails">
+      <span class="label">Customer name: </span><span>${user.name}</span><br/>
+      <span class="label">Mobile No: </span><span>${user.mobileNumber}</span><br/>
+      <span class="label">City: </span><span>${user.city}</span><br/>
+      <span class="label">Pizza Name: </span><span>${user.pizzaName}</span>
     </div>
     
     <div class="options">
-      <p>Please go back to <a href="${pageContext.request.contextPath}">Home</a></p>
+      Go to <a href="${pageContext.request.contextPath}">Home</a>
     </div>
   </div>
   

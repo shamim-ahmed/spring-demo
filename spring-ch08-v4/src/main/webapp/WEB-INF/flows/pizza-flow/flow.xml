@@ -3,22 +3,75 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
-      start-state="state0">
-  <view-state id="state0" view="pizza-flow/page0">
-    <transition on="next" to="state1"/>
+      start-state="askMobileNumber">
+      
+  <view-state id="askMobileNumber" view="pizza-flow/mobileNumberForm">
+    <transition on="next" to="lookupUser"/>
+    <transition on="cancel" to="cancel"/>
+  </view-state> 
+  
+  <action-state id="lookupUser">
+    <set name="flowScope.mobileNumber" value="requestParameters.mobileNumber"/>
+    <evaluate result="flowScope.user" expression="T(edu.buet.cse.spring.ch08.v4.service.UserService).getUser(requestParameters.mobileNumber)"/>
+    <transition on="#{flowScope.user != null}" to="askPizzaName"/>
+    <transition on="#{flowScope.user == null}" to="createUser"/>
+  </action-state>
+  
+  <action-state id="createUser">
+    <set name="flowScope.user" value="new edu.buet.cse.spring.ch08.v4.model.User()"/>
+    <transition to="saveMobileNumber"/>
+  </action-state>
+  
+  <action-state id="saveMobileNumber">
+    <set name="flowScope.user.mobileNumber" value="flowScope.mobileNumber"/>
+    <transition to="askName"/>
+  </action-state>
+  
+  <view-state id="askName" view="pizza-flow/nameForm">
+    <transition on="next" to="saveName"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
   
-  <view-state id="state1" view="pizza-flow/page1">
-    <transition on="next" to="state2"/>
+  <action-state id="saveName">
+    <set name="flowScope.user.name" value="requestParameters.name"/>
+    <transition to="askCity"/>
+  </action-state>
+  
+  <view-state id="askCity" view="pizza-flow/cityForm">
+    <transition on="next" to="saveCity"/>
+  </view-state>
+  
+  <action-state id="saveCity">
+    <set name="flowScope.user.city" value="requestParameters.city"/>
+    <transition to="checkCity"/>
+  </action-state>
+  
+  <decision-state id="checkCity">
+    <if test="T(edu.buet.cse.spring.ch08.v4.service.CityService).isDeliveryAvailable(flowScope.user.city)"
+        then="askPizzaName"
+        else="showWarning"/>
+  </decision-state>
+  
+  <view-state id="showWarning" view="pizza-flow/warning">
+    <transition on="next" to="askPizzaName"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
   
-  <view-state id="state2" view="pizza-flow/page2">
-    <transition on="next" to="success"/>
+  <view-state id="askPizzaName" view="pizza-flow/pizzaNameForm">
+    <transition on="next" to="savePizzaName"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
   
+  <action-state id="savePizzaName">
+    <set name="flowScope.user.pizzaName" value="requestParameters.pizzaName"/>
+    <transition to="saveUser"/>
+  </action-state>
+  
+  <action-state id="saveUser">
+    <evaluate expression="T(edu.buet.cse.spring.ch08.v4.service.UserService).addUser(flowScope.user)"/>
+    <transition to="success"/>
+  </action-state>
+ 
   <view-state id="success" view="pizza-flow/success"/>
   <view-state id="cancel" view="pizza-flow/cancel"/>
 </flow>
