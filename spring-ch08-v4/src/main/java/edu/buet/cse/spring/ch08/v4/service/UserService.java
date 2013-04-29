@@ -11,10 +11,6 @@ public class UserService {
   private static final Map<String, User> userMap = new HashMap<>();
   
   public synchronized static User getUser(String mobileNumber) {
-    if (mobileNumber.equals("123456")) {
-      return new User();
-    }
-    
     return userMap.get(mobileNumber);
   }
   
