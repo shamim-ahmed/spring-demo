@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        <span class="label">Pizza Name: </span>
+        <span class="label">Pizza Name </span>
         <select name="pizzaName">
           <option value="thai">Thai</option>
           <option value="grilled">Grilled</option>

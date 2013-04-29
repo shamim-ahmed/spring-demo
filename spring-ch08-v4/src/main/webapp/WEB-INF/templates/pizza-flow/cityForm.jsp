@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        <span class="label">City: </span><input type="text" name="city"/><br/>
+        <span class="label">City </span><input type="text" name="city"/><br/>
         <button type="submit" name="_eventId_next">Next</button>
         &nbsp;&nbsp;
         <button type="submit" name="_eventId_cancel">Cancel</button>

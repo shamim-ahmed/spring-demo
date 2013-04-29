@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        <span class="label">Mobile Number: </span><input type="text" name="mobileNumber"/><br/>
+        <span class="label">Mobile Number </span><input type="text" name="mobileNumber"/><br/>
         <button type="submit" name="_eventId_next">Next</button>
         &nbsp;&nbsp;
         <button type="submit" name="_eventId_cancel">Cancel</button>
