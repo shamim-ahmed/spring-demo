@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="state0">
+  <view-state id="state0" view="main-flow/page0">
+    <transition on="next" to="state1"/>
+    <transition on="cancel" to="cancel"/>
+  </view-state>
+  
+  <view-state id="state1" view="main-flow/page1">
+    <transition on="next" to="state2"/>
+    <transition on="cancel" to="cancel"/>
+  </view-state>
+  
+  <view-state id="state2" view="main-flow/page2">
+    <transition on="next" to="success"/>
+    <transition on="cancel" to="cancel"/>
+  </view-state>
+  
+  <end-state id="success" view="main-flow/success"/>
+  <end-state id="cancel" view="main-flow/cancel"/>
+</flow>
