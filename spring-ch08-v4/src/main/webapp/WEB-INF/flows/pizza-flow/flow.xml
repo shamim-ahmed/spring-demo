@@ -85,9 +85,9 @@
     <evaluate expression="orderService.addOrder(flowScope.order)"/>
     <transition to="success"/>
   </action-state>
- 
-  <view-state id="success" view="pizza-flow/success"/>
-  <view-state id="cancel" view="pizza-flow/cancel"/>
+
+  <end-state id="success" view="pizza-flow/success"/>
+  <end-state id="cancel" view="pizza-flow/cancel"/>
   
   <!-- import the beans that are used in the expressions -->
   <bean-import resource="flow-beans.xml"/>
