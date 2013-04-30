@@ -54,6 +54,6 @@
     <transition to="success"/>
   </action-state>
   
-  <view-state id="success" view="user-flow/success"/>
-  <view-state id="cancel" view="user-flow/cancel"/>
+  <end-state id="success" view="user-flow/success"/>
+  <end-state id="cancel" view="user-flow/cancel"/>
 </flow>
