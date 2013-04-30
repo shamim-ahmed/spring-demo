@@ -9,10 +9,10 @@
     <transition on="cancel" to="cancel"/>
   </view-state>
   
-  <view-state id="state1" view="simple-flow/page1">
-    <transition on="next" to="state2"/>
-    <transition on="cancel" to="cancel"/>
-  </view-state>
+  <subflow-state id="state1" subflow="simple-subflow">
+    <transition on="subflow-success" to="state2"/>
+    <transition on="subflow-cancel" to="cancel"/>
+  </subflow-state>
   
   <view-state id="state2" view="simple-flow/page2">
     <transition on="next" to="success"/>
