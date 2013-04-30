@@ -21,7 +21,7 @@
   </action-state>
   
   <action-state id="lookupOrder">
-    <evaluate result="flowScope.order" expression="orderService.findUser(flowScope.mobileNumber)"/>
+    <evaluate result="flowScope.order" expression="orderService.findOrder(flowScope.mobileNumber)"/>
     <transition to="checkOrder"/>
   </action-state>
   
@@ -78,11 +78,11 @@
   
   <action-state id="savePizzaName">
     <set name="flowScope.order.pizzaName" value="requestParameters.pizzaName"/>
-    <transition to="saveUser"/>
+    <transition to="saveOrder"/>
   </action-state>
   
-  <action-state id="saveUser">
-    <evaluate expression="orderService.addUser(flowScope.order)"/>
+  <action-state id="saveOrder">
+    <evaluate expression="orderService.addOrder(flowScope.order)"/>
     <transition to="success"/>
   </action-state>
  

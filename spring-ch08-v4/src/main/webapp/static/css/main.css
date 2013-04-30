@@ -47,3 +47,7 @@ div#main div.options button {
 div#footer {
   background-color: #adff2f;
 }
+
+div.options button {
+  margin-top: 5px;
+}

@@ -10,15 +10,15 @@ import edu.buet.cse.spring.ch08.v4.model.Order;
 public class OrderService {
   private final Map<String, Order> orderMap = new HashMap<>();
   
-  public synchronized Order findUser(String mobileNumber) {
+  public synchronized Order findOrder(String mobileNumber) {
     return orderMap.get(mobileNumber);
   }
   
-  public synchronized void addUser(Order user) {
-    if (user == null || StringUtils.isBlank(user.getMobileNumber())) {
+  public synchronized void addOrder(Order order) {
+    if (order == null || StringUtils.isBlank(order.getMobileNumber())) {
       return;
     }
      
-    orderMap.put(user.getMobileNumber(), user);
+    orderMap.put(order.getMobileNumber(), order);
   }
 }

@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        <p class="warning">Delivery is not available in ${user.city}. You have to collect the pizza yourself</p>
+        <p class="warning">Delivery is not available in ${order.city}. You have to collect the pizza yourself</p>
         <button type="submit" name="_eventId_next">OK</button>
         &nbsp;
         <button type="submit" name="_eventId_cancel">Cancel</button>
