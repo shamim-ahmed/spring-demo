@@ -19,7 +19,7 @@
     
     <div class="options">
       <form action="${flowExecutionUrl}" method="post">
-        To start the flow demo, click <a href="main-flow">here</a>
+        To start the flow demo, click <a href="simple-flow">here</a>
       </form>
     </div> 
   </div>
