@@ -19,6 +19,6 @@
     <transition on="cancel" to="cancel"/>
   </view-state>
   
-  <view-state id="success" view="simple-flow/success"/>
-  <view-state id="cancel" view="simple-flow/cancel"/>
+  <end-state id="success" view="simple-flow/success"/>
+  <end-state id="cancel" view="simple-flow/cancel"/>
 </flow>
