@@ -3,7 +3,7 @@ package edu.buet.cse.spring.ch08.v4.service;
 import org.apache.commons.lang3.StringUtils;
 
 public class CityService {
-  private static final String[] cityNames = { "Sydney", "Canberra", "Melbourne" };
+  private final String[] cityNames = { "Sydney", "Canberra", "Melbourne" };
 
   public boolean isDeliveryAvailable(String city) {
     if (StringUtils.isBlank(city)) {

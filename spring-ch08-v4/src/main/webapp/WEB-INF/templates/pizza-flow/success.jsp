@@ -18,10 +18,10 @@
     </div>
     
     <div class="orderDetails">
-      <span class="label">Customer name: </span><span>${user.name}</span><br/>
-      <span class="label">Mobile No: </span><span>${user.mobileNumber}</span><br/>
-      <span class="label">City: </span><span>${user.city}</span><br/>
-      <span class="label">Pizza Name: </span><span>${user.pizzaName}</span>
+      <span class="label">Customer name: </span><span>${order.customerName}</span><br/>
+      <span class="label">Mobile No: </span><span>${order.mobileNumber}</span><br/>
+      <span class="label">City: </span><span>${order.city}</span><br/>
+      <span class="label">Pizza Name: </span><span>${order.pizzaName}</span>
     </div>
     
     <div class="options">

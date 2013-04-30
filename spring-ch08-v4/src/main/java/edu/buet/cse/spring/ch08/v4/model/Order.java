@@ -5,11 +5,11 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class User implements Serializable {
+public class Order implements Serializable {
   private static final long serialVersionUID = 1L;
   
   private String mobileNumber;
-  private String name;
+  private String customerName;
   private String city;
   private String pizzaName;
 
@@ -21,12 +21,12 @@ public class User implements Serializable {
     this.mobileNumber = mobileNumber;
   }
 
-  public String getName() {
-    return name;
+  public String getCustomerName() {
+    return customerName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCustomerName(String customerName) {
+    this.customerName = customerName;
   }
 
   public String getCity() {
@@ -49,7 +49,7 @@ public class User implements Serializable {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("mobileNumber", mobileNumber)
-           .append("name", name)
+           .append("customerName", customerName)
            .append("city", city);
     
     return builder.toString();

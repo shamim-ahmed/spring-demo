@@ -4,6 +4,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
   
- <bean id="userService" class="edu.buet.cse.spring.ch08.v4.service.UserService"/>
+ <bean id="orderService" class="edu.buet.cse.spring.ch08.v4.service.OrderService"/>
  <bean id="cityService" class="edu.buet.cse.spring.ch08.v4.service.CityService"/>
 </beans>

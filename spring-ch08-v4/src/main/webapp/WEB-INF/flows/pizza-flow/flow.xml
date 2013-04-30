@@ -17,37 +17,37 @@
    -->
   <action-state id="saveMobileNumberInFlowScope">
     <set name="flowScope.mobileNumber" value="requestParameters.mobileNumber"/>
-    <transition to="lookupUser"/>
+    <transition to="lookupOrder"/>
   </action-state>
   
-  <action-state id="lookupUser">
-    <evaluate result="flowScope.user" expression="userService.findUser(flowScope.mobileNumber)"/>
-    <transition to="checkUser"/>
+  <action-state id="lookupOrder">
+    <evaluate result="flowScope.order" expression="orderService.findUser(flowScope.mobileNumber)"/>
+    <transition to="checkOrder"/>
   </action-state>
   
-  <decision-state id="checkUser">
-    <if test="flowScope.user != null" 
+  <decision-state id="checkOrder">
+    <if test="flowScope.order != null" 
         then="askPizzaName"
-        else="createUser"/>
+        else="createOrder"/>
   </decision-state>
   
-  <action-state id="createUser">
-    <set name="flowScope.user" value="new edu.buet.cse.spring.ch08.v4.model.User()"/>
+  <action-state id="createOrder">
+    <set name="flowScope.order" value="new edu.buet.cse.spring.ch08.v4.model.Order()"/>
     <transition to="saveMobileNumber"/>
   </action-state>
   
   <action-state id="saveMobileNumber">
-    <set name="flowScope.user.mobileNumber" value="flowScope.mobileNumber"/>
-    <transition to="askName"/>
+    <set name="flowScope.order.mobileNumber" value="flowScope.mobileNumber"/>
+    <transition to="askCustomerName"/>
   </action-state>
   
-  <view-state id="askName" view="pizza-flow/nameForm">
-    <transition on="next" to="saveName"/>
+  <view-state id="askCustomerName" view="pizza-flow/customerNameForm">
+    <transition on="next" to="saveCustomerName"/>
     <transition on="cancel" to="cancel"/>
   </view-state>
   
-  <action-state id="saveName">
-    <set name="flowScope.user.name" value="requestParameters.name"/>
+  <action-state id="saveCustomerName">
+    <set name="flowScope.order.customerName" value="requestParameters.customerName"/>
     <transition to="askCity"/>
   </action-state>
   
@@ -56,12 +56,12 @@
   </view-state>
   
   <action-state id="saveCity">
-    <set name="flowScope.user.city" value="requestParameters.city"/>
+    <set name="flowScope.order.city" value="requestParameters.city"/>
     <transition to="checkCity"/>
   </action-state>
   
   <decision-state id="checkCity">
-    <if test="cityService.isDeliveryAvailable(flowScope.user.city)"
+    <if test="cityService.isDeliveryAvailable(flowScope.order.city)"
         then="askPizzaName"
         else="showWarning"/>
   </decision-state>
@@ -77,12 +77,12 @@
   </view-state>
   
   <action-state id="savePizzaName">
-    <set name="flowScope.user.pizzaName" value="requestParameters.pizzaName"/>
+    <set name="flowScope.order.pizzaName" value="requestParameters.pizzaName"/>
     <transition to="saveUser"/>
   </action-state>
   
   <action-state id="saveUser">
-    <evaluate expression="userService.addUser(flowScope.user)"/>
+    <evaluate expression="orderService.addUser(flowScope.order)"/>
     <transition to="success"/>
   </action-state>
  
