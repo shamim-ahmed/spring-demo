@@ -6,12 +6,12 @@
       start-state="state1-substate0">
   <view-state id="state1-substate0" view="simple-subflow/page1-sub0">
     <transition on="next" to="state1-substate1"/>
-    <transition on="cancel" to="cancel"/>
+    <transition on="cancel" to="subflow-cancel"/>
   </view-state>
   
   <view-state id="state1-substate1" view="simple-subflow/page1-sub1">
     <transition on="next" to="state1-substate2"/>
-    <transition on="cancel" to="cancel"/>
+    <transition on="cancel" to="subflow-cancel"/>
   </view-state>
   
   <view-state id="state1-substate2" view="simple-subflow/page1-sub2">
