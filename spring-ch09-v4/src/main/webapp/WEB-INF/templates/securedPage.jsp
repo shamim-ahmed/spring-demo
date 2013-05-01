@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,11 @@
   
   <div id="main">
     <div class="info">
-      This page is secured. It contains top secret info :-)
+      <p>This page is secured. It contains top secret info :-)</p>
+      
+      <security:authorize access="isAuthenticated() and principal.username == 'shamim'">
+        <p>Long time no see, Shamim !</p>
+      </security:authorize>    
     </div>
     
     <div class="options">
