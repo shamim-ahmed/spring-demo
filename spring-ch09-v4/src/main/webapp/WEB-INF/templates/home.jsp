@@ -20,6 +20,11 @@
     </div>
     
     <security:authentication var="principal" property="principal"/>
+    
+    <%-- 
+      Note : the following technique of accessing class name of a bean is interesting. However, in real world 
+      projects it is better to write a separate tag to perform the test in a cleaner way.  
+    --%>
     <c:set var="principalClassName" value="${principal.getClass().name}" />
     
     <c:if test="${principalClassName != 'java.lang.String'}">
