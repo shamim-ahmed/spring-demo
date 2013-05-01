@@ -6,7 +6,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class GetUserNameTag extends SimpleTagSupport {
+public class GetUsernameTag extends SimpleTagSupport {
   private String var;
 
   public void setVar(String var) {
