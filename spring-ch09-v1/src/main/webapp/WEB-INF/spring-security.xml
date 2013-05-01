@@ -8,6 +8,8 @@
   <bean:bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy"/>
   
   <http auto-config="true">
+    <form-login/>
+    <http-basic/>
     <intercept-url pattern="/secured-page" access="ROLE_USER"/>
   </http>
   
