@@ -10,7 +10,7 @@
   
   <tag>
     <name>getUsername</name>
-    <tag-class>edu.buet.cse.spring.ch09.v2.tag.GetUserNameTag</tag-class>
+    <tag-class>edu.buet.cse.spring.ch09.v3.tag.GetUserNameTag</tag-class>
     <body-content>empty</body-content>
     
     <attribute>
