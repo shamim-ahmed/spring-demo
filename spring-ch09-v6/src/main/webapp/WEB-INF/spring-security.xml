@@ -9,25 +9,19 @@
   
   <!-- note the use of expressions -->
   <http auto-config="true" use-expressions="true">
-    <intercept-url pattern="/secured-page" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
+    <intercept-url pattern="/secured-page" access="isAuthenticated()"/>
     <form-login login-page="/login-form" authentication-failure-url="/login-form?error=true"/>
   </http>
   
-  <!-- data source -->
-  <bean:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-    <bean:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <bean:property name="url" value="jdbc:mysql://localhost:3306/spring3db"/>
-    <bean:property name="username" value="root"/>
-    <bean:property name="password" value="admin"/>
-    <bean:property name="initialSize" value="5"/>
-    <bean:property name="maxActive" value="10"/>
-  </bean:bean>
+  <ldap-server root="dc=habuma,dc=com" />
   
-  <jdbc-user-service id="userService" 
-                     data-source-ref="dataSource"
-                     users-by-username-query="SELECT username, password, TRUE FROM User WHERE username = ?"
-                     authorities-by-username-query="SELECT username, authority FROM Role WHERE username = ?"/>
+  <ldap-user-service id="userService"  
+                     user-search-base="ou=people"
+                     user-search-filter="(uid={0})"
+                     group-search-base="ou=groups" 
+                     group-search-filter="member={0}" />
   
+  <!-- configuration for authentication manager -->
   <authentication-manager>
     <authentication-provider user-service-ref="userService"/>
   </authentication-manager>
