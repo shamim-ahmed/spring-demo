@@ -62,6 +62,14 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- aop related -->
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.2</version>
+      <scope>compile</scope>
+    </dependency>
+    
     <!-- javaee dependency -->
     <dependency>
       <groupId>javax</groupId>
