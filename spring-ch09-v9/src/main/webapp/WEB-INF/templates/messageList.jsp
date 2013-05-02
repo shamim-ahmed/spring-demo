@@ -22,7 +22,7 @@
       <h3>Content of Messages</h3>
       
       <c:forEach var="msg" items="${messages}">
-        <p><c:out value="${msg.content}"/></p>
+        <p><c:out value="${msg.content}"/> - <c:out value="${msg.username}"/></p>
       </c:forEach>
     </div>
     

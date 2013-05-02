@@ -20,7 +20,7 @@
   <div id="main">
     <div class="info">
       <h3>Message Content</h3>
-      <p><c:out value="${message.content}"/></p>
+      <p><c:out value="${message.content}"/> - <c:out value="${message.username}"/></p>
     </div>
     
     <div class="options">
