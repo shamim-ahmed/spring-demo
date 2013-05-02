@@ -36,6 +36,19 @@ div#main div.options {
   margin-top: 10px;
 }
 
+div.fruitList, div.colorList, div.poem {
+  margin-top: 10px;
+}
+
 div#footer {
   background-color: #adff2f;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+span.label {
+  width: 100px;
+  display: inline-block;
 }

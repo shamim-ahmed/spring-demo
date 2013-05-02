@@ -18,7 +18,7 @@
   
   <div id="main">
     <div class="info">
-      This application demonstrates basic aspects of Spring Security.
+      <h2>This application demonstrates basic aspects of Spring Security.</h2>
     </div>
     
     <chirp:getUsername var="username"/>

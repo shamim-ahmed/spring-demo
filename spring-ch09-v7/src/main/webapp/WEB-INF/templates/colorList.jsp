@@ -20,6 +20,8 @@
       <h2>This application demonstrates basic aspects of Spring Security.</h2>
       
       <div class="colorList">
+        <h3>List of colors</h3>
+        
         <ul>
           <li>Red</li>
           <li>Green</li>

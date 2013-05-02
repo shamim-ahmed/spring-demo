@@ -21,6 +21,8 @@
     </div>
     
     <div class="fruitList">
+      <h3>List of fruits</h3>
+      
       <ul>
         <li>Apple</li>
         <li>Orange</li>

@@ -17,6 +17,8 @@
     
   <div id="main">
     <div class="info">
+      <h3>Login Form</h3>
+      
       <form action="${ctxPath}/j_spring_security_check" method="post">
         <span class="label">Username</span><input type="text" name="j_username"/><br/>
         <span class="label">Password</span><input type="password" name="j_password"/><br/>
