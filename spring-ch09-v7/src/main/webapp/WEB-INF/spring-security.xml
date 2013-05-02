@@ -7,17 +7,20 @@
   <!-- the bean to which request will be forwarded -->
   <bean:bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy"/>
   
-  <http auto-config="true">
-    <form-login/>
+  <http auto-config="true" use-expressions="true">
+    <form-login login-page="/login-form"/>
     <http-basic/>
-    <intercept-url pattern="/secured-page" access="ROLE_USER"/>
+    <intercept-url pattern="/color-list" access="isAuthenticated() and hasRole('ROLE_PAINTER')"/>
+    <intercept-url pattern="/fruit-list" access="isAuthenticated() and hasRole('ROLE_CHEF')"/>
+    <intercept-url pattern="/poem" access="isAuthenticated() and hasRole('ROLE_POET')"/>
   </http>
   
   <authentication-manager>
     <authentication-provider>
       <user-service>
-        <user name="johnson" password="spring" authorities="ROLE_USER"/>
-        <user name="shamim" password="secret" authorities="ROLE_ADMIN"/>
+        <user name="monet" password="monet" authorities="ROLE_PAINTER"/>
+        <user name="ratatoulle" password="ratatoulle" authorities="ROLE_CHEF"/>
+        <user name="browning" password="browning" authorities="ROLE_POET"/>
       </user-service>
     </authentication-provider>
   </authentication-manager>
