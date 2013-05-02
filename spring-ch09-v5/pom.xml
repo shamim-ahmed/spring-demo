@@ -9,7 +9,7 @@
 
   <name>spring-ch09-v5</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to use tags from Spring Security library to determine various properties of the user and his roles.</description>
+  <description>This project demonstrates how to authenticate the user against the credentials stored in the database.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
