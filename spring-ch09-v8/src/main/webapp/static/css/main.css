@@ -52,3 +52,8 @@ span.label {
   width: 100px;
   display: inline-block;
 }
+
+p.error {
+  margin: 5px 0;
+  color: red;
+}
