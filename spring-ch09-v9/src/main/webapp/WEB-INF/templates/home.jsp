@@ -30,6 +30,7 @@
            <li><a href="${ctxPath}/message-list">List of messages</a></li>
            <li><a href="${ctxPath}/message-form">Create a message</a></li>
            <li><a href="${ctxPath}/message-search-form">Find a message</a></li>
+           <li><a href="${ctxPath}/j_spring_security_logout">Logout</a></li>
           </ul>
         </c:when>
         <c:otherwise>
