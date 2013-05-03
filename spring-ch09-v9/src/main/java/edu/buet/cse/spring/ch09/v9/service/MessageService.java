@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.TreeMap;
 
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
@@ -34,6 +35,7 @@ public class MessageService {
     }
   }
   
+  @PostAuthorize("returnObject.username == principal.username")
   public synchronized Message getMessageById(Long id) {
     return messageMap.get(id);
   }
@@ -44,6 +46,7 @@ public class MessageService {
     return new ArrayList<>(messageMap.values());
   }
   
+  @PreAuthorize("(hasRole('ROLE_USER') and message.content.length <= 50) or hasRole('ROLE_ADMIN')")
   public synchronized void addMessage(Message message) {
     Long max = messageMap.lastKey();
     

@@ -39,6 +39,10 @@
         <button type="submit">Submit</button>
       </c:if>
     </div>
+    
+    <div class="options">
+      Go to <a href="${ctxPath}">Home</a>
+    </div>
   </div>
   
   <div id="footer">
