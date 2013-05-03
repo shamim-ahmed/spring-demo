@@ -13,7 +13,7 @@
   <mvc:annotation-driven/>
   <context:component-scan base-package="edu.buet.cse.spring.ch09.v10"/>
   
-  <bean id="permissionEvaluator" class="edu.buet.cse.spring.ch09.v10.model.MessagePermissionEvaluator"/>
+  <bean id="permissionEvaluator" class="edu.buet.cse.spring.ch09.v10.evaluator.MessagePermissionEvaluator"/>
   
   <bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
     <property name="permissionEvaluator" ref="permissionEvaluator"/>

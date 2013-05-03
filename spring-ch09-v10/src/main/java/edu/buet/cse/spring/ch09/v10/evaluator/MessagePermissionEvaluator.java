@@ -1,9 +1,11 @@
-package edu.buet.cse.spring.ch09.v10.model;
+package edu.buet.cse.spring.ch09.v10.evaluator;
 
 import java.io.Serializable;
 
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
+
+import edu.buet.cse.spring.ch09.v10.model.Message;
 
 /**
  * This permission evaluator ensures that a user can only view his own message
