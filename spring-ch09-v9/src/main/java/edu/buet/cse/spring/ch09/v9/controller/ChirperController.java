@@ -5,7 +5,6 @@ import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,14 +17,10 @@ import edu.buet.cse.spring.ch09.v9.service.MessageService;
 
 @Controller
 public class ChirperController {
-  @Autowired
   private MessageService messageService;
-  
-  public MessageService getMessageService() {
-    return messageService;
-  }
 
-  public void setMessageService(MessageService messageService) {
+  @Autowired
+  public ChirperController(MessageService messageService) {
     this.messageService = messageService;
   }
 
@@ -48,7 +43,6 @@ public class ChirperController {
   }
 
   @RequestMapping(value = "/message-list", method = RequestMethod.GET)
-  @PreAuthorize("hasRole('ROLE_ADMIN')")
   public String getMessages(ModelMap modelMap) {
     Collection<Message> messages = messageService.getMessages();
     modelMap.put("messages", messages);

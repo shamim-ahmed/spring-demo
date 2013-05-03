@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.TreeMap;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
 import edu.buet.cse.spring.ch09.v9.model.Message;
@@ -35,6 +36,7 @@ public class MessageService {
     return messageMap.get(id);
   }
   
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   public synchronized Collection<Message> getMessages() {
     return messageMap.values();
   }
