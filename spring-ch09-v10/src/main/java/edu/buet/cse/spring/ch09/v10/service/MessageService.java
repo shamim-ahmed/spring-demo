@@ -35,7 +35,7 @@ public class MessageService {
     }
   }
   
-  @PostAuthorize("returnObject.username == principal.username")
+  @PostAuthorize("hasPermission(returnObject, 'view')")
   public synchronized Message getMessageById(Long id) {
     return messageMap.get(id);
   }
