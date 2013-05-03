@@ -12,10 +12,104 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.springframework.version>3.0.6.RELEASE</org.springframework.version>
   </properties>
   
   <dependencyManagement>
     <dependencies>
+      <!-- core spring dependencies -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${org.springframework.version}</version>
+        <scope>compile</scope>
+      </dependency>
+    
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${org.springframework.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      
+        <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${org.springframework.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!-- spring jdbc integration -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${org.springframework.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!-- transactions -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${org.springframework.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>jta</artifactId>
+        <version>1.1</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!-- connection pooling -->
+      <dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>1.4</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!--  mysql jdbc -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.21</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!-- logging -->
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.16</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <!-- javaee dependency -->
+      <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-web-api</artifactId>
+        <version>6.0</version>
+        <scope>provided</scope>
+      </dependency>
+      
+      <!-- jstl -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.1.2</version>
+        <scope>compile</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>taglibs</groupId>
+        <artifactId>standard</artifactId>
+        <version>1.1.2</version>
+        <scope>compile</scope>
+      </dependency>
+    
+      <!-- misc -->
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>

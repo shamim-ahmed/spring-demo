@@ -32,7 +32,7 @@
   
   <bean class="org.springframework.remoting.rmi.RmiServiceExporter"
     p:service-ref="chirperService"
-    p:serviceName="ChirperService"
+    p:serviceName="Chirper"
     p:serviceInterface="edu.buet.cse.spring.ch10.v1.service.ChirperService"/>
 </beans>
                          

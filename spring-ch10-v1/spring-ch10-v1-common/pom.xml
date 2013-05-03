@@ -13,6 +13,7 @@
   
   <name>spring-ch10-v1-common</name>
   <url>http://maven.apache.org</url>
+  <description>This module contains common classes that are required both by the client and the service</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
