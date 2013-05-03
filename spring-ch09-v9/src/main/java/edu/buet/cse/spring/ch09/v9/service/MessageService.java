@@ -46,7 +46,7 @@ public class MessageService {
     return new ArrayList<>(messageMap.values());
   }
   
-  @PreAuthorize("(hasRole('ROLE_USER') and message.content.length <= 50) or hasRole('ROLE_ADMIN')")
+  @PreAuthorize("(hasRole('ROLE_USER') and #message.content.length() <= 50) or hasRole('ROLE_ADMIN')")
   public synchronized void addMessage(Message message) {
     Long max = messageMap.lastKey();
     
