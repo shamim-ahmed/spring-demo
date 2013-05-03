@@ -1,7 +1,7 @@
 package edu.buet.cse.spring.ch09.v9.controller;
 
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class ChirperController {
 
   @RequestMapping(value = "/message-list", method = RequestMethod.GET)
   public String getMessages(ModelMap modelMap) {
-    Collection<Message> messages = messageService.getMessages();
+    List<Message> messages = messageService.getMessages();
     modelMap.put("messages", messages);
 
     return "messageList";

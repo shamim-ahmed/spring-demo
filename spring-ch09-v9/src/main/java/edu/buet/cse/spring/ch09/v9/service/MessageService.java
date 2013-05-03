@@ -1,9 +1,11 @@
 package edu.buet.cse.spring.ch09.v9.service;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.TreeMap;
 
+import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
@@ -37,8 +39,9 @@ public class MessageService {
   }
   
   @PreAuthorize("hasRole('ROLE_ADMIN')")
-  public synchronized Collection<Message> getMessages() {
-    return messageMap.values();
+  @PostFilter("filterObject.username == principal.username")
+  public synchronized List<Message> getMessages() {
+    return new ArrayList<>(messageMap.values());
   }
   
   public synchronized void addMessage(Message message) {
