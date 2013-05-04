@@ -9,10 +9,13 @@ import java.util.Map;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.buet.cse.spring.ch10.v1.model.Message;
 import edu.buet.cse.spring.ch10.v1.model.User;
 
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
   private static final String GET_USER_SQL = "SELECT * FROM User WHERE id = ?";
   private static final String GET_MESSAGE_SQL = "SELECT * FROM Message WHERE id = ?";
@@ -49,6 +52,7 @@ public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
   }
 
   @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
   public boolean addUser(User user) {
     Map<String, Object> paramMap = new HashMap<>();
     paramMap.put("uname", user.getUsername());
@@ -61,6 +65,7 @@ public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
   }
 
   @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
   public boolean addMessage(Message message) {
     Map<String, Object> paramMap = new HashMap<>();
     paramMap.put("txt", message.getContent());
