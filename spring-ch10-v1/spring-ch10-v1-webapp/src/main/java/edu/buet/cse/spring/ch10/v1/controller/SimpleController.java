@@ -7,9 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import edu.buet.cse.spring.ch10.v1.model.Message;
 import edu.buet.cse.spring.ch10.v1.model.User;
 import edu.buet.cse.spring.ch10.v1.service.ChirperService;
 
@@ -33,18 +31,5 @@ public class SimpleController {
     modelMap.put("users", users);
     
     return "userList";
-  }
-  
-  @RequestMapping(value = "/user-id-form", method = RequestMethod.GET)
-  public String showUserIdForm() {
-    return "messageIdForm";
-  }
-  
-  @RequestMapping(value = "/messages", method = RequestMethod.GET)
-  public String showMessages(@RequestParam Long userId, ModelMap modelMap) {
-    Collection<Message> messages = chirperService.getMessagesByUserId(userId);
-    modelMap.put("messages", messages);
-    
-    return "messages";
   }
 }

@@ -17,11 +17,16 @@
   
   <div id="main">
     <div class="info">
-      This application demonstrates how Spring Remoting works.
+      <h2>User List</h2>
+      <ul>
+        <c:forEach var="user" items="${users}">
+          <li><c:out value="${user.username}"/></li>
+        </c:forEach>
+      </ul>
     </div>
     
     <div class="options">
-      Click <a href="${ctxPath}/users">here</a> to see a list of users.
+      Go to <a href="${ctxPath}">Home</a>
     </div> 
   </div>
   
