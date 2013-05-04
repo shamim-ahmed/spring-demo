@@ -3,13 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.buet.cse</groupId>
-  <artifactId>spring-ch10-v1</artifactId>
+  <artifactId>spring-ch10-v2</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>spring-ch10-v1</name>
+  <name>spring-ch10-v2</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to export a service so that it can be accessed over RMI</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -135,8 +134,8 @@
   </build>
   
   <modules>
-    <module>spring-ch10-v1-common</module>
-    <module>spring-ch10-v1-webapp</module>
-    <module>spring-ch10-v1-client</module>
+    <module>spring-ch10-v2-common</module>
+    <module>spring-ch10-v2-webapp</module>
+    <module>spring-ch10-v2-client</module>
   </modules>
 </project>
