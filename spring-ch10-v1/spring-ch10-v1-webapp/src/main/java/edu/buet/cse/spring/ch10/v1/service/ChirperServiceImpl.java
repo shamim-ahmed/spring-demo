@@ -56,20 +56,20 @@ public class ChirperServiceImpl implements ChirperService {
   }
 
   @Override
-  public void addUser(User user) {
+  public boolean addUser(User user) {
     if (user == null) {
-      return;
+      return false;
     }
-
-    chirperDao.addUser(user);
+    
+    return chirperDao.addUser(user);
   }
 
   @Override
-  public void addMessage(Message message) {
+  public boolean addMessage(Message message) {
     if (message == null) {
-      return;
+      return false;
     }
 
-    chirperDao.addMessage(message);
+    return chirperDao.addMessage(message);
   }
 }

@@ -14,7 +14,7 @@ public interface ChirperService {
 
   Collection<Message> getMessagesByUserId(Long userId);
 
-  void addUser(User user);
+  boolean addUser(User user);
 
-  void addMessage(Message message);
+  boolean addMessage(Message message);
 }
