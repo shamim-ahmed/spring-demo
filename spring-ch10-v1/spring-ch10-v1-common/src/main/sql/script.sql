@@ -22,3 +22,5 @@ INSERT INTO User(id, username, password, join_date, receive_email) VALUES (1, 'j
 INSERT INTO User(id, username, password, join_date, receive_email) VALUES (2, 'gavin', 'hibernate', '2013-04-21', false);
 INSERT INTO Message(id, content, created_on, user_id) VALUES (1, 'Spring rocks !', '2013-04-21', 1);
 INSERT INTO Message(id, content, created_on, user_id) VALUES (2, 'Hibernate rocks !', '2013-04-21', 2);
+INSERT INTO Message(id, content, created_on, user_id) VALUES (3, 'Seam rocks !', '2013-04-21', 2);
+INSERT INTO Message(id, content, created_on, user_id) VALUES (4, 'Groovy rocks !', '2013-04-21', 1);
