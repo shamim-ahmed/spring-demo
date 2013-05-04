@@ -40,5 +40,19 @@
       <artifactId>spring-context</artifactId>
       <scope>compile</scope>
     </dependency>
+    
+    <!-- hessian -->
+    <dependency>
+      <groupId>com.caucho</groupId>
+      <artifactId>hessian</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- needed for Hessian -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 </project>

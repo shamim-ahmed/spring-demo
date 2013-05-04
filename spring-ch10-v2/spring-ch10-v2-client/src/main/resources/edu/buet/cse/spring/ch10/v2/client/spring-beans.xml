@@ -5,8 +5,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
        
-  <bean id="chirperService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"
+  <bean id="chirperService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean"
         p:serviceInterface="edu.buet.cse.spring.ch10.v2.service.ChirperService"
-        p:serviceUrl="rmi://localhost/Chirper"/>
-  
+        p:serviceUrl="http://localhost:8080/spring-ch10-v2-webapp/chirper.service"/>
 </beans>

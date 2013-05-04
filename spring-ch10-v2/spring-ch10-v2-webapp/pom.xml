@@ -46,6 +46,13 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- needed for Hessian -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    
     <!-- spring mvc -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -99,6 +106,12 @@
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
       <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.caucho</groupId>
+      <artifactId>hessian</artifactId>
+      <scope>compile</scope>
     </dependency>
     
     <!-- jstl -->
