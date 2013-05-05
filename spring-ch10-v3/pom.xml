@@ -30,7 +30,7 @@
         <version>${org.springframework.version}</version>
       </dependency>
       
-      <!-- needed for Hessian -->
+      <!-- needed for http invoker -->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-web</artifactId>
@@ -89,13 +89,6 @@
         <groupId>javax</groupId>
         <artifactId>javaee-web-api</artifactId>
         <version>6.0</version>
-      </dependency>
-      
-      <!-- hessian -->
-      <dependency>
-        <groupId>com.caucho</groupId>
-        <artifactId>hessian</artifactId>
-        <version>4.0.7</version>
       </dependency>
       
       <!-- jstl -->
