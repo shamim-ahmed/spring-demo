@@ -23,6 +23,7 @@
       <props>
         <prop key="/chirper.service">httpInvokerChirperService</prop>
         <prop key="/">homeController</prop>
+        <prop key="/user-list">userController</prop>
       </props>
     </property>
   </bean>

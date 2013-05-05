@@ -6,23 +6,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spring Flow Demo</title>
+  <title>Home page</title>
   <link rel="stylesheet" href="${ctxPath}/static/css/reset.css"/>
   <link rel="stylesheet" href="${ctxPath}/static/css/main.css"/>
 </head>
 <body>
   <div id="header">
-    <h1>Spring Remoting Demo</h1>
+    <h1>Chirper</h1>
   </div>
   
-  <div id="main">
+  <div id="main">    
     <div class="info">
-      This application demonstrates how spring remoting using HTTP Invoker works.
-    </div>
+      <h2>Registered Users</h2>
     
-    <div class="options">
-      Click <a href="${ctxPath}/user-list">here</a> to view a list of users
-    </div> 
+	  <ul>
+	    <c:forEach var="user" items="${requestScope.users}">
+	      <li><c:out value="${user.username}"/></li>
+	    </c:forEach>
+	  </ul>
+    </div>
+     
+    <div id="options">
+      Go to <a href="${ctxPath}">Home</a>
+    </div>
   </div>
   
   <div id="footer">
