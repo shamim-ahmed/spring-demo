@@ -15,10 +15,7 @@
   
   <name>spring-ch10-v4-webapp</name>
   <url>http://maven.apache.org</url>
-  <description>
-    This module generates the webapp which is deployed on tomcat and which hosts the service that is accessed
-    over RMI. 
-  </description>
+  <description>This module generates the webapp which exposes the ChirperService so that it can be accessed over SOAP.</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

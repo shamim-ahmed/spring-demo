@@ -9,6 +9,7 @@
 
   <name>spring-ch10-v4</name>
   <url>http://maven.apache.org</url>
+  <description>This project demonstrates how to expose a service over SOAP and how to access it from clients</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
