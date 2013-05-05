@@ -5,15 +5,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">   
        
-  <bean id="hessianChirperService"
-        class="org.springframework.remoting.caucho.HessianServiceExporter"
+  <bean id="httpInvokerChirperService"
+        class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter"
         p:service-ref="chirperService"
         p:serviceInterface="edu.buet.cse.spring.ch10.v3.service.ChirperService"/>
   
   <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
     <property name="mappings">
       <value>
-        /chirper.service=hessianChirperService
+        /chirper.service=httpInvokerChirperService
       </value>
     </property>
   </bean>
