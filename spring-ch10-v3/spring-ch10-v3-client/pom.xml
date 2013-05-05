@@ -13,7 +13,7 @@
   
   <name>spring-ch10-v3-client</name>
   <url>http://maven.apache.org</url>
-  <description>This module contains the client that accesses the remote service</description>
+  <description>This module implements the client that accesses the remote service over HTTP</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
