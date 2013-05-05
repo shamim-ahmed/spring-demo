@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">   
-       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">   
+  
+  <!-- configuration related to static resources -->
+  <mvc:resources location="/static/" mapping="/static/**"/>
+  
+  <!-- configuration for auto-registering controllers -->
+  <context:component-scan base-package="edu.buet.cse.spring.ch10.v2.controller"/>
+  
+  <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+  
+  <!-- url mappings -->
+  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="mappings">
+      <props>
+        <prop key="/chirper.service">hessianChirperService</prop>
+        <prop key="/">homeController</prop>
+        <prop key="/user-list">userController</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- view resolver -->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/templates/"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>
+  
+  <!-- configuration related to exported service -->
   <bean id="hessianChirperService"
         class="org.springframework.remoting.caucho.HessianServiceExporter"
         p:service-ref="chirperService"
         p:serviceInterface="edu.buet.cse.spring.ch10.v2.service.ChirperService"/>
-  
-  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-    <property name="mappings">
-      <value>
-        /chirper.service=hessianChirperService
-      </value>
-    </property>
-  </bean>
 </beans>
