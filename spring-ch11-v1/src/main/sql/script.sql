@@ -15,7 +15,7 @@ CREATE TABLE Message(
   content VARCHAR(200) NOT NULL,
   created_on DATE NOT NULL,
   user_id INTEGER NOT NULL,
-  CONSTRAINT message_fk FOREIGN KEY (user_id) REFERENCES User(id)
+  CONSTRAINT message_fk FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
 );
 
 INSERT INTO User(id, username, password, join_date, receive_email) VALUES (1, 'johnson', 'spring', '2013-04-21', true);
