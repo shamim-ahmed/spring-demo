@@ -98,7 +98,10 @@ public class ChirperController {
   }
   
   @RequestMapping(value = "/user", method = RequestMethod.POST)
-  public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam Boolean receiveEmail, ModelMap modelMap) {    
+  public String createUser(@RequestParam String username, 
+                           @RequestParam String password, 
+                           @RequestParam(required = false) Boolean receiveEmail, 
+                           ModelMap modelMap) {    
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
       modelMap.put("message", "Username and password must be provided");
       return "resultPage";
@@ -165,7 +168,7 @@ public class ChirperController {
                            @RequestParam String username,
                            @RequestParam String password,
                            @RequestParam String joinDate,
-                           @RequestParam Boolean receiveEmail,
+                           @RequestParam(required = false) Boolean receiveEmail,
                            ModelMap modelMap) { 
     DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
     Date parsedDate = null;
