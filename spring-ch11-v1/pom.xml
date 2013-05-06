@@ -9,7 +9,7 @@
 
   <name>spring-ch11-v1</name>
   <url>http://maven.apache.org</url>
-  <description>This project is used to demonstrate how to implement a RESTful web application using Spring</description>
+  <description>This project demonstrates how to implement a RESTful web application using Spring</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
