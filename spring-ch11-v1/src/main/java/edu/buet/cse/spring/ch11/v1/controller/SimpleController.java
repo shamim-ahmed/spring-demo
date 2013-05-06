@@ -49,7 +49,16 @@ public class SimpleController {
   public String showMessage(@PathVariable Long id, ModelMap modelMap) {
     Message message = chirperService.getMessage(id);
     modelMap.put("message", message);
+    modelMap.put("userId", message.getUserId());
     
     return "message";
+  }
+  
+  @RequestMapping(value = "/user/{userId}/messages", method = RequestMethod.GET)
+  public String showMessageList(@PathVariable Long userId, ModelMap modelMap) {
+    Collection<Message> messages = chirperService.getMessagesByUserId(userId);
+    modelMap.put("messages", messages);
+    
+    return "messageList";
   }
 }

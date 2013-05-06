@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="ctxPath" value="${pageContext.request.contextPath}"/>
 
@@ -17,11 +18,17 @@
   
   <div id="main">
     <div class="info">
-      This application demonstrates how to design a RESTful application with Spring.
+      <h2>User info</h2>
+      
+      <ul>
+        <li><span class="label">ID: </span><span class="content">${requestScope.user.id}</span></li>
+        <li><span class="label">Username: </span><span class="content">${requestScope.user.username}</span></li>
+        <li><span class="label">Join Date: </span><span class="content"><fmt:formatDate value="${requestScope.user.joinDate}" pattern="yyyy/MM/dd"/></span></li>
+      </ul>
     </div>
     
     <div class="options">
-      Click <a href="${ctxPath}/users">here</a> to view a list of users
+      Go to <a href="${ctxPath}/users">user list</a>
     </div> 
   </div>
   
