@@ -23,6 +23,11 @@ public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
   private static final String GET_MESSAGES_BY_USERID_SQL = "SELECT * FROM Message where user_id = ?";
   private static final String INSERT_USER_SQL = "INSERT INTO User(username, password, join_date, receive_email) VALUES (:uname, :passwd, :joinDate, :recvEmail)";
   private static final String INSERT_MESSAGE_SQL = "INSERT INTO Message(content, created_on, user_id) VALUES (:txt, :creationDate, :userId)";
+  private static final String UPDATE_USER_SQL = "UPDATE User SET password = :passwd, receive_email = :recvEmail WHERE id = :id";
+  private static final String DELETE_USER_SQL = "DELETE FROM User where id = ?";
+  private static final String UPDATE_MESSAGE_SQL = "UPDATE Message SET content = :txt WHERE id = :id";
+  private static final String DELETE_MESSAGE_SQL = "DELETE FROM Message WHERE id = ?";
+  
   
   private final UserRowMapper userRowMapper = new UserRowMapper();
   private final MessageRowMapper messageRowMapper = new MessageRowMapper();
@@ -73,6 +78,44 @@ public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
     paramMap.put("userId", message.getUserId());
     
     int count = getSimpleJdbcTemplate().update(INSERT_MESSAGE_SQL, paramMap);
+    return count == 1;
+  }
+  
+  @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+  public boolean updateUser(User user) {
+    Map<String, Object> paramMap = new HashMap<>();
+    paramMap.put("id", user.getId());
+    paramMap.put("passwd", user.getPassword());
+    paramMap.put("recvEmail", user.isReceiveEmail());
+    
+    int count = getSimpleJdbcTemplate().update(UPDATE_USER_SQL, paramMap);
+    
+    return count == 1;
+  }
+
+  @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+  public boolean deleteUser(Long id) {
+    int count = getSimpleJdbcTemplate().update(DELETE_USER_SQL, id);
+    return count == 1;
+  }
+
+  @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+  public boolean updateMessage(Message message) {
+    Map<String, Object> paramMap = new HashMap<>();
+    paramMap.put("id", message.getId());
+    paramMap.put("txt", message.getContent());
+    
+    int count = getSimpleJdbcTemplate().update(UPDATE_MESSAGE_SQL, paramMap);
+    return count == 1;
+  }
+
+  @Override
+  @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+  public boolean deleteMessage(Long id) { 
+    int count = getSimpleJdbcTemplate().update(DELETE_MESSAGE_SQL, id);
     return count == 1;
   }
   

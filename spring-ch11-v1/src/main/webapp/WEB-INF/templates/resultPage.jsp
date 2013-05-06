@@ -17,7 +17,7 @@
   
   <div id="main">
     <div class="info">
-      <c:out value="${requestScope.message}"/>
+      <c:out value="${requestScope['status.text']}"/>
     </div>
     
     <div class="options">

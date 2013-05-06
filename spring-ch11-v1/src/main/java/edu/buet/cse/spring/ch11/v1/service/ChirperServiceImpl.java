@@ -3,6 +3,8 @@ package edu.buet.cse.spring.ch11.v1.service;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.apache.commons.lang3.StringUtils;
+
 import edu.buet.cse.spring.ch11.v1.dao.ChirperDao;
 import edu.buet.cse.spring.ch11.v1.model.Message;
 import edu.buet.cse.spring.ch11.v1.model.User;
@@ -39,11 +41,11 @@ public class ChirperServiceImpl implements ChirperService {
     if (count <= 0) {
       return Collections.emptyList();
     }
-    
+
     if (count > MAX_USER_COUNT) {
       count = MAX_USER_COUNT;
     }
-    
+
     return chirperDao.getUsers(count);
   }
 
@@ -61,7 +63,7 @@ public class ChirperServiceImpl implements ChirperService {
     if (user == null) {
       return false;
     }
-    
+
     return chirperDao.addUser(user);
   }
 
@@ -72,5 +74,41 @@ public class ChirperServiceImpl implements ChirperService {
     }
 
     return chirperDao.addMessage(message);
+  }
+
+  @Override
+  public boolean updateUser(User user) {
+    if (user == null || user.getId() == null || StringUtils.isBlank(user.getPassword())) {
+      return false;
+    }
+
+    return chirperDao.updateUser(user);
+  }
+
+  @Override
+  public boolean updateMessage(Message message) {
+    if (message == null || message.getId() == null || StringUtils.isBlank(message.getContent())) {
+      return false;
+    }
+
+    return chirperDao.updateMessage(message);
+  }
+
+  @Override
+  public boolean deleteUser(Long id) {
+    if (id == null) {
+      return false;
+    }
+
+    return chirperDao.deleteUser(id);
+  }
+
+  @Override
+  public boolean deleteMessage(Long id) {
+    if (id == null) {
+      return false;
+    }
+    
+    return chirperDao.deleteMessage(id);
   }
 }

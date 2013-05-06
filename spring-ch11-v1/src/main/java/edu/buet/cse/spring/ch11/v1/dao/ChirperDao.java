@@ -17,4 +17,12 @@ public interface ChirperDao {
   boolean addUser(User user);
 
   boolean addMessage(Message message);
+
+  boolean updateUser(User user);
+
+  boolean updateMessage(Message message);
+  
+  boolean deleteUser(Long id);
+
+  boolean deleteMessage(Long id);
 }
