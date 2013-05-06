@@ -17,16 +17,12 @@
   
   <div id="main">
     <div class="info">
-      This application demonstrates how to design a RESTful application with Spring.
+      <c:out value="${requestScope.message}"/>
     </div>
     
     <div class="options">
-      <ul>
-        <li>Click <a href="${ctxPath}/users">here</a> to view a list of users</li>
-        <li>Click <a href="${ctxPath}/user-form">here</a> to create a user</li>
-        <li>Click <a href="${ctxPath}/message-form">here</a> to create a message</li>
-      </ul>
-    </div> 
+      Go to <a href="${ctxPath}">Home</a>
+    </div>
   </div>
   
   <div id="footer">

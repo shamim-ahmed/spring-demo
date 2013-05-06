@@ -1,13 +1,16 @@
 package edu.buet.cse.spring.ch11.v1.controller;
 
 import java.util.Collection;
+import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.buet.cse.spring.ch11.v1.model.Message;
 import edu.buet.cse.spring.ch11.v1.model.User;
@@ -27,6 +30,16 @@ public class SimpleController {
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String showHome() {
     return "home";
+  }
+  
+  @RequestMapping(value = "/user-form", method = RequestMethod.GET)
+  public String showUserForm() {
+    return "userForm";
+  }
+  
+  @RequestMapping(value = "/message-form", method = RequestMethod.GET)
+  public String showMessageForm() {
+    return "messageForm";
   }
   
   @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
@@ -60,5 +73,58 @@ public class SimpleController {
     modelMap.put("messages", messages);
     
     return "messageList";
+  }
+  
+  @RequestMapping(value = "/user", method = RequestMethod.POST)
+  public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam Boolean receiveEmail, ModelMap modelMap) {
+    boolean result = false;
+    
+    if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
+      modelMap.put("message", "Username and password must be provided");
+      return "resultPage";
+    }
+    
+    if (receiveEmail == null) {
+      receiveEmail = Boolean.FALSE;
+    }
+    
+    User user = new User();
+    user.setUsername(username);
+    user.setPassword(password);
+    user.setJoinDate(new Date());
+    user.setReceiveEmail(receiveEmail);
+    
+    result = chirperService.addUser(user);
+    
+    if (result) {
+      modelMap.put("message", "The user was created successfully");
+    } else {
+      modelMap.put("message", "An error occurred while creating the user");
+    }
+    
+    return "resultPage";
+  }
+  
+  @RequestMapping(value = "/message", method = RequestMethod.POST)
+  public String createMessage(@RequestParam String content, @RequestParam Long userId, ModelMap modelMap) {
+    if (StringUtils.isBlank(content) || userId == null) {
+      modelMap.put("error", "message content and user id must be provided");
+      return "resultPage";
+    }
+    
+    Message message = new Message();
+    message.setContent(content);
+    message.setUserId(userId);
+    message.setCreationDate(new Date());
+    
+    boolean result = chirperService.addMessage(message);
+    
+    if (result) {
+      modelMap.put("message", "The message was created successfully");
+    } else {
+      modelMap.put("message", "An error occurred while creating the message");
+    }
+    
+    return "resultPage";
   }
 }
