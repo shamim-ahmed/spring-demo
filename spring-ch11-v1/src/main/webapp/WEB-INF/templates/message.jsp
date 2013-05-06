@@ -29,7 +29,9 @@
     </div>
     
     <div class="options">
-      Go to <a href="${ctxPath}/user/${requestScope.userId}/messages">message list</a>
+      <p><a href="${ctxPath}/message/${requestScope.message.id}/edit-form">Edit</a> this message</p>
+      <br/>
+      <p>Go to <a href="${ctxPath}/user/${requestScope.userId}/messages">message list</a></p>
     </div> 
   </div>
   

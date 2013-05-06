@@ -22,7 +22,7 @@ import edu.buet.cse.spring.ch11.v1.model.User;
 import edu.buet.cse.spring.ch11.v1.service.ChirperService;
 
 @Controller
-public class SimpleController {
+public class ChirperController {
   private static final int MAX_USER_COUNT = 5;
   private static final String DATE_FORMAT = "yyyy-MM-dd";
   private static final String STATUS_ATTRIBUTE_NAME = "status.text";
@@ -31,7 +31,7 @@ public class SimpleController {
   private final ChirperService chirperService;
   
   @Autowired
-  public SimpleController(ChirperService chirperService) {
+  public ChirperController(ChirperService chirperService) {
     this.chirperService = chirperService;
   }
   
@@ -42,12 +42,12 @@ public class SimpleController {
   
   @RequestMapping(value = "/user-form", method = RequestMethod.GET)
   public String showUserForm() {
-    return "userForm";
+    return "userCreateForm";
   }
   
   @RequestMapping(value = "/message-form", method = RequestMethod.GET)
   public String showMessageForm() {
-    return "messageForm";
+    return "messageCreateForm";
   }
   
   @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
@@ -81,6 +81,20 @@ public class SimpleController {
     modelMap.put("messages", messages);
     
     return "messageList";
+  }
+  
+  @RequestMapping(value = "/user/{id}/edit-form", method = RequestMethod.GET)
+  public String showUserEditForm(@PathVariable Long id, ModelMap modelMap) {
+    User user = chirperService.getUser(id);
+    modelMap.put("user", user);
+    return "userEditForm";
+  }
+  
+  @RequestMapping(value = "/message/{id}/edit-form", method = RequestMethod.GET)
+  public String showMessageEditForm(@PathVariable Long id, ModelMap modelMap) {
+    Message message = chirperService.getMessage(id);
+    modelMap.put("message", message);
+    return "messageEditForm";
   }
   
   @RequestMapping(value = "/user", method = RequestMethod.POST)
