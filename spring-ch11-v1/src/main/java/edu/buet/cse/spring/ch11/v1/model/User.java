@@ -1,14 +1,11 @@
 package edu.buet.cse.spring.ch11.v1.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class User implements Serializable {
-  private static final long serialVersionUID = 1L;
-  
+public class User {  
   private Long id;
   private String username;
   private String password;
