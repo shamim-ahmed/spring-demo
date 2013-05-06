@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,6 +22,7 @@ import edu.buet.cse.spring.ch11.v1.service.ChirperService;
 public class SimpleController {
   private static final int MAX_USER_COUNT = 5;
   
+  private final Logger logger = LogManager.getLogger(getClass()); 
   private final ChirperService chirperService;
   
   @Autowired
@@ -76,9 +79,7 @@ public class SimpleController {
   }
   
   @RequestMapping(value = "/user", method = RequestMethod.POST)
-  public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam Boolean receiveEmail, ModelMap modelMap) {
-    boolean result = false;
-    
+  public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam Boolean receiveEmail, ModelMap modelMap) {    
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
       modelMap.put("message", "Username and password must be provided");
       return "resultPage";
@@ -94,7 +95,13 @@ public class SimpleController {
     user.setJoinDate(new Date());
     user.setReceiveEmail(receiveEmail);
     
-    result = chirperService.addUser(user);
+    boolean result = false;
+
+    try {
+      result = chirperService.addUser(user);
+    } catch (Exception ex) {
+      logger.error(ex);
+    }
     
     if (result) {
       modelMap.put("message", "The user was created successfully");
@@ -117,7 +124,13 @@ public class SimpleController {
     message.setUserId(userId);
     message.setCreationDate(new Date());
     
-    boolean result = chirperService.addMessage(message);
+    boolean result = false;
+    
+    try {
+      result = chirperService.addMessage(message);
+    } catch (Exception ex) {
+      logger.error(ex);
+    }
     
     if (result) {
       modelMap.put("message", "The message was created successfully");
