@@ -9,6 +9,10 @@
 
   <name>spring-ch12-v2</name>
   <url>http://maven.apache.org</url>
+  <description>
+    This project demonstrates how the JMS connection factory and queue can be declared using elements from 
+    the custom 'amq' namespace
+  </description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
