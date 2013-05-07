@@ -12,10 +12,6 @@
     <constructor-arg value="chirper.queue"/>
   </bean>
   
-  <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic">
-    <constructor-arg value="chirper.topic"/>
-  </bean>
-  
   <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
     <constructor-arg ref="connectionFactory"/>
   </bean>
