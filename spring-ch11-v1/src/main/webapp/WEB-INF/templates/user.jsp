@@ -24,6 +24,7 @@
         <li><span class="label">ID: </span><span class="content">${requestScope.user.id}</span></li>
         <li><span class="label">Username: </span><span class="content">${requestScope.user.username}</span></li>
         <li><span class="label">Join Date: </span><span class="content"><fmt:formatDate value="${requestScope.user.joinDate}" pattern="yyyy/MM/dd"/></span></li>
+        <li><span class="label">Receive Email: </span><span class="content">${requestScope.user.receiveEmail}</span></li>
       </ul>
     </div>
     
