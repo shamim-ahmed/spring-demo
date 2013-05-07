@@ -2,9 +2,12 @@ package edu.buet.cse.spring.ch11.v2.model;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+@XmlRootElement(name = "user")
 public class User {  
   private Long id;
   private String username;

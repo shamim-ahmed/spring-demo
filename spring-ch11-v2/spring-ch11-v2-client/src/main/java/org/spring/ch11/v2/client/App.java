@@ -15,7 +15,7 @@ public class App {
   public static void main(String[] args) {
     HttpClient httpClient = new DefaultHttpClient();
     HttpGet httpGet = new HttpGet("http://localhost:8080/spring-ch11-v2-webapp/user/1");
-    Header header = new BasicHeader("Accept", "application/json");
+    Header header = new BasicHeader("Accept", "application/xml");
     httpGet.addHeader(header);
     
     HttpEntity responseEntity = null;

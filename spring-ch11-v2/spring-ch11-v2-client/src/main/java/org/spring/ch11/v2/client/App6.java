@@ -4,35 +4,35 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.spring.ch11.v2.client.util.MiscUtils;
 
-public class App2 {
+public class App6 {
   public static void main(String... args) {
     HttpClient httpClient = new DefaultHttpClient();
-    HttpGet httpGet = new HttpGet("http://localhost:8080/spring-ch11-v2-webapp/message/1");
-    httpGet.addHeader("Accept", "application/xml");
+    HttpDelete httpDelete = new HttpDelete("http://localhost:8080/spring-ch11-v2-webapp/user/1");
+    httpDelete.addHeader("Accept", "text/plain");
     
-    HttpEntity httpEntity = null;
+    HttpEntity responseEntity = null;
     
     try {
-      HttpResponse response = httpClient.execute(httpGet);
+      HttpResponse response = httpClient.execute(httpDelete);
       StatusLine statusLine = response.getStatusLine();
       int statusCode = statusLine.getStatusCode();
       
       if (statusCode == 200) {
-        httpEntity = response.getEntity();
-        String result = EntityUtils.toString(httpEntity);
+        responseEntity = response.getEntity();
+        String result = EntityUtils.toString(responseEntity);
         System.out.println(result);
       } else {
-        System.err.printf("The status code is %d%n", statusCode);
+        System.err.printf("The response code is %d%n", statusCode);
       }
     } catch (Exception ex) {
-      System.err.println(ex);
+      ex.printStackTrace(System.err);
     } finally {
-      MiscUtils.closeEntity(httpEntity);
+      MiscUtils.closeEntity(responseEntity);
     }
   }
 }

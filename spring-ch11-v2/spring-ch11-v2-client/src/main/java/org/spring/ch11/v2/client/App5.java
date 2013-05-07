@@ -19,7 +19,7 @@ public class App5 {
   public static void main(String... args) {
     HttpClient httpClient = new DefaultHttpClient();
     HttpPost httpPost = new HttpPost("http://localhost:8080/spring-ch11-v2-webapp/user");
-    httpPost.addHeader("Accept", "application/json");
+    httpPost.addHeader("Accept", "text/plain");
     List<NameValuePair> requestParams = new ArrayList<>();
     requestParams.add(new BasicNameValuePair("username", "shamim"));
     requestParams.add(new BasicNameValuePair("password", "secret"));

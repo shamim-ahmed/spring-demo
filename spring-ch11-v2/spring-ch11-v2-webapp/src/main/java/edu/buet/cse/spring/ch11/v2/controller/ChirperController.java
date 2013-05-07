@@ -34,32 +34,32 @@ public class ChirperController {
     this.chirperService = chirperService;
   }
   
-  @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/html"})
+  @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/plain"})
   public @ResponseBody User showUser(@PathVariable Long id) {
     return chirperService.getUser(id);
   }
   
-  @RequestMapping(value = "/users", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/html"})
+  @RequestMapping(value = "/users", method = RequestMethod.GET, headers = {"Accept=application/json, text/plain"})
   public @ResponseBody Collection<User> showUserList() {
     return chirperService.getUsers(MAX_USER_COUNT);
   }
  
-  @RequestMapping(value = "/message/{id}", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/html"})
+  @RequestMapping(value = "/message/{id}", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/plain"})
   public @ResponseBody Message showMessage(@PathVariable Long id) {
     return chirperService.getMessage(id);
   }
   
-  @RequestMapping(value = "/user/{userId}/messages", method = RequestMethod.GET, headers = {"Accept=application/xml, application/json, text/html"})
+  @RequestMapping(value = "/user/{userId}/messages", method = RequestMethod.GET, headers = {"Accept=application/json, text/plain"})
   public @ResponseBody Collection<Message> showMessageList(@PathVariable Long userId) {
     return chirperService.getMessagesByUserId(userId);
   }
   
-  @RequestMapping(value = "/user", method = RequestMethod.POST, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean createUser(@RequestParam String username, 
+  @RequestMapping(value = "/user", method = RequestMethod.POST, headers = {"Accept=text/plain"})
+  public @ResponseBody String createUser(@RequestParam String username, 
                                           @RequestParam String password, 
                                           @RequestParam(required = false) Boolean receiveEmail) {    
     if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
-      return Boolean.FALSE;
+      return Boolean.FALSE.toString();
     }
     
     if (receiveEmail == null) {
@@ -80,13 +80,13 @@ public class ChirperController {
       logger.error(ex);
     }
     
-    return result;
+    return Boolean.toString(result);
   }
   
-  @RequestMapping(value = "/message", method = RequestMethod.POST, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean createMessage(@RequestParam String content, @RequestParam Long userId) {
+  @RequestMapping(value = "/message", method = RequestMethod.POST, headers = {"Accept=text/plain"})
+  public @ResponseBody String createMessage(@RequestParam String content, @RequestParam Long userId) {
     if (StringUtils.isBlank(content) || userId == null) {
-      return Boolean.FALSE;
+      return Boolean.FALSE.toString();
     }
     
     Message message = new Message();
@@ -102,11 +102,11 @@ public class ChirperController {
       logger.error(ex);
     }
     
-    return result;
+    return Boolean.toString(result);
   }
   
-  @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean updateUser(@PathVariable Long id, 
+  @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT, headers = {"Accept=text/plain"})
+  public @ResponseBody String updateUser(@PathVariable Long id, 
                                           @RequestParam String username,
                                           @RequestParam String password,
                                           @RequestParam String joinDate,
@@ -131,11 +131,11 @@ public class ChirperController {
     user.setJoinDate(parsedDate);
     user.setReceiveEmail(receiveEmail);
     
-    return chirperService.updateUser(user);
+    return Boolean.toString(chirperService.updateUser(user));
   }
   
-  @RequestMapping(value = "/message/{id}", method = RequestMethod.PUT, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean updateMessage(@PathVariable Long id, 
+  @RequestMapping(value = "/message/{id}", method = RequestMethod.PUT, headers = {"Accept=text/plain"})
+  public @ResponseBody String updateMessage(@PathVariable Long id, 
                                              @RequestParam String content, 
                                              @RequestParam String creationDate,
                                              @RequestParam Long userId) {
@@ -154,16 +154,16 @@ public class ChirperController {
     message.setCreationDate(parsedDate);
     message.setUserId(userId);
     
-    return chirperService.updateMessage(message);
+    return Boolean.toString(chirperService.updateMessage(message));
   }
   
-  @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean deleteUser(@PathVariable Long id) {
-    return chirperService.deleteUser(id);
+  @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE, headers = {"Accept=text/plain"})
+  public @ResponseBody String deleteUser(@PathVariable Long id) {
+    return Boolean.toString(chirperService.deleteUser(id));
   }
   
-  @RequestMapping(value = "/message/{id}", method = RequestMethod.DELETE, headers = {"Accept=application/xml, application/json, text/html"})
-  public @ResponseBody Boolean deleteMessage(@PathVariable Long id) {
-    return chirperService.deleteMessage(id);
+  @RequestMapping(value = "/message/{id}", method = RequestMethod.DELETE, headers = {"Accept=text/plain"})
+  public @ResponseBody String deleteMessage(@PathVariable Long id) {
+    return Boolean.toString(chirperService.deleteMessage(id));
   }
 }
