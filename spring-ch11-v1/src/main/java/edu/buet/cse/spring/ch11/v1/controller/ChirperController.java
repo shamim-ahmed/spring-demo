@@ -78,6 +78,7 @@ public class ChirperController {
   @RequestMapping(value = "/user/{userId}/messages", method = RequestMethod.GET)
   public String showMessageList(@PathVariable Long userId, ModelMap modelMap) {
     Collection<Message> messages = chirperService.getMessagesByUserId(userId);
+    modelMap.put("userId", userId);
     modelMap.put("messages", messages);
     
     return "messageList";
@@ -88,6 +89,19 @@ public class ChirperController {
     User user = chirperService.getUser(id);
     modelMap.put("user", user);
     return "userEditForm";
+  }
+  
+  @RequestMapping(value = "/user/{id}/delete-form", method = RequestMethod.GET)
+  public String showUserDeleteForm(@PathVariable Long id, ModelMap modelMap) {
+    modelMap.put("user", chirperService.getUser(id));
+    return "userDeleteForm";
+  }
+  
+  @RequestMapping(value = "/message/{id}/delete-form", method = RequestMethod.GET)
+  public String showMessageDeleteForm(@PathVariable Long id, ModelMap modelMap) {
+    Message message = chirperService.getMessage(id);
+    modelMap.put("message", message);
+    return "messageDeleteForm";
   }
   
   @RequestMapping(value = "/message/{id}/edit-form", method = RequestMethod.GET)

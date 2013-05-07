@@ -18,7 +18,7 @@
   
   <div id="main">
     <div class="info">
-      <h2>Message List</h2>
+      <h2>Message List for user with ID ${requestScope.userId}</h2>
       
       <ul>
         <c:forEach var="message" items="${requestScope.messages}">

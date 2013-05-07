@@ -30,6 +30,8 @@
     <div class="options">
       <p><a href="${ctxPath}/user/${requestScope.user.id}/edit-form">Edit</a> this user</p>
       <br/>
+      <p><a href="${ctxPath}/user/${requestScope.user.id}/delete-form">Delete</a> this user</p>
+      <br/>
       <p>Go to <a href="${ctxPath}/users">user list</a></p>
     </div> 
   </div>

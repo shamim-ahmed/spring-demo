@@ -31,6 +31,8 @@
     <div class="options">
       <p><a href="${ctxPath}/message/${requestScope.message.id}/edit-form">Edit</a> this message</p>
       <br/>
+      <p><a href="${ctxPath}/message/${requestScope.message.id}/delete-form">Delete</a> this message</p>
+      <br/>
       <p>Go to <a href="${ctxPath}/user/${requestScope.userId}/messages">message list</a></p>
     </div> 
   </div>
