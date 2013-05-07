@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.buet.cse</groupId>
-  <artifactId>spring-ch12-v1</artifactId>
+  <artifactId>spring-ch12-v2</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-ch12-v1</name>
+  <name>spring-ch12-v2</name>
   <url>http://maven.apache.org</url>
 
   <properties>
