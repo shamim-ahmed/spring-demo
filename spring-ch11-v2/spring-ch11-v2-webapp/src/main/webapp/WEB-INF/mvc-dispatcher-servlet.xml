@@ -13,21 +13,4 @@
   
   <!-- configuration for auto-registration of controllers -->
   <context:component-scan base-package="edu.buet.cse.spring.ch11.v2"/>                  
-  
-  <!-- configuration for serving static files -->         
-  <mvc:resources location="/static/" mapping="/static/**"/> 
-  
-  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/templates/"/>
-    <property name="suffix" value=".jsp"/>
-  </bean>
-  
-  <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-    <property name="mediaTypes">
-      <map>
-        <entry key="xml" value="application/xml"/>
-        <entry key="json" value="application/json"/>
-      </map>
-    </property>
-  </bean>
 </beans>
