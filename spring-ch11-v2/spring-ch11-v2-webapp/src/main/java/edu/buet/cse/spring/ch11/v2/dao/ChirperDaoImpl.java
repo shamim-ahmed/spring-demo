@@ -28,7 +28,6 @@ public class ChirperDaoImpl extends SimpleJdbcDaoSupport implements ChirperDao {
   private static final String UPDATE_MESSAGE_SQL = "UPDATE Message SET content = :txt WHERE id = :id";
   private static final String DELETE_MESSAGE_SQL = "DELETE FROM Message WHERE id = ?";
   
-  
   private final UserRowMapper userRowMapper = new UserRowMapper();
   private final MessageRowMapper messageRowMapper = new MessageRowMapper();
   
