@@ -9,6 +9,7 @@
 
   <name>spring-ch12-v1</name>
   <url>http://maven.apache.org</url>
+  <description>This project demonstrates how to produce and consume messages using Spring-JMS integration</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
