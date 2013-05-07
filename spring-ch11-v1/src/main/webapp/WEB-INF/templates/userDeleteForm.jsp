@@ -23,7 +23,9 @@
       <input type="hidden" name="_method" value="delete"/>
       <input type="hidden" name="id" value="${requestScope.user.id}"/>
       <p>Are you sure you want to delete the user with name ${requestScope.user.username} ?</p>
+      <br/>
       <input type="submit" value="Yes"/>
+      &nbsp;
       <input type="reset" value="No" onclick="window.location = '${ctxPath}/users'"/>
     </form>
   </div>

@@ -23,8 +23,9 @@
       <input type="hidden" name="_method" value="delete"/>
       <input type="hidden" name="id" value="${requestScope.message.id}"/>
       <p>Are you sure you want to delete the message with content:  '${requestScope.message.content}' ?</p>
+      <br/>
       <input type="submit" value="Yes"/>
-      &nbsp;&nbsp;
+      &nbsp;
       <input type="reset" value="No" onclick="window.location = '${ctxPath}/user/${requestScope.message.userId}/messages'"/>
     </form>
   </div>
