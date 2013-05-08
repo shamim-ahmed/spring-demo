@@ -1,5 +1,8 @@
 package edu.buet.cse.spring.ch13.v1.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Person {
   private String firstName;
   private String lastName;
@@ -27,6 +30,16 @@ public class Person {
 
   public void setAge(int age) {
     this.age = age;
+  }
+  
+  @Override
+  public String toString() {
+    ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
+    builder.append("firstName", firstName)
+           .append("lastName", lastName)
+           .append("age", age);
+    
+    return builder.toString();
   }
 }
 

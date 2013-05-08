@@ -17,6 +17,7 @@
   </properties>
   
   <dependencies>
+    <!-- core spring dependency -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
@@ -28,6 +29,14 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>${org.springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- misc -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
