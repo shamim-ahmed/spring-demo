@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>spring-ch12-v5</artifactId>
+    <groupId>edu.buet.cse</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>spring-ch12-v5-common</artifactId>
+  
+  <name>spring-ch12-v5-common</name>
+  <url>http://maven.apache.org</url>
+  <description>This module contains the domain objects common to other modules</description>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
