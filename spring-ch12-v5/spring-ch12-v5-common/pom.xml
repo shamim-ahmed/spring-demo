@@ -12,7 +12,7 @@
   
   <name>spring-ch12-v5-common</name>
   <url>http://maven.apache.org</url>
-  <description>This module contains the domain objects common to other modules</description>
+  <description>This module contains the classes and interfaces common to other modules</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

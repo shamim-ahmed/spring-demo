@@ -12,7 +12,7 @@
   
   <name>spring-ch12-v5-actor</name>
   <url>http://maven.apache.org</url>
-  <description>This module contains the producer to produce a JMS message</description>
+  <description>This module contains the producer that uses the exported service to log a tweet</description>
   
   <dependencies>
     <!-- inter module dependency -->

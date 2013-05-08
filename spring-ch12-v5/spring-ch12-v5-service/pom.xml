@@ -13,6 +13,7 @@
 
   <name>spring-ch12-v5-service</name>
   <url>http://maven.apache.org</url>
+  <description>This module exposes the logging service over JMS, which can then be accessed by others</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
