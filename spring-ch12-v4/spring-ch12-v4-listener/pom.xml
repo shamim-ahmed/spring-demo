@@ -12,6 +12,7 @@
 
   <name>spring-ch12-v4-listener</name>
   <url>http://maven.apache.org</url>
+  <description>This module shows how to implement a listener for incoming JMS messages</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,6 +27,7 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- core spring dependencies -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
@@ -38,6 +40,7 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- spring JMS integration -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jms</artifactId>
@@ -56,6 +59,7 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- logging -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>

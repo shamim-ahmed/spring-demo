@@ -12,6 +12,7 @@
   
   <name>spring-ch12-v4-actor</name>
   <url>http://maven.apache.org</url>
+  <description>This module contains the producer to produce a JMS message</description>
   
   <dependencies>
     <!-- inter module dependency -->
@@ -22,6 +23,7 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- core spring dependencies -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
@@ -34,6 +36,7 @@
       <scope>compile</scope>
     </dependency>
     
+    <!-- spring JMS integration -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jms</artifactId>
@@ -47,14 +50,15 @@
     </dependency>
     
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <groupId>org.apache.xbean</groupId>
+      <artifactId>xbean-spring</artifactId>
       <scope>compile</scope>
     </dependency>
     
+    <!-- logging -->
     <dependency>
-      <groupId>org.apache.xbean</groupId>
-      <artifactId>xbean-spring</artifactId>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
