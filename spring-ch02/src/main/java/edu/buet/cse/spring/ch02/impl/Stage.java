@@ -2,7 +2,7 @@ package edu.buet.cse.spring.ch02.impl;
 
 public class Stage {
   private static class SingletonHolder {
-    private static Stage INSTANCE = new Stage();
+    private static final Stage INSTANCE = new Stage();
   }
 
   public static Stage getInstance() {
